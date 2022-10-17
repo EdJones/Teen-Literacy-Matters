@@ -4,6 +4,10 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-regular-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/vue-fontawesome": "^2.0.8",
     "@nativescript/core": "~8.3.0",
     "@nativescript/social-share": "^2.2.0",
     "@nativescript/tailwind": "^2.0.1",
