@@ -1,46 +1,222 @@
-@import '@nativescript/theme/core';
-@import '@nativescript/theme/default';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
 
-// Font icon class
-.fab {
-  font-family: 'Font Awesome 5 Brands', 'fa-brands-400';
+//Font CSS properties come from ns fonts on CLI.
+/* Font icon class*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+//Use the FontAwesome 5.15 for all the old icons. (V6 broke their useage).
+.fa {
+  font-family: "Font Awesome 6 Free", "fa-solid-900";
+  font-weight: 900;
+  }
+
+.fa-brands {
+  font-family: "Font Awesome 6 Brands", "fa-brands-400";
   font-weight: 400;
 }
-
+.far {
+  font-family: "Font Awesome 6 Free", "fa-regular-400";
+  font-weight: 400;
+}
 .fas {
-  font-family: 'Font Awesome 5 Free', 'fa-solid-900';
+  font-family: "Font Awesome 6 Free", "fa-solid-900";
   font-weight: 900;
 }
-
-.far {
-  font-family: 'Font Awesome 5 Free', 'fa-regular-400';
+.fal {
+  font-family: "Font Awesome 6 Free", "fa-solid-900";
+  font-weight: 900;
+}
+.MaterialIcons {
+  font-family: "Material Icons", "MaterialIcons-Regular.ttf"; 
   font-weight: 400;
 }
 
 // Common page class
-.page__content {
-  &-icon,
-  &-placeholder {
-    color: const(grey);
-    font-size: 20;
-    vertical-align: center;
-    horizontal-align: center;
-  }
+.page-content {
 
-  &-icon {
-    font-size: 72;
-    vertical-align: top;
-    margin-top: 20%;
-  }
+  /*
+    .MaterialIcons {
+  font-family: "Material Icons", "MaterialIcons-Regular.ttf"; 
+  font-weight: 400;
+}
+*/
+
+}
+.invisible {
+  color: white;
+}
+/* Action bar*/
+.action-bar {
+        background-color: #00aaee;
+}
+ActionBar .action-bar-title {
+    horizontal-align: center;
+
+}
+/*Color */
+.right-gradient {
+  /* background: linear-gradient(to left, #33ffc7, #d0f1f8); */
+  margin-right:0;
+  background: linear-gradient(to right, #0065d4, #009fd4, #d3f2f7);
 }
 
-// Drawer navigation custom styles
-.nt-drawer__header-image {
-  color: const(grey);
+/* Page Header */
+.p-20 {
+  margin-top: 20;
+  padding-top: 30;
+}
+.p-r-10 {
+  margin:7;
+}
+
+.top-content {
+  margin:10;
+}
+.challenge-label {
+  font-size:15;
+  font-weight:bold;
+/*  color: #002299; */
+/*  color: #b26a22; */
+  color: firebrick;
+/*  text-wrap: true; */
+  margin-top:10;
+    margin-left: 3;
+}
+
+/* User Status */
+.progress-label {
+  font-size:10;
+  text-align: center;
+  margin-bottom:0;
+  margin-top:16;
+}
+.progress-label1 {
+  font-size:10;
+  text-align: center;
+  margin-bottom:0;
+  margin-top:0;
+}
+.progress-label2 {
+  font-size:10;
+  text-align: center;
+  margin-bottom:6;
+  margin-top:6;
+}
+.progressbar {
+    height: 20;
+    margin: 10;
+    border-radius: 10;
+    background: #ECEFF1;
+      margin-top:12;
+}
+.progressbar-value {
+  /*  background: #51BC6B; */
+  background: #5fd400;
+} 
+/* Card Styles */
+.cardStyle {
+  background-color: #fff;
+  color: rgb(43, 43, 43);
+}
+.cardContent {
+  padding: 9;
+  padding-right:10;
+  padding-bottom: 7;
+  padding-top:7;
+  font-weight: bold;
+  font-size: 15;
+}
+.card-title {
+  font-weight: bold;
+  /* color: firebrick; */
+  color: #b26a22;
+  margin-left:0;
+  word-wrap: true;
+}
+.card-subtitle {
+  font-weight: bold;
+  font-size: 13;
+}
+.card-text {
+  font-weight: normal;
+  text-wrap: true;
+  
+}
+
+.completed-dot {
+    height: 40px;
+    width: 40px;
+    background-color: #22b222;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: right;
+    padding:0;
+    margin-right:6;
+    vertical-align: top;
+  }
+  .incomplete-dot {
+    height: 40px;
+    width: 40px;
+    background-color: #ffffff;
+    border-color: #cccccc;
+    border-style: solid;
+    border-width:2;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: right;
+    padding:0;
+    margin-right:0;
+    margin-left: 6px;
+    vertical-align: top;
+  }
+  .headphones {
+    vertical-align: top;
+    padding-top: 3;
+  }
+  .media-icon {
+    vertical-align: top;
+    padding-top: 2;
+    margin-left: 0;
+
+    text-align:left;
+  }
+.actionbar2 {
+  color: #0065d4;
+}
+.blueblue {
+    background-color: #009fd4;
+}
+.text-para {
+  margin-bottom: 6;
+  margin-left: 3;
+}
+.text-quote {
+  margin-bottom: 6;
+  margin-left: 3;
+  font-style: italic;
+}
+.topic-link {
+  font-size:15;
+  font-weight:bold;
+  text-wrap: true; 
+  margin-top:10;
+    margin-left: 3;
+    text-decoration: underline;
+}
+.input-gray {
+  background-color: #c2c2c2;
+  border-color: #000000;
+  border-width: 1;
+  margin-bottom: 15;
+}
+.btn-b {
+  width: 70;
+  background-color: #2555A9;
+  border-radius: 3;
+  color: #B8CAE9;
+}
+.r-graphic {
+  margin: 8;
 }
