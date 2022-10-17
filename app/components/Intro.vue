@@ -33,14 +33,14 @@ import { topicPages } from "../data/pages_list.js";
 
   export default {
     mounted() {
-      SelectedPageService.getInstance().updateSelectedPage("Intro");
+      SelectedPageService.getInstance().updateSelectedPage("Introduction");
     },
     components: {
    // ProgressBar,
     XPcard
   },
     data() {
-      const page="Comprehension";
+      const page="Introduction";
     const pageXPDetails = XPs.filter(XP => {
         //console.info("In page filter, ", XP );
       return XP.Page.includes(page);

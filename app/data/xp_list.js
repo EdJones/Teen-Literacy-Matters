@@ -2999,4 +2999,18 @@ export const XPs = [{
     "xpUrl": "https://www.edweek.org/teaching-learning/which-states-have-passed-science-of-reading-laws-whats-in-them/2022/07",
     "Text3": "",
     "points": "2500"
+}, {
+    "Science": "",
+    "XP_NUM": "10100",
+    "xpId": "XP10100",
+    "Page": "Introduction",
+    "title": "A Hard Truth",
+    "xpType": "blog",
+    "YTvideoId": "",
+    "Subtitle": "",
+    "xpText": "Meet a high school principal and his teens who cannot read.",
+    "text2": "",
+    "xpUrl": "https://growinggoodschools.blogspot.com/2018/01/a-hard-truth.html",
+    "Text3": "",
+    "points": "2500"
 }]

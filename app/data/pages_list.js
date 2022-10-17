@@ -1,4 +1,16 @@
-export const topicPages = [ {
+export const topicPages = [ 
+  {
+    page: "Introduction",
+    title: "(Black) Literacy Matters--Intro",
+    challenge: "",
+    pageXPs: [10100],
+    text1: "",
+    text2: "",
+    text3: "",
+    closingText: "",
+    closingText2: "", 
+    modal: ""
+  },{
         page: "Home",
         title: "Science of Reading--Caring",
         challenge: "Not everyone is cut out to care this much.",
