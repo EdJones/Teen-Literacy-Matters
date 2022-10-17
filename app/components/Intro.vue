@@ -11,13 +11,13 @@
 
         <GridLayout class="page__content">
           <StackLayout orientation="vertical">
-            <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-48"/>
-          <Label class="text-2xl text-center" text="(Black) Teen Literacy Matters"  />
-            <Label class="text-base leading-none p-4 pb-0" text="Systemic racism has many forms; few more hurtful than denying children basic reading." textWrap="true" />
+            <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24"/>
+          <Label class="text-2xl text-center" text="First Steps"  />
+            <Label class="text-base leading-none p-4 pb-0" text="A Hard Truth" textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="Across the country, Black children are deprived of the reading instruction they need. (So are many others.)" textWrap="true" />
 <Label class="text-base leading-none p-4" text="This puts them behind for life. When they become parents, it limits the jobs they can get, what they can do for the next generation." textWrap="true" />
 <Label class="text-base leading-none p-4 text-center" text="How can teens help change this?" textWrap="true" />
- <Button text="How can I help?" @tap="moveForward" class="button-active help-button" width="20%" />
+ <Button text="How can I help?" @tap="showModal(HardTruth)" class="button-active help-button" width="20%" />
           </StackLayout>
         </GridLayout>
     </Page>
@@ -26,7 +26,9 @@
 <script>
   import * as utils from "~/shared/utils";
   import { SelectedPageService } from "../shared/selected-page-service";
-  import Intro from "./Intro";
+  //import HardTruth from "./HardTruth";
+  import XPModal from "./XPModal";
+  import XPCard from "./XPCard";
 
   export default {
     mounted() {
@@ -40,10 +42,7 @@
     methods: {
       onDrawerButtonTap() {
         utils.showDrawer();
-      },
-      moveForward() {
-      this.$navigateTo(Intro);
-    }
+      }
     }
   };
 </script>
