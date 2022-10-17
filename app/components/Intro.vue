@@ -14,9 +14,7 @@
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24"/>
           <Label class="text-2xl text-center" text="First Steps"  />
             <Label class="text-base leading-none p-4 pb-0" text="A Hard Truth" textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="Across the country, Black children are deprived of the reading instruction they need. (So are many others.)" textWrap="true" />
-<Label class="text-base leading-none p-4" text="This puts them behind for life. When they become parents, it limits the jobs they can get, what they can do for the next generation." textWrap="true" />
-<Label class="text-base leading-none p-4 text-center" text="How can teens help change this?" textWrap="true" />
+             <XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard>
  <Button text="How can I help?" @tap="showModal(HardTruth)" class="button-active help-button" width="20%" />
           </StackLayout>
         </GridLayout>
@@ -28,12 +26,44 @@
   import { SelectedPageService } from "../shared/selected-page-service";
   //import HardTruth from "./HardTruth";
   import XPModal from "./XPModal";
-  import XPCard from "./XPCard";
+  import XPcard from "./XPCard";
+  import { XPs } from "../data/xp_list.js";
+  //import ProgressBar from "./ProgressBar";
+import { topicPages } from "../data/pages_list.js";
 
   export default {
     mounted() {
-      SelectedPageService.getInstance().updateSelectedPage("Home");
+      SelectedPageService.getInstance().updateSelectedPage("Intro");
     },
+    components: {
+   // ProgressBar,
+    XPcard
+  },
+    data() {
+      const page="Comprehension";
+    const pageXPDetails = XPs.filter(XP => {
+        //console.info("In page filter, ", XP );
+      return XP.Page.includes(page);
+     });
+    // console.info("In page filter, topicPage is", topicPages[3]);
+
+    const pageInfo = topicPages.filter(topicPage => {
+        console.info("In page filter 2, ", topicPage );
+      return topicPage.page.includes(page);
+     });
+    // pageInfo = topicPages[1];
+    
+     console.info("In data, pageInfo is: ", pageInfo);
+     console.info("In data, topicPage.page is: ", pageInfo[0].page );
+    // console.info("In data, topicPage.title is: ", topicPages[3].title );
+    // console.info("In data, topicPage.challenge is: ", topicPages[3].challenge );
+
+    return {
+      pageXPDetails: pageXPDetails,
+      pageInfo: pageInfo[0],
+      topicPages: topicPages
+    };
+  },
     computed: {
       message() {
         return "<!-- Page content goes here -->";

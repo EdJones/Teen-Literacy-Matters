@@ -1,0 +1,174 @@
+<template>
+    <card-view class="cardStyle" margin="10" elevation="40" radius="1" @tap="cardDetail">
+        <stack-layout class="cardContent">
+
+           <Gridlayout columns="20,*, 20" rows="auto,auto">
+                <Label row="0" col="0" :text="mediaIcon" :class="iconPackage" verticalAlignment="top" ></Label>
+                <Label row="0" col="1" :text="xpObj.title" class="card-title"  textWrap="true" ></Label>
+                <Label row="0" col="2" :class="dotStatus" ></Label>
+                <Label row="1" col="1" :text="xpObj.Subtitle" class="card-subtitle"  textWrap="true" ></Label>
+            </Gridlayout>
+
+            <StackLayout>
+                <YoutubePlayer v-if="xpObj.xpType==='YtVideo'" ref="player" :videoId="xpObj.YTvideoId" :apiKey="apiKey" height="200" />
+                <Image v-if="xpObj.xpType==='video_pic'" :src="'~/images/'+xpObj.imageSource" stretch="aspectFit" />
+                <Label :text="xpObj.xpText" class="card-text"></Label>
+                <Label :text="xpObj.text2" class="card-text"></Label>
+                <Label :text="xpObj.Text3" class="card-text"></Label>
+                <Label :text="xpObj.text4" class="card-text"></Label>
+            </StackLayout>
+
+        </stack-layout>
+    </card-view>
+</template>
+
+<script>
+import XPModal from "./XPModal";
+//import ModalDigraphs from "./modals/ModalDigraphs";
+import ModalImage from "./modals/ModalImage";
+// import Digraphs from "./Digraphs";
+
+export default {
+    name: "XPcard",
+    mounted() {},
+    props: {
+    xpObj: {
+      type: Object,
+      required: true
+    },
+    },
+    data() {
+        return {
+            apiKey: global.YTapiKey,
+            ModalImage: ModalImage
+        }
+        },
+    computed: { 
+        dotStatus() {
+           // if (this.$store.state.completedXPs.includes(this.xpObj.xpId)) {
+            if (true) {
+                return "completed-dot";
+            } else {
+                return "incomplete-dot";
+            }
+        },
+        mediaIcon() {
+        console.log("xpType: ", this.xpObj.xpType);
+            if (this.xpObj.xpType === "podcast") {
+            return String.fromCharCode(0xf025);
+        } else if (this.xpObj.xpType === "YtVideo" ) {
+            return String.fromCharCode(0xf26c);
+        } else if (this.xpObj.xpType === "video" ) {
+            return String.fromCharCode(0xf26c);
+        } else if (this.xpObj.xpType === "article") {
+            return String.fromCharCode(0xf1ea);
+        } else if (this.xpObj.xpType === "book") {
+            return String.fromCharCode(0xf02d);
+        }  else if (this.xpObj.xpType === "Facebook") {
+            return String.fromCharCode(0xf39e);
+        }  else if (this.xpObj.xpType === "Research") {
+            return String.fromCharCode(0xf0c3);
+        }   else if (this.xpObj.xpType === "blog") {
+            return String.fromCharCode(0xf781);
+        } else if (this.xpObj.xpType === "lab") {
+            return String.fromCharCode(0xf610);
+        } else if (this.xpObj.xpType === "list") {
+            return String.fromCharCode(0xf46d);
+        } else if (this.xpObj.xpType === "study") {
+            return String.fromCharCode(0xf558);
+        } else if (this.xpObj.xpType === "page") {
+            return String.fromCharCode(0xf558);
+        } else if (this.xpObj.xpType === "paper") {
+            return String.fromCharCode(0xf558);
+        } else if (this.xpObj.xpType === "lit_survey") {
+            return String.fromCharCode(0xf24e);
+         } else if (this.xpObj.xpType === "radio") {
+            return String.fromCharCode(0xf025);
+        } else if (this.xpObj.xpType === "checklist") {
+            return String.fromCharCode(0xf0ae);
+        } else {
+            return String.fromCharCode(0xf15c);
+        }
+
+        },
+
+        iconPackage() {
+        console.log("in iconPackage, xpType: ", this.xpObj.xpType);
+
+        if (this.xpObj.xpType === "Image") {
+            return "fa-brands media";
+        }
+         else {
+             return "fas media"
+         }  
+
+        }
+            },
+    methods: {
+        cardDetail() {
+            console.info("******* In cardDetail, in XPCard:  *******");
+            console.info("xpUrl: ", this.xpObj.xpUrl);
+            console.info("points: ", this.xpObj.points );
+
+          //  if (this.xpObj.xpType = 'nav_link') {
+          //  this.$navigateTo(this.xpObj.nav_link);
+          //      }
+          // 
+           /*
+          if (this.xpObj.xpType ==='page') {
+            this.$showModal(ModalDigraphs, {
+                props: {
+                    xpPage: this.xpObj.xpPage
+                }
+            });
+            } 
+            else if (this.xpObj.xpType ==='image') {
+            this.$showModal(ModalFacebook, {
+                props: {
+                    xpObj: this.xpObj
+                }
+            });
+            } 
+            else 
+            */
+           if (this.xpObj.xpType!='YtVideo') {
+            this.$showModal(XPModal, {
+                props: {
+                    xpUrl: this.xpObj.xpUrl
+                }
+            });
+            }
+        
+          
+/*
+            
+            //confirm("Did you learn from this resource?");
+            this.$store.commit('increment', {
+                XP: this.xpObj.xpId,
+                newPoints: parseInt(this.xpObj.points)
+            });
+            this.$store.commit('addXP', {
+                XP: this.xpObj.xpId
+            });
+*/
+        },
+
+        onDrawerButtonTap() {
+            utils.showDrawer();
+        }
+    },
+
+  created() {
+      console.info("***********************Creating Webcard***********************");
+      console.info("Title: ", this.xpObj.title );
+  }
+       
+    };
+</script>
+
+<style scoped lang="scss">
+ // @import '../app-variables';
+  .media {
+  padding-top: 2;
+}
+</style>
