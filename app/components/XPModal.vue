@@ -60,7 +60,7 @@ export default {
       console.log("t2:  ",  t2);
       let tdiff= (t2 - t1)/1000;
       console.log("tdiff:  ", tdiff);
-      this.$store.commit('logXPTime', {XP: "XP133", logTime: tdiff});
+      //this.$store.commit('logXPTime', {XP: "XP133", logTime: tdiff});
     },
     shareUrl(xpUrl) {
       console.log("************************************* Open the Url. **************************************");
