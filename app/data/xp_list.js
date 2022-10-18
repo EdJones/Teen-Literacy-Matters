@@ -3013,4 +3013,19 @@ export const XPs = [{
     "xpUrl": "https://growinggoodschools.blogspot.com/2018/01/a-hard-truth.html",
     "Text3": "",
     "points": "2500"
+}, {
+    "Science": "",
+    "XP_NUM": "10101",
+    "xpId": "XP10101",
+    "Page": "Introduction",
+    "title": "How Bad Is It?",
+    "image": "NAEP_ethnicity.png",
+    "xpType": "xp_pic",
+    "YTvideoId": "",
+    "Subtitle": "",
+    "xpText": "Take a good look at this graphic. What's your theory of why this happens?",
+    "text2": "",
+    "xpUrl": "https://growinggoodschools.blogspot.com/2018/01/a-hard-truth.html",
+    "Text3": "",
+    "points": "2500"
 }]

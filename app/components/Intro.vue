@@ -2,10 +2,10 @@
     <Page class="page">
       <ActionBar class="action-bar">
         <NavigationButton visibility="hidden"/>
-        <GridLayout columns="*, 70">
+        <GridLayout columns="*, 50">
           <Label col="0" class="action-bar-title" text="(Black) Teen Literacy Matters" />
 
-          <Label col="1" class="fas" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
+          <Label col="1" class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
         </GridLayout>
       </ActionBar>
 
@@ -15,9 +15,8 @@
           <Label class="text-2xl text-center" text="First Steps"  />
             <Label class="text-base leading-none p-4 pb-0" text="Why Are We Here?" textWrap="true" />
              <XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard>
-             <Label class="text-base leading-none p-4 pb-0" text="Take a good look at this graphic. What's your theory of why this happens?" textWrap="true" />
-                <image src="~/images/NAEP_ethnicity.png" stretch="aspectFit" class="h-40" />
- <Button text="Next" @tap="showModal(Next)" class="button-active help-button" width="50%" />
+             
+ <Button text="Next" @tap="showModal(next)" class="button-active help-button" width="50%" />
           </StackLayout>
         </GridLayout>
     </Page>

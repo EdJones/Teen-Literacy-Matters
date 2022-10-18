@@ -133,7 +133,7 @@ ActionBar .action-bar-title {
   /* color: firebrick; */
   color: #b26a22;
   margin-left:0;
-  word-wrap: true;
+  word-wrap: normal;
 }
 .card-subtitle {
   font-weight: bold;
@@ -141,7 +141,8 @@ ActionBar .action-bar-title {
 }
 .card-text {
   font-weight: normal;
-  text-wrap: true;
+  overflow-wrap: break-word;
+  word-wrap: normal;
   
 }
 
