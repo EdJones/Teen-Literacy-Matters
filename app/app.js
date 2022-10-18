@@ -4,6 +4,7 @@ import YoutubePlayer from '@triniwiz/nativescript-youtubeplayer/vue';
 Vue.use(YoutubePlayer);
 
 //import CardView from "@nativescript-cardview";
+Vue.registerElement('ImageZoom', () => require('@triniwiz/nativescript-image-zoom').ImageZoom);
 Vue.registerElement(
   'CardView',
   () => require('@nstudio/nativescript-cardview').CardView

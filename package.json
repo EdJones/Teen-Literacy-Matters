@@ -13,6 +13,7 @@
     "@nativescript/tailwind": "^2.0.1",
     "@nativescript/theme": "~3.0.2",
     "@nstudio/nativescript-cardview": "^2.0.1",
+    "@triniwiz/nativescript-image-zoom": "^4.1.3",
     "@triniwiz/nativescript-youtubeplayer": "^4.1.4",
     "nativescript-ui-sidedrawer": "~10.0.2",
     "nativescript-vue": "~2.9.0",

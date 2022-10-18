@@ -25,6 +25,8 @@
 
 <script>
 import XPModal from "./XPModal";
+import ModalFacebook from "./ModalFacebook";
+import XPModalA from "./XPModalA";
 //import ModalDigraphs from "./modals/ModalDigraphs";
 import ModalImage from "./modals/ModalImage";
 // import Digraphs from "./Digraphs";
@@ -125,15 +127,16 @@ export default {
                 }
             });
             } 
-            else if (this.xpObj.xpType ==='image') {
-            this.$showModal(ModalFacebook, {
+            else 
+            */
+           if (this.xpObj.xpType ==='xp_pic') {
+            this.$showModal(XPModalA, {
                 props: {
                     xpObj: this.xpObj
                 }
             });
             } 
             else 
-            */
            if (this.xpObj.xpType!='YtVideo') {
             this.$showModal(XPModal, {
                 props: {

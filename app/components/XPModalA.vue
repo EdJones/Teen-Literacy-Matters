@@ -8,13 +8,25 @@
         </StackLayout>
 
         <ScrollView row="1" height="auto">
-          <WebView :src="xpUrl" minHeight="648" />
+          <GridLayout rows="*,*">
+          <StackLayout row="0">
+          <Label class="text-2xl text-center" text="Why Are We Here?"  />
+             <Label class="text-base leading-none p-4 pb-0" text="Take a good look at this graphic. " textWrap="true" />
+                <image src="~/images/NAEP_ethnicity.png" stretch="aspectFit" class="h-40" />
+
+          </StackLayout>
+                  <StackLayout row="1" width="90%">
+          <Label class="text2" text="What reasons would you give for why this is the case?" textWrap="true"> </Label>
+          <TextView width="400" height="60" class="input-gray" editable="true" v-model="textViewValue" hint="Because..." returnKeyType="done" > </TextView>
+          <Button class="btn-b" text="Submit" @tap="acceptInput" />
+        </StackLayout>
+        </GridLayout>
         </ScrollView>
         <StackLayout row="2" width="100%" height="40" orientation="horizontal" horizontalAlignment="right" >
            <Label horizontalAlignment="right" class="fas share" text.decode="&#xf064;" @tap="shareUrl(xpUrl)" />
-           <Button horizontalAlignment="right" class="fa-brands browser-button text-left" text.decode="&#xf267;"
-            @tap="newBrowser(xpUrl)" />
+           
         </StackLayout>
+        </GridLayout>
       </GridLayout>
 
     
