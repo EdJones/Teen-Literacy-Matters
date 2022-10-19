@@ -115,20 +115,20 @@ export default {
             console.info("xpUrl: ", this.xpObj.xpUrl);
             console.info("points: ", this.xpObj.points );
 
-          //  if (this.xpObj.xpType = 'nav_link') {
-          //  this.$navigateTo(this.xpObj.nav_link);
-          //      }
+      if (this.xpObj.xpType = 'newPage') {
+            this.$navigateTo(this.xpObj.nav_link);
+                }
           // 
            /*
-          if (this.xpObj.xpType ==='page') {
+          else if (this.xpObj.xpType ==='page') {
             this.$showModal(ModalDigraphs, {
                 props: {
                     xpPage: this.xpObj.xpPage
                 }
             });
             } 
-            else 
             */
+            else 
            if (this.xpObj.xpType ==='xp_pic') {
             this.$showModal(XPModalA, {
                 props: {

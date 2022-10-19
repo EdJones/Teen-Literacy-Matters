@@ -20,6 +20,29 @@
              
  <Button text="Next" @tap="showModal(next)" class="button-active help-button page-link" width="50%" />
           </StackLayout>
+          <ScrollView>
+          <StackLayout  class="p-20">
+            <StackLayout>
+              <Label class="challenge-label" :text="pageInfo.challenge" textWrap="true" ></Label>
+            </StackLayout>
+            <StackLayout>
+            <Label :text="pageInfo.text1"  class="text-para" textWrap="true"  ></Label>
+
+            </StackLayout>
+             <XPcard :xpObj="pageXPDetails[0]" ></XPcard>
+
+
+               <StackLayout>
+            <Label :text="pageInfo.text2"  class="text-para" textWrap="true"  ></Label>
+            <Label :text="pageInfo.text3"  class="text-para" textWrap="true"  ></Label>
+            </StackLayout>        
+
+           <Label :text="pageInfo.closingText"  class="text-para" textWrap="true"  ></Label>
+            <Label :text="pageInfo.closingText2"  class="text-para" textWrap="true"  ></Label>
+             <Label :text="pageInfo.closingText3"  class="text-para" textWrap="true"  ></Label>
+            </StackLayout>
+          </StackLayout>
+        </ScrollView>
         </GridLayout>
     </Page>
 </template>
@@ -27,7 +50,7 @@
 <script>
   import * as utils from "~/shared/utils";
   import { SelectedPageService } from "../shared/selected-page-service";
-  //import HardTruth from "./HardTruth";
+
   import XPModalA from "./XPModalA";
   import XPcard from "./XPCard";
   import { XPs } from "../data/xp_list.js";
@@ -43,7 +66,7 @@ import { topicPages } from "../data/pages_list.js";
     XPcard
   },
     data() {
-      const page="Introduction";
+      const page="HardTruth";
     const pageXPDetails = XPs.filter(XP => {
         //console.info("In page filter, ", XP );
       return XP.Page.includes(page);

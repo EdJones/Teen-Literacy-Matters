@@ -11,6 +11,17 @@ export const topicPages = [
     closingText2: "", 
     modal: ""
   },{
+    page: "HardTruth",
+    title: "(Black) Literacy Matters--A Hard Truth",
+    challenge: "",
+    pageXPs: ["10103"],
+    text1: "",
+    text2: "",
+    text3: "",
+    closingText: "",
+    closingText2: "", 
+    modal: ""
+  },{
         page: "Home",
         title: "Science of Reading--Caring",
         challenge: "Not everyone is cut out to care this much.",

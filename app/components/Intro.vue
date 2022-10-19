@@ -16,7 +16,7 @@
             <Label class="text-base leading-none p-4 pb-0" text="Why Are We Here?" textWrap="true" />
              <XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard>
              
- <Button text="Next" @tap="showModal(next)" class="button-active help-button page-link" width="50%" />
+ <Button text="Next" @tap="nextPage()" class="button-active help-button page-link" width="50%" />
           </StackLayout>
         </GridLayout>
     </Page>
@@ -25,7 +25,7 @@
 <script>
   import * as utils from "~/shared/utils";
   import { SelectedPageService } from "../shared/selected-page-service";
-  //import HardTruth from "./HardTruth";
+  import HardTruth from "./HardTruth";
   import XPModalA from "./XPModalA";
   import XPcard from "./XPCard";
   import { XPs } from "../data/xp_list.js";
@@ -73,6 +73,9 @@ import { topicPages } from "../data/pages_list.js";
     methods: {
       onDrawerButtonTap() {
         utils.showDrawer();
+      },
+      nextPage() {
+      this.$navigateTo(HardTruth);
       }
     }
   };
