@@ -1,5 +1,5 @@
 <template>
-    <card-view class="cardStyle" margin="10" elevation="40" radius="1" @tap="cardDetail">
+    <card-view class="cardStyle1" margin="10" elevation="0" radius="12" shadowColor = "new Color('#CF0A0A').ios" @tap="cardDetail">
         <stack-layout class="cardContent">
 
            <Gridlayout columns="20,*, 20" rows="auto,auto">
@@ -174,6 +174,7 @@ export default {
 
 <style scoped lang="scss">
  // @import '../app-variables';
+ @import '../_btlm.scss';
   .media {
   padding-top: 2;
 }

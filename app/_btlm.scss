@@ -49,12 +49,10 @@
 }
 /* Action bar*/
 .action-bar {
-        background-color: #000000;
-        color: #eeeeee;
+        background-color: #DC5F00;
 }
 ActionBar .action-bar-title {
     horizontal-align: center;
-    color: #eeeeee;
 
 }
 /*Color */
@@ -118,7 +116,111 @@ ActionBar .action-bar-title {
   background: #5fd400;
 } 
 /* Card Styles */
+.cardStyle {
+  background-color: #fff;
+  color: rgb(43, 43, 43);
+}
+.cardStyle1 {
+    background-color: #EEEEEE;
+    color: #000000;
+    border: #CF0A0A;
+    border-radius: 5;
+    border-color: #CF0A0A;
+    border-width: 5;
+  }
+.cardContent {
+  padding: 9;
+  padding-right:10;
+  padding-bottom: 7;
+  padding-top:7;
+  font-weight: bold;
+  font-size: 15;
+}
+.card-title {
+  font-weight: bold;
+  /* color: firebrick; */
+  color: #DC5F00;
+  margin-left:0;
+  word-wrap: normal;
+}
+.card-subtitle {
+  font-weight: bold;
+  font-size: 13;
+}
+.card-text {
+  font-weight: normal;
+  overflow-wrap: break-word;
+  word-wrap: normal;
+  color: #000000;
+  
+}
 
+.completed-dot {
+    height: 40px;
+    width: 40px;
+    background-color: #22b222;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: right;
+    padding:0;
+    margin-right:6;
+    vertical-align: top;
+  }
+  .incomplete-dot {
+    height: 40px;
+    width: 40px;
+    background-color: #ffffff;
+    border-color: #cccccc;
+    border-style: solid;
+    border-width:2;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: right;
+    padding:0;
+    margin-right:0;
+    margin-left: 6px;
+    vertical-align: top;
+  }
+  .headphones {
+    vertical-align: top;
+    padding-top: 3;
+  }
+  .media-icon {
+    vertical-align: top;
+    padding-top: 2;
+    margin-left: 0;
+
+    text-align:left;
+  }
+.actionbar2 {
+  color: #0065d4;
+}
+.blueblue {
+    background-color: #009fd4;
+}
+.text-para {
+  margin-bottom: 6;
+  margin-left: 3;
+}
+.text-quote {
+  margin-bottom: 6;
+  margin-left: 3;
+  font-style: italic;
+}
+.topic-link {
+  font-size:15;
+  font-weight:bold;
+  text-wrap: true; 
+  margin-top:10;
+    margin-left: 3;
+    text-decoration: underline;
+}
+.input-gray {
+  background-color: #c2c2c2;
+  border-color: #000000;
+  border-width: 1;
+  margin-bottom: 15;
+}
 .btn-b {
   width: 70;
   background-color: #2555A9;

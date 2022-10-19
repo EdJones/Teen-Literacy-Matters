@@ -16,8 +16,8 @@
             <Label class="text-base leading-none p-4 pb-0" text="Systemic racism has many forms; few more hurtful than denying children basic reading." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="Across the country, Black children are deprived of the reading instruction they need. (So are many others.)" textWrap="true" />
 <Label class="text-base leading-none p-4" text="This puts them behind for life. When they become parents, it limits the jobs they can get, what they can do for the next generation." textWrap="true" />
-<Label class="text-base leading-none p-4 text-center" text="How can teens help change this?" textWrap="true" />
- <Button text="How can I help?" @tap="moveForward(Introduction)" class="button-active help-button text-center" width="50%" />
+
+ <Button text="How can teens help change this?" @tap="moveForward(Introduction)" class="page-link text-center" width="75%" />
           </StackLayout>
         </GridLayout>
     </Page>
