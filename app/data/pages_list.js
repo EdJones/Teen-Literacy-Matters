@@ -14,7 +14,7 @@ export const topicPages = [
     page: "HardTruth",
     title: "(Black) Literacy Matters--A Hard Truth",
     challenge: "",
-    pageXPs: ["10103"],
+    pageXPs: ["XP10111", "XP10112"],
     text1: "",
     text2: "",
     text3: "",

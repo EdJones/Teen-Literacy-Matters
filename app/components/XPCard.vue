@@ -6,10 +6,10 @@
                 <Label row="0" col="0" :text="mediaIcon" :class="iconPackage" verticalAlignment="top" ></Label>
                 <Label row="0" col="1" :text="xpObj.title" class="card-title"  textWrap="true" ></Label>
                 <Label row="0" col="2" :class="dotStatus" ></Label>
-                <Label row="1" col="1" :text="xpObj.Subtitle" class="card-subtitle"  textWrap="true" ></Label>
+                <Label v-if="xpObj.xpType!='challenge'" row="1" col="1" :text="xpObj.Subtitle" class="card-subtitle"  textWrap="true" ></Label>
             </Gridlayout>
 
-            <StackLayout>
+            <StackLayout v-if="xpObj.xpType!='challenge'">
                 <YoutubePlayer v-if="xpObj.xpType==='YtVideo'" ref="player" :videoId="xpObj.YTvideoId" :apiKey="apiKey" height="200" />
                 <Image v-if="xpObj.xpType==='video_pic'" :src="'~/images/'+xpObj.imageSource" stretch="aspectFit" />
                 <Image v-if="xpObj.xpType==='xp_pic'" :src="'~/images/'+xpObj.image" stretch="aspectFit" class="h-36" />
@@ -63,6 +63,8 @@ export default {
             return String.fromCharCode(0xf26c);
         } else if (this.xpObj.xpType === "video" ) {
             return String.fromCharCode(0xf26c);
+        } else if (this.xpObj.xpType === "challenge" ) {
+            return String.fromCharCode(0xf022);
         } else if (this.xpObj.xpType === "article") {
             return String.fromCharCode(0xf1ea);
         } else if (this.xpObj.xpType === "book") {
@@ -91,6 +93,8 @@ export default {
             return String.fromCharCode(0xf0ae);
         } else if (this.xpObj.xpType === "xp_image") {
             return String.fromCharCode(0xf302);
+        } else if (this.xpObj.xpType === "engage") {
+            return String.fromCharCode(0xe4f6);
         } else {
             return String.fromCharCode(0xf15c);
         }

@@ -3030,8 +3030,22 @@ export const XPs = [{
     "points": "2500"
 }, {
     "Science": "",
-    "XP_NUM": "10100",
+    "XP_NUM": "10110",
     "xpId": "XP10102",
+    "Page": "HardTruth",
+    "title": "A Hard Truth--Challenge",
+    "xpType": "challenge",
+    "YTvideoId": "",
+    "Subtitle": "",
+    "xpText": "Read Eric and R's story.",
+    "text2": "",
+    "xpUrl": "https://growinggoodschools.blogspot.com/2018/01/a-hard-truth.html",
+    "Text3": "",
+    "points": "2500"
+}, {
+    "Science": "",
+    "XP_NUM": "10111",
+    "xpId": "XP10103",
     "Page": "HardTruth",
     "title": "A Hard Truth--Story",
     "xpType": "blog",
@@ -3044,11 +3058,11 @@ export const XPs = [{
     "points": "2500"
 }, {
     "Science": "",
-    "XP_NUM": "10100",
-    "xpId": "XP10103",
+    "XP_NUM": "10112",
+    "xpId": "XP10104",
     "Page": "HardTruth",
     "title": "A Hard Truth--Engage",
-    "xpType": "blog",
+    "xpType": "engage",
     "YTvideoId": "",
     "Subtitle": "",
     "xpText": "What should we know about this school, and its teens?",
