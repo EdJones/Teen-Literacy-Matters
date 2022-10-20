@@ -10,6 +10,7 @@
       </ActionBar>
 
         <GridLayout class="">
+          <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
           <Label class="text-2xl text-center" text="A Hard Truth"  />
@@ -22,8 +23,8 @@
              
  <Button text="Next" @tap="showModal(next)" class="button-active help-button page-link" width="50%" />
           </StackLayout>
-          <ScrollView>
-          <StackLayout  class="p-20">
+
+          <!--StackLayout  class="p-20">
             <StackLayout>
               <Label class="challenge-label" :text="pageInfo.challenge" textWrap="true" ></Label>
             </StackLayout>
@@ -31,20 +32,11 @@
             <Label :text="pageInfo.text1"  class="text-para" textWrap="true"  ></Label>
 
             </StackLayout>
-             <XPcard :xpObj="pageXPDetails[0]" ></XPcard>
+             <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
 
 
-               <StackLayout>
-            <Label :text="pageInfo.text2"  class="text-para" textWrap="true"  ></Label>
-            <Label :text="pageInfo.text3"  class="text-para" textWrap="true"  ></Label>
-            </StackLayout>        
+          </StackLayout-->
 
-           <Label :text="pageInfo.closingText"  class="text-para" textWrap="true"  ></Label>
-            <Label :text="pageInfo.closingText2"  class="text-para" textWrap="true"  ></Label>
-             <Label :text="pageInfo.closingText3"  class="text-para" textWrap="true"  ></Label>
-            </StackLayout>
-          </StackLayout>
-        </ScrollView>
         </GridLayout>
     </Page>
 </template>
@@ -55,8 +47,9 @@
 
   import XPModalA from "./XPModalA";
   import XPcard from "./XPCard";
+  import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
-  //import ProgressBar from "./ProgressBar";
+  //import P rogressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
 
   export default {
@@ -65,7 +58,8 @@ import { topicPages } from "../data/pages_list.js";
     },
     components: {
    // ProgressBar,
-    XPcard
+    XPcard,
+    XPCardSmall
   },
     data() {
       const page="HardTruth";

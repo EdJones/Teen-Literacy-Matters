@@ -3031,7 +3031,7 @@ export const XPs = [{
 }, {
     "Science": "",
     "XP_NUM": "10110",
-    "xpId": "XP10102",
+    "xpId": "XP10110",
     "Page": "HardTruth",
     "title": "A Hard Truth--Challenge",
     "xpType": "challenge",
@@ -3046,7 +3046,7 @@ export const XPs = [{
 }, {
     "Science": "",
     "XP_NUM": "10111",
-    "xpId": "XP10103",
+    "xpId": "XP10111",
     "Page": "HardTruth",
     "title": "A Hard Truth--Story",
     "xpType": "blog",
@@ -3060,7 +3060,7 @@ export const XPs = [{
 }, {
     "Science": "",
     "XP_NUM": "10112",
-    "xpId": "XP10104",
+    "xpId": "XP101112",
     "Page": "HardTruth",
     "title": "A Hard Truth--Engage",
     "xpType": "engage",

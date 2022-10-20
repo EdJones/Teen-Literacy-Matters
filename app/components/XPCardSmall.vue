@@ -1,22 +1,13 @@
 <template>
-    <card-view class="cardStyle1" margin="10" elevation="0" radius="12" @tap="cardDetail">
+    <card-view class="cardStyle1 card-small" margin="10" elevation="50" radius="12"  @tap="cardDetail">
         <stack-layout class="cardContent">
 
-           <Gridlayout columns="20,*, 20" rows="auto,auto">
+           <Gridlayout columns="20,*, 20" rows="50,120" class=card-small>
                 <Label row="0" col="0" :text="mediaIcon" :class="iconPackage" verticalAlignment="top" ></Label>
                 <Label row="0" col="1" :text="xpObj.title" class="card-title"  textWrap="true" ></Label>
                 <Label row="0" col="2" :class="dotStatus" ></Label>
+                <Label v-if="xpObj.xpType!='challenge'" row="1" col="1" :text="xpObj.Subtitle" class="card-subtitle"  textWrap="true" ></Label>
             </Gridlayout>
-
-            <StackLayout v-if="xpObj.xpType!='challenge'">
-                <YoutubePlayer v-if="xpObj.xpType==='YtVideo'" ref="player" :videoId="xpObj.YTvideoId" :apiKey="apiKey" height="200" />
-                <Image v-if="xpObj.xpType==='video_pic'" :src="'~/images/'+xpObj.imageSource" stretch="aspectFit" />
-                <Image v-if="xpObj.xpType==='xp_pic'" :src="'~/images/'+xpObj.image" stretch="aspectFit" class="h-36" />
-                <Label :text="xpObj.xpText" class="card-text break-all" textWrap="true"></Label>
-                <Label :text="xpObj.text2" class="card-text"></Label>
-                <Label :text="xpObj.Text3" class="card-text"></Label>
-                <Label :text="xpObj.text4" class="card-text"></Label>
-            </StackLayout>
 
         </stack-layout>
     </card-view>
@@ -32,7 +23,7 @@ import ModalImage from "./modals/ModalImage";
 // import Digraphs from "./Digraphs";
 
 export default {
-    name: "XPcard",
+    name: "XPCardSmall",
     mounted() {},
     props: {
     xpObj: {
@@ -116,15 +107,13 @@ export default {
     methods: {
         cardDetail() {
             console.info("******* In cardDetail, in XPCard:  *******");
-            console.info("xpId: ", this.xpObj.xpId);
-            console.info("xpType: ", this.xpObj.xpType);
             console.info("xpUrl: ", this.xpObj.xpUrl);
             console.info("points: ", this.xpObj.points );
 
       if (this.xpObj.xpType = 'challenge') {
             this.$navigateTo(this.xpObj.nav_link);
                 }
-/*
+
          else if (this.xpObj.xpType = 'engage') {
              this.$showModal(XPModalA, {
                 props: {
@@ -132,7 +121,7 @@ export default {
                 }
             });
                 }
-           */
+           
            /*
           else if (this.xpObj.xpType ==='page') {
             this.$showModal(ModalDigraphs, {
@@ -142,7 +131,6 @@ export default {
             });
             } 
             */
-           /*
             else 
            if (this.xpObj.xpType ==='xp_pic') {
             this.$showModal(XPModalA, {
@@ -151,18 +139,15 @@ export default {
                 }
             });
             } 
-            */
             else 
            if (this.xpObj.xpType!='YtVideo') {
-            console.log("in cardDetail, xpType: ", this.xpObj.xpType, "so show modal");
             this.$showModal(XPModal, {
                 props: {
                     xpUrl: this.xpObj.xpUrl
                 }
             });
             }
-        else { console.log("xpType: none of the above", this.xpObj.xpType);
-
+        else { console.log("Bad xpType: ", this.xpObj.xpType);
         }
         },
           
