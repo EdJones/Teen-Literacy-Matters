@@ -27,6 +27,7 @@
 import XPModal from "./XPModal";
 import ModalFacebook from "./ModalFacebook";
 import XPModalA from "./XPModalA";
+import HardTruth from "./HardTruth";
 //import ModalDigraphs from "./modals/ModalDigraphs";
 import ModalImage from "./modals/ModalImage";
 // import Digraphs from "./Digraphs";
@@ -119,10 +120,18 @@ export default {
             console.info("xpUrl: ", this.xpObj.xpUrl);
             console.info("points: ", this.xpObj.points );
 
-      if (this.xpObj.xpType = 'newPage') {
+      if (this.xpObj.xpType = 'challenge') {
             this.$navigateTo(this.xpObj.nav_link);
                 }
-          // 
+
+         else if (this.xpObj.xpType = 'engage') {
+             this.$showModal(XPModalA, {
+                props: {
+                    xpObj: this.xpObj.modal
+                }
+            });
+                }
+           
            /*
           else if (this.xpObj.xpType ==='page') {
             this.$showModal(ModalDigraphs, {
@@ -148,7 +157,9 @@ export default {
                 }
             });
             }
-        
+        else { console.log("Bad xpType: ", this.xpObj.xpType);
+        }
+        },
           
 /*
             
@@ -161,11 +172,7 @@ export default {
                 XP: this.xpObj.xpId
             });
 */
-        },
-
-        onDrawerButtonTap() {
-            utils.showDrawer();
-        }
+        
     },
 
   created() {

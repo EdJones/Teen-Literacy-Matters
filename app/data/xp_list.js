@@ -3036,10 +3036,11 @@ export const XPs = [{
     "title": "A Hard Truth--Challenge",
     "xpType": "challenge",
     "YTvideoId": "",
+    "nav_link": "HardTruth",
     "Subtitle": "",
     "xpText": "Read Eric and R's story.",
     "text2": "",
-    "xpUrl": "https://growinggoodschools.blogspot.com/2018/01/a-hard-truth.html",
+    "xpUrl": "",
     "Text3": "",
     "points": "2500"
 }, {
@@ -3069,5 +3070,6 @@ export const XPs = [{
     "text2": "",
     "xpUrl": "",
     "Text3": "",
+    "modal": "XPModalA",
     "points": "2500"
 }]
