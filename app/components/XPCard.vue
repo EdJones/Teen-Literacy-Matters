@@ -121,18 +121,28 @@ export default {
             console.info("xpUrl: ", this.xpObj.xpUrl);
             console.info("points: ", this.xpObj.points );
 
-      if (this.xpObj.xpType = 'challenge') {
-            this.$navigateTo(this.xpObj.nav_link);
+            if (this.xpObj.xpType='blog') {
+                console.log("in cardDetail, xpType: ", this.xpObj.xpType, "so show modal");
+                this.$showModal(XPModal, {
+                props: {
+                    xpUrl: this.xpObj.xpUrl
                 }
-/*
-         else if (this.xpObj.xpType = 'engage') {
+            });
+            }
+            else if (this.xpObj.xpType = 'engage') {
              this.$showModal(XPModalA, {
                 props: {
                     xpObj: this.xpObj.modal
                 }
-            });
+             }); 
                 }
-           */
+            else if (this.xpObj.xpType = 'challenge') {
+            this.$navigateTo(this.xpObj.nav_link);
+                }
+    
+
+    
+           
            /*
           else if (this.xpObj.xpType ==='page') {
             this.$showModal(ModalDigraphs, {

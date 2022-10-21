@@ -3,7 +3,7 @@ export const topicPages = [
     page: "Introduction",
     title: "(Black) Literacy Matters--Intro",
     challenge: "",
-    pageXPs: [10100],
+    pageXPs: ["XP10100", "XP10101"],
     text1: "",
     text2: "",
     text3: "",

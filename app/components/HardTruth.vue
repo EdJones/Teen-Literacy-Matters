@@ -21,7 +21,7 @@
              <XPcard :xpObj="pageXPDetails[1]" ></XPcard>
              <XPcard :xpObj="pageXPDetails[2]" ></XPcard>
              
- <Button text="Next" @tap="showModal(next)" class="button-active help-button page-link" width="50%" />
+ <!--Button text="Next" @tap="showModal(next)" class="button-active help-button page-link" width="50%" /-->
           </StackLayout>
 
           <!--StackLayout  class="p-20">
@@ -35,7 +35,7 @@
              <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
 
 
-          </StackLayout-->
+          <!--/StackLayout-->
 
         </GridLayout>
     </Page>
@@ -47,7 +47,7 @@
 
   import XPModalA from "./XPModalA";
   import XPcard from "./XPCard";
-  import XPCardSmall from "./XPCardSmall";
+  //import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
@@ -59,7 +59,7 @@ import { topicPages } from "../data/pages_list.js";
     components: {
    // ProgressBar,
     XPcard,
-    XPCardSmall
+    //XPCardSmall
   },
     data() {
       const page="HardTruth";
