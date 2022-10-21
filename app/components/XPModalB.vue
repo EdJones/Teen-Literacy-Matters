@@ -3,7 +3,7 @@
     
     
       <GridLayout rows="40, *, 40">
-        <StackLayout row="0" height="40" orientation="horizontal" class="modalblue">
+        <StackLayout row="0" height="40" orientation="horizontal" class="modal-top">
           <Button horizontalAlignment="right" class="closebutton7 text-right" text="Done" @tap="finishXP()" />
         </StackLayout>
 
@@ -13,13 +13,19 @@
           <Label class="text-2xl text-center" text="A Hard Truth--Engage"  />
              <Label class="text-base leading-none p-4 pb-0" text="When I read this, I cried with compassion for r, Eric, the teachers, and all the kids in these classes. How hard it was for everyone to learn." textWrap="true" />
              <Label class="text-base leading-none p-4 pb-0" text="Yet I've heard from others who were upset at Principal Juli." textWrap="true" />
-                <image src="~/images/NAEP_ethnicity.png" stretch="aspectFit" class="h-40" />
-
+              <Label class="text-base leading-none p-4 pb-0" text="Let's dig in." textWrap="true" />
+<Label horizontalAlignment="center" class="fas separator" text.decode="&#xf458;"  />
           </StackLayout>
-                  <StackLayout row="1" width="90%">
-          <Label class="text2" text="" textWrap="true"> </Label>
-          <TextView width="400" height="60" class="input-gray" editable="true" v-model="textViewValue" hint="Because..." returnKeyType="done" > </TextView>
-          <Button class="btn-b" text="Submit" @tap="acceptInput" />
+                  <StackLayout row="1" width="90%" horizontalAlignment="left" >
+          <Label class="text-base leading-none p-4 pb-0"  horizontalAlignment="left" text="'R' is a high school teen. Yet he reads at what grade level?" textWrap="true"> </Label>
+          <TextView width="50" height="40" class="input" horizontalAlignment="left" editable="true" keyboardType="number" maxlength="2" v-model="textViewValue1" hint="10" returnKeyType="next" @returnPress="onReturnPress()" > </TextView>
+          <Button class="btn-b" text="Submit" @tap="acceptInput(textViewValue1)" />
+          <Label class="text-base leading-none p-4 pb-0" text="In this school, how many freshmen & sophomores read below a sixth-grade level?" textWrap="true"> </Label>
+          <TextView width="40" height="40" class="input" horizontalAlignment="left" editable="true" v-model="textViewValue2" hint="0" returnKeyType="next" > </TextView>
+          <Button class="btn-b" text="Submit" @tap="acceptInput(textViewValue2)" />
+          <Label class="text-base leading-none p-4 pb-0" text="Did any part of this story bring a tear to your eye? Make you well up with emotion? Which part?" textWrap="true"> </Label>
+          <TextView width="400" height="80" class="inputText" horizontalAlignment="left" editable="true" v-model="textViewValue3" hint="0" returnKeyType="done" > </TextView>
+          <Button class="btn-b" text="Submit" @tap="acceptInput(textViewValue3)" />
         </StackLayout>
         </GridLayout>
         </ScrollView>
@@ -44,7 +50,10 @@ export default {
   data() {
    
         return {
-           webLoading: this.webLoading
+           webLoading: this.webLoading,
+            textViewValue1: "0",
+            textViewValue2: "10",
+            textViewValue3: "The part where...",
         };
     },
   methods: {
@@ -58,6 +67,39 @@ export default {
       console.log("#####################It started to Load   " + xpURL +"    #################");
       webLoading = "true";
     },
+    onReturnPress() {
+      console.log("Return pressed");
+    },
+    }
+    acceptInput(inputValue) {
+
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  XPModalB answer entered: ", inputValue);
+        let now = new Date();
+        let docNum = now.getTime();
+        console.log("Now: ",  docNum);
+        /*
+        db.collection('LevelIII').doc(docNum.toString()).set({
+            UserID: global.userNum,
+            Time: now.toLocaleString().replace(',',''),
+            TimeInSec: now.getTime(),
+            LevelIII: this.textViewValue
+            }, { merge: false })
+            .then(() => {
+              console.log("LevelIII successfully written to db.");
+          })
+          .catch((error) => {
+              console.error("Error writing levelIII: ", error);
+          });
+          
+            this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});
+      this.$store.commit('addXP', {XP: "XP3000"});
+        Dialogs.alert(alertOptions).then(() => {
+            this.$navigateTo(Dashboard, {
+                    clearHistory: true
+                });
+                
+  }) */
+    },   
     newBrowser(xpUrl) {
       Utils.openUrl(xpUrl);
     },

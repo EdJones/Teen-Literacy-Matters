@@ -26,6 +26,7 @@
 import XPModal from "./XPModal";
 import ModalFacebook from "./ModalFacebook";
 import XPModalA from "./XPModalA";
+import XPModalB from "./XPModalB";
 import HardTruth from "./HardTruth";
 //import ModalDigraphs from "./modals/ModalDigraphs";
 import ModalImage from "./modals/ModalImage";
@@ -121,7 +122,7 @@ export default {
             console.info("xpUrl: ", this.xpObj.xpUrl);
             console.info("points: ", this.xpObj.points );
 
-            if (this.xpObj.xpType='blog') {
+            if (this.xpObj.xpType==='blog') {
                 console.log("in cardDetail, xpType: ", this.xpObj.xpType, "so show modal");
                 this.$showModal(XPModal, {
                 props: {
@@ -130,7 +131,7 @@ export default {
             });
             }
             else if (this.xpObj.xpType = 'engage') {
-             this.$showModal(XPModalA, {
+             this.$showModal(XPModalB, {
                 props: {
                     xpObj: this.xpObj.modal
                 }

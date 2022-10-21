@@ -47,15 +47,8 @@
 .invisible {
   color: white;
 }
-/* Action bar*/
-.action-bar {
-        background-color: #000000;
-        color: #eeeeee;
-}
-ActionBar .action-bar-title {
-    horizontal-align: center;
-    color: #eeeeee;
-
+.modal-top {
+  background-color: #000000;
 }
 /*Color */
 .right-gradient {
@@ -87,36 +80,7 @@ ActionBar .action-bar-title {
     margin-left: 3;
 }
 
-/* User Status */
-.progress-label {
-  font-size:10;
-  text-align: center;
-  margin-bottom:0;
-  margin-top:16;
-}
-.progress-label1 {
-  font-size:10;
-  text-align: center;
-  margin-bottom:0;
-  margin-top:0;
-}
-.progress-label2 {
-  font-size:10;
-  text-align: center;
-  margin-bottom:6;
-  margin-top:6;
-}
-.progressbar {
-    height: 20;
-    margin: 10;
-    border-radius: 10;
-    background: #ECEFF1;
-      margin-top:12;
-}
-.progressbar-value {
-  /*  background: #51BC6B; */
-  background: #5fd400;
-} 
+
 /* Card Styles */
 
 .btn-b {
@@ -140,4 +104,28 @@ ActionBar .action-bar-title {
   margin-top: 8;
   margin-bottom: 8;
   width: 75%;
+}
+.input {
+  color: #eeeeee;
+  text-align: left;
+  padding: 7;
+  font-size: 18;
+  border: #eeeeee;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1;
+  margin: 6;
+  margin-left: 12;
+}
+.inputText {
+  color: #eeeeee;
+  text-align: left;
+  padding: 7;
+  font-size: 14;
+  border: #eeeeee;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1;
+  margin: 6;
+  margin-left: 12;
 }
