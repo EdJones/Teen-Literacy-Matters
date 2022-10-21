@@ -1,7 +1,5 @@
 <template >
   <Page @shownModally="onPageLoaded" >
-    
-    
       <GridLayout rows="40, *, 40">
         <StackLayout row="0" height="40" orientation="horizontal" class="modal-top">
           <Button horizontalAlignment="right" class="closebutton7 text-right" text="Done" @tap="finishXP()" />
@@ -70,7 +68,6 @@ export default {
     onReturnPress() {
       console.log("Return pressed");
     },
-    }
     acceptInput(inputValue) {
 
         console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  XPModalB answer entered: ", inputValue);

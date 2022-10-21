@@ -2,10 +2,10 @@
     <Page class="page">
       <ActionBar class="action-bar">
         <NavigationButton visibility="hidden"/>
-        <GridLayout columns="50, *">
-          <Label class="action-bar-title" text="(Black) Teen Literacy Matters" colSpan="2"/>
+        <GridLayout columns="*, 50">
+          <Label class="action-bar-title" text="(Black) Teen Literacy Matters" col="0" />
 
-          <Label class="fas" text.decode="&#xf0c9;" @tap="onDrawerButtonTap"/>
+          <Label class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" col="1"/>
         </GridLayout>
       </ActionBar>
 

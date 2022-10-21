@@ -6,6 +6,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '_btlm.scss';
 //Use the FontAwesome 5.15 for all the old icons. (V6 broke their useage).
 .fa {
   font-family: "Font Awesome 6 Free", "fa-solid-900";
