@@ -130,18 +130,36 @@ export default {
                 }
             });
             }
-            else if (this.xpObj.xpType = 'engage') {
+            else if (this.xpObj.xpType === 'engage') {
              this.$showModal(XPModalB, {
                 props: {
                     xpObj: this.xpObj.modal
                 }
              }); 
                 }
-            else if (this.xpObj.xpType = 'challenge') {
+            else if (this.xpObj.xpType === 'challenge') {
             this.$navigateTo(this.xpObj.nav_link);
                 }
-    
+            else if (this.xpObj.xpType !='YtVideo') {
+            console.log("in cardDetail, xpType: ", this.xpObj.xpType, "so show modal");
+            this.$showModal(XPModal, {
+                props: {
+                    xpUrl: this.xpObj.xpUrl
+                }
+            });
+            }
+            else 
+            if (this.xpObj.xpType ==='xp_pic') {
+            this.$showModal(XPModalA, {
+                props: {
+                    xpObj: this.xpObj
+                }
+            });
+            }
+            else 
+            { console.log("xpType: none of the above", this.xpObj.xpType);
 
+            }
     
            
            /*
@@ -163,18 +181,8 @@ export default {
             });
             } 
             */
-            else 
-           if (this.xpObj.xpType!='YtVideo') {
-            console.log("in cardDetail, xpType: ", this.xpObj.xpType, "so show modal");
-            this.$showModal(XPModal, {
-                props: {
-                    xpUrl: this.xpObj.xpUrl
-                }
-            });
-            }
-        else { console.log("xpType: none of the above", this.xpObj.xpType);
+            
 
-        }
         },
           
 /*
