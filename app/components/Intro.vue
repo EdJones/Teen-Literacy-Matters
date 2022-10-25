@@ -16,7 +16,7 @@
             <Label class="text-base leading-none p-4 pb-0" text="Why Are We Here?" textWrap="true" />
              <XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard>
              
- <Button text="Next" @tap="nextPage()" class="button-active help-button page-link" width="50%" />
+ <!--Button text="Next" @tap="nextPage()" class="button-active help-button page-link" width="50%" /-->
           </StackLayout>
         </GridLayout>
     </Page>
@@ -62,7 +62,8 @@ import { topicPages } from "../data/pages_list.js";
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
-      topicPages: topicPages
+      topicPages: topicPages,
+      HardTruth: "./HardTruth"
     };
   },
     computed: {

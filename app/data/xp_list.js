@@ -3005,12 +3005,13 @@ export const XPs = [{
     "xpId": "XP10100",
     "Page": "Introduction",
     "title": "A Hard Truth",
-    "xpType": "newPage",
+    "xpType": "challenge",
     "YTvideoId": "",
+    "nav_link": "HardTruth",
     "Subtitle": "",
     "xpText": "Meet a high school principal and his teens who cannot read.",
     "text2": "",
-    "xpUrl": "https://growinggoodschools.blogspot.com/2018/01/a-hard-truth.html",
+    "xpUrl": "",
     "Text3": "",
     "points": "2500"
 }, {

@@ -6,6 +6,7 @@
                 <Label row="0" col="0" :text="mediaIcon" :class="iconPackage" verticalAlignment="top" ></Label>
                 <Label row="0" col="1" :text="xpObj.title" class="card-title"  textWrap="true" ></Label>
                 <Label row="0" col="2" :class="dotStatus" ></Label>
+                <Label row="1" colSpan="3" v-if="xpObj.xpType==='challenge'" :text="xpObj.xpText" class="card-text break-all" textWrap="true"></Label>
             </Gridlayout>
 
             <StackLayout v-if="xpObj.xpType!='challenge'">
@@ -44,7 +45,8 @@ export default {
     data() {
         return {
             apiKey: global.YTapiKey,
-            ModalImage: ModalImage
+            ModalImage: ModalImage,
+            HardTruth: HardTruth
         }
         },
     computed: { 
@@ -138,7 +140,9 @@ export default {
              }); 
                 }
             else if (this.xpObj.xpType === 'challenge') {
-            this.$navigateTo(this.xpObj.nav_link);
+                console.info(HardTruth);
+            //this.$navigateTo(this.xpObj.nav_link);
+            this.$navigateTo(HardTruth);
                 }
             else if (this.xpObj.xpType !='YtVideo') {
             console.log("in cardDetail, xpType: ", this.xpObj.xpType, "so show modal");
