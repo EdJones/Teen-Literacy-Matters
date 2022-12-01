@@ -144,6 +144,14 @@ export default {
             //this.$navigateTo(this.xpObj.nav_link);
             this.$navigateTo(HardTruth);
                 }
+                 else 
+            if (this.xpObj.xpType ==='xp_pic') {
+            this.$showModal(XPModalA, {
+                props: {
+                    xpObj: this.xpObj
+                }
+            });
+            }
             else if (this.xpObj.xpType !='YtVideo') {
             console.log("in cardDetail, xpType: ", this.xpObj.xpType, "so show modal");
             this.$showModal(XPModal, {
@@ -152,14 +160,7 @@ export default {
                 }
             });
             }
-            else 
-            if (this.xpObj.xpType ==='xp_pic') {
-            this.$showModal(XPModalA, {
-                props: {
-                    xpObj: this.xpObj
-                }
-            });
-            }
+            
             else 
             { console.log("xpType: none of the above", this.xpObj.xpType);
 
