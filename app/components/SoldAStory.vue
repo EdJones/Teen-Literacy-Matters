@@ -13,12 +13,14 @@
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
-          <Label class="text-2xl text-center" text="Sold A Story 1"  />
-            <Label class="text-base leading-none p-4 pb-0" text="Listen to these three different children trying to read." textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="" textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="" textWrap="true" />
+          <Label class="text-2xl text-center" text="A Hard Truth"  />
+            <Label class="text-base leading-none p-4 pb-0" text="Imagine an urban school. It's near the asian district of a major city, across the freeway from the downtown, sports, and cultural areas. It borders neighborhoods of government housing complexes and abandoned brick factory buildings." textWrap="true" />
+            <Label class="text-base leading-none p-4 pb-0" text="The school is small. Unlike the nearby comprehensive high schools, this one is a special school, created and run by a special principal." textWrap="true" />
+            <Label class="text-base leading-none p-4 pb-0" text="Principal Juli was brought to this city because of his track record with difficult urban schools. He was known among progressive educators across the country, as a gentle, compassionate, inventive soul." textWrap="true" />
              <!--XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard-->
-             <XPcard :xpObj="pageXPDetails[0]" ></XPcard>
+             <XPCard :xpObj="pageXPDetails[0]" ></XPCard>
+
+             
           </StackLayout>
 
 
@@ -32,8 +34,8 @@
   import { SelectedPageService } from "../shared/selected-page-service";
 
   import XPModalA from "./XPModalA";
-  import { XPcard } from "./XPCard";
-  import XPCardSmall from "./XPCardSmall";
+  import XPCard from "./XPCard";
+  //import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
@@ -43,12 +45,10 @@ import { topicPages } from "../data/pages_list.js";
       SelectedPageService.getInstance().updateSelectedPage("Introduction");
     },
     components: {
-   // ProgressBar,
-   // XPcard,
-   // XPCardSmall
+      XPCard
   },
     data() {
-      const page="Hanford";
+      const page="HardTruth";
     const pageXPDetails = XPs.filter(XP => {
         //console.info("In page filter, ", XP );
       return XP.Page.includes(page);
@@ -69,8 +69,7 @@ import { topicPages } from "../data/pages_list.js";
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
-      topicPages: topicPages,
-      XPcard: XPcard
+      topicPages: topicPages
     };
   },
     computed: {

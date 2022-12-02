@@ -14,7 +14,7 @@
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
           <Label class="text-2xl text-center" text="First Steps"  />
             <Label class="text-base leading-none p-4 pb-0" text="Why Are We Here?" textWrap="true" />
-             <XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard>
+             <XPCard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard>
              
  <!--Button text="Next" @tap="nextPage()" class="button-active help-button page-link" width="50%" /-->
           </StackLayout>
@@ -26,9 +26,8 @@
   import * as utils from "~/shared/utils";
   import { SelectedPageService } from "../shared/selected-page-service";
   import HardTruth from "./HardTruth";
-  import Hanford from "./Hanford";
   import XPModalA from "./XPModalA";
-  import XPcard from "./XPCard";
+  import XPCard from "./XPCard";
   import { XPs } from "../data/xp_list.js";
   //import ProgressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
@@ -39,7 +38,7 @@ import { topicPages } from "../data/pages_list.js";
     },
     components: {
    // ProgressBar,
-    XPcard
+    XPCard
   },
     data() {
       const page="Introduction";
@@ -64,8 +63,7 @@ import { topicPages } from "../data/pages_list.js";
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
       topicPages: topicPages,
-      HardTruth: HardTruth,
-      Hanford: Hanford
+      HardTruth: HardTruth
     };
   },
     computed: {
@@ -79,9 +77,6 @@ import { topicPages } from "../data/pages_list.js";
       },
       nextPage() {
       this.$navigateTo(HardTruth);
-      },
-      Hanford() {
-      this.$navigateTo(Hanford);
       }
     }
   };

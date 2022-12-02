@@ -18,7 +18,7 @@
             <Label class="text-base leading-none p-4 pb-0" text="The school is small. Unlike the nearby comprehensive high schools, this one is a special school, created and run by a special principal." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="Principal Juli was brought to this city because of his track record with difficult urban schools. He was known among progressive educators across the country, as a gentle, compassionate, inventive soul." textWrap="true" />
              <!--XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard-->
-             <XPcard :xpObj="pageXPDetails[0]" ></XPcard>
+             <XPCard :xpObj="pageXPDetails[0]" ></XPCard>
 
              
  <!--Button text="Next" @tap="showModal(next)" class="button-active help-button page-link" width="50%" /-->
@@ -46,7 +46,7 @@
   import { SelectedPageService } from "../shared/selected-page-service";
 
   import XPModalA from "./XPModalA";
-  import XPcard from "./XPCard";
+  import XPCard from "./XPCard";
   //import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
@@ -58,7 +58,7 @@ import { topicPages } from "../data/pages_list.js";
     },
     components: {
    // ProgressBar,
-    XPcard,
+    XPCard,
     //XPCardSmall
   },
     data() {

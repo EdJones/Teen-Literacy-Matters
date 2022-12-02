@@ -29,13 +29,13 @@ import ModalFacebook from "./ModalFacebook";
 import XPModalA from "./XPModalA";
 import XPModalB from "./XPModalB";
 import HardTruth from "./HardTruth";
-import Hanford from "./Hanford";
+import SoldAStory from "./SoldAStory";
 //import ModalDigraphs from "./modals/ModalDigraphs";
 import ModalImage from "./modals/ModalImage";
 // import Digraphs from "./Digraphs";
 
 export default {
-    name: "XPcard",
+    name: "XPCard",
     mounted() {},
     props: {
     xpObj: {
@@ -48,7 +48,7 @@ export default {
             apiKey: global.YTapiKey,
             ModalImage: ModalImage,
             HardTruth: HardTruth,
-            Hanford: Hanford
+            SoldAStory: SoldAStory
         }
         },
     computed: { 
@@ -147,7 +147,8 @@ export default {
             if (this.xpObj.nav_link === 'HardTruth') {
             this.$navigateTo(HardTruth);}
             else {
-            this.$navigateTo(Hanford);
+                console.log("Open SoldAStory.vue")
+            this.$navigateTo(SoldAStory);
         }
 
                 }
