@@ -29,6 +29,7 @@ import ModalFacebook from "./ModalFacebook";
 import XPModalA from "./XPModalA";
 import XPModalB from "./XPModalB";
 import HardTruth from "./HardTruth";
+import Hanford from "./Hanford";
 //import ModalDigraphs from "./modals/ModalDigraphs";
 import ModalImage from "./modals/ModalImage";
 // import Digraphs from "./Digraphs";
@@ -46,7 +47,8 @@ export default {
         return {
             apiKey: global.YTapiKey,
             ModalImage: ModalImage,
-            HardTruth: HardTruth
+            HardTruth: HardTruth,
+            Hanford: Hanford
         }
         },
     computed: { 
@@ -142,7 +144,12 @@ export default {
             else if (this.xpObj.xpType === 'challenge') {
                 console.info(HardTruth);
             //this.$navigateTo(this.xpObj.nav_link);
-            this.$navigateTo(HardTruth);
+            if (this.xpObj.nav_link === 'HardTruth') {
+            this.$navigateTo(HardTruth);}
+            else {
+            this.$navigateTo(Hanford);
+        }
+
                 }
                  else 
             if (this.xpObj.xpType ==='xp_pic') {

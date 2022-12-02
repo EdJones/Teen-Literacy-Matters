@@ -26,6 +26,7 @@
   import * as utils from "~/shared/utils";
   import { SelectedPageService } from "../shared/selected-page-service";
   import HardTruth from "./HardTruth";
+  import Hanford from "./Hanford";
   import XPModalA from "./XPModalA";
   import XPcard from "./XPCard";
   import { XPs } from "../data/xp_list.js";
@@ -63,7 +64,8 @@ import { topicPages } from "../data/pages_list.js";
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
       topicPages: topicPages,
-      HardTruth: "./HardTruth"
+      HardTruth: HardTruth,
+      Hanford: Hanford
     };
   },
     computed: {
@@ -77,6 +79,9 @@ import { topicPages } from "../data/pages_list.js";
       },
       nextPage() {
       this.$navigateTo(HardTruth);
+      },
+      Hanford() {
+      this.$navigateTo(Hanford);
       }
     }
   };

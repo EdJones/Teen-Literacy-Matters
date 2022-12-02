@@ -3,7 +3,7 @@ export const topicPages = [
     page: "Introduction",
     title: "(Black) Literacy Matters--Intro",
     challenge: "",
-    pageXPs: ["XP10100", "XP10101"],
+    pageXPs: ["XP10100", "XP10101", "XP10102"],
     text1: "",
     text2: "",
     text3: "",
@@ -13,6 +13,17 @@ export const topicPages = [
   },{
     page: "HardTruth",
     title: "(Black) Literacy Matters--A Hard Truth",
+    challenge: "",
+    pageXPs: ["XP10111", "XP10112"],
+    text1: "",
+    text2: "",
+    text3: "",
+    closingText: "",
+    closingText2: "", 
+    modal: ""
+  },{
+    page: "Hanford",
+    title: "(Black) Literacy Matters--Sold A Story",
     challenge: "",
     pageXPs: ["XP10111", "XP10112"],
     text1: "",

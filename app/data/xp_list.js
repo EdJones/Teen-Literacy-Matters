@@ -3031,6 +3031,22 @@ export const XPs = [{
     "points": "2500"
 }, {
     "Science": "",
+    "XP_NUM": "10102",
+    "xpId": "XP10102",
+    "Page": "Introduction",
+    "title": "What Does It Sound Like?",
+    "image": "",
+    "xpType": "challenge",
+    "YTvideoId": "",
+    "nav_link": "Hanford",
+    "Subtitle": "",
+    "xpText": "Listen to a story about kids in schools and learning to read.",
+    "text2": "",
+    "xpUrl": "",
+    "Text3": "",
+    "points": "2500"
+}, {
+    "Science": "",
     "XP_NUM": "10110",
     "xpId": "XP10110",
     "Page": "HardTruth",
