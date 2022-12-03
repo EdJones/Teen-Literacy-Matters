@@ -27,7 +27,7 @@
   import { SelectedPageService } from "../shared/selected-page-service";
   import HardTruth from "./HardTruth";
   import XPModalA from "./XPModalA";
-  import XPCard from "./XPCard";
+  import { XPCard }  from "../WebpackHack.js";
   import { XPs } from "../data/xp_list.js";
   //import ProgressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
@@ -62,8 +62,8 @@ import { topicPages } from "../data/pages_list.js";
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
-      topicPages: topicPages,
-      HardTruth: HardTruth
+      topicPages: topicPages
+
     };
   },
     computed: {
@@ -74,10 +74,8 @@ import { topicPages } from "../data/pages_list.js";
     methods: {
       onDrawerButtonTap() {
         utils.showDrawer();
-      },
-      nextPage() {
-      this.$navigateTo(HardTruth);
       }
+
     }
   };
 </script>

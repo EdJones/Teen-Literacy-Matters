@@ -34,7 +34,8 @@
   import { SelectedPageService } from "../shared/selected-page-service";
 
   import XPModalA from "./XPModalA";
-  import XPCard from "./XPCard";
+  import { XPCard }  from "../WebpackHack.js";
+  //import XPCard from "./XPCard";
   //import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
@@ -42,13 +43,13 @@ import { topicPages } from "../data/pages_list.js";
 
   export default {
     mounted() {
-      SelectedPageService.getInstance().updateSelectedPage("Introduction");
+      SelectedPageService.getInstance().updateSelectedPage("SoldAStory");
     },
     components: {
       XPCard
   },
     data() {
-      const page="HardTruth";
+      const page="SoldAStory";
     const pageXPDetails = XPs.filter(XP => {
         //console.info("In page filter, ", XP );
       return XP.Page.includes(page);
@@ -69,7 +70,8 @@ import { topicPages } from "../data/pages_list.js";
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
-      topicPages: topicPages
+      topicPages: topicPages,
+      XPCard: xpcard
     };
   },
     computed: {

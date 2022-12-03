@@ -22,7 +22,7 @@ export const topicPages = [
     closingText2: "", 
     modal: ""
   },{
-    page: "Hanford",
+    page: "SoldAStory",
     title: "(Black) Literacy Matters--Sold A Story",
     challenge: "",
     pageXPs: ["XP10111", "XP10112"],
