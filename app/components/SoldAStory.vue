@@ -18,7 +18,7 @@
             <Label class="text-base leading-none p-4 pb-0" text="Is the difference how 'smart' they each are?" textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="Or is it more about how they were--or weren't--taught?" textWrap="true" />
              <!--XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard-->
-             <!--XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2-->
+             <XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
 
              
           </StackLayout>

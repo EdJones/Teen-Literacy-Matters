@@ -3100,8 +3100,8 @@ export const XPs = [{
     "Subtitle": "",
     "xpText": "Let's listen to some children reading.",
     "text2": "",
-    "xpUrl": "",
+    "xpUrl": "https://features.apmreports.org/sold-a-story/",
     "Text3": "",
-    "modal": "XPModalA",
+    "modal": "XPModal",
     "points": "2500"
 }]
