@@ -13,12 +13,12 @@
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
-          <Label class="text-2xl text-center" text="A Hard Truth"  />
-            <Label class="text-base leading-none p-4 pb-0" text="Imagine an urban school. It's near the asian district of a major city, across the freeway from the downtown, sports, and cultural areas. It borders neighborhoods of government housing complexes and abandoned brick factory buildings." textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="The school is small. Unlike the nearby comprehensive high schools, this one is a special school, created and run by a special principal." textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="Principal Juli was brought to this city because of his track record with difficult urban schools. He was known among progressive educators across the country, as a gentle, compassionate, inventive soul." textWrap="true" />
+          <Label class="text-2xl text-center" text="Sold A Story"  />
+            <Label class="text-base leading-none p-4 pb-0" text="Listen to three these children read." textWrap="true" />
+            <Label class="text-base leading-none p-4 pb-0" text="Is the difference how 'smart' they each are?" textWrap="true" />
+            <Label class="text-base leading-none p-4 pb-0" text="Or is it more about how they were--or weren't--taught?" textWrap="true" />
              <!--XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard-->
-             <XPCard :xpObj="pageXPDetails[0]" ></XPCard>
+             <!--XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2-->
 
              
           </StackLayout>
@@ -34,8 +34,9 @@
   import { SelectedPageService } from "../shared/selected-page-service";
 
   import XPModalA from "./XPModalA";
-  import { XPCard }  from "../WebpackHack.js";
+  //import { XPCard }  from "../WebpackHack.js";
   //import XPCard from "./XPCard";
+  import XPCard2 from "./XPCard2";
   //import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
@@ -46,7 +47,7 @@ import { topicPages } from "../data/pages_list.js";
       SelectedPageService.getInstance().updateSelectedPage("SoldAStory");
     },
     components: {
-      XPCard
+      XPCard2
   },
     data() {
       const page="SoldAStory";
@@ -70,8 +71,7 @@ import { topicPages } from "../data/pages_list.js";
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
-      topicPages: topicPages,
-      XPCard: xpcard
+      topicPages: topicPages
     };
   },
     computed: {

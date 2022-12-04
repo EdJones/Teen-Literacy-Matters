@@ -27,7 +27,7 @@
   import { SelectedPageService } from "../shared/selected-page-service";
   import HardTruth from "./HardTruth";
   import XPModalA from "./XPModalA";
-  import { XPCard }  from "../WebpackHack.js";
+  import XPCard   from "./XPCard";
   import { XPs } from "../data/xp_list.js";
   //import ProgressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";

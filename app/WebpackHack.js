@@ -1,1 +1,0 @@
-export { XPCard }  from "./components/XPCard.vue";
