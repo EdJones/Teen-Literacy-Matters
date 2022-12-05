@@ -17,8 +17,8 @@
             <Label class="text-base leading-none p-4 pb-0" text="Imagine an urban school. It's near the asian district of a major city, across the freeway from the downtown, sports, and cultural areas. It borders neighborhoods of government housing complexes and abandoned brick factory buildings." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="The school is small. Unlike the nearby comprehensive high schools, this one is a special school, created and run by a special principal." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="Principal Juli was brought to this city because of his track record with difficult urban schools. He was known among progressive educators across the country, as a gentle, compassionate, inventive soul." textWrap="true" />
-             <!--XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard-->
-             <XPCard :xpObj="pageXPDetails[0]" ></XPCard>
+             <XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard>
+             <!--XPCard :xpObj="pageXPDetails[0]" ></XPCard>
 
              
  <!--Button text="Next" @tap="showModal(next)" class="button-active help-button page-link" width="50%" /-->

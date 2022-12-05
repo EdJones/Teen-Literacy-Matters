@@ -146,6 +146,10 @@ export default {
             //this.$navigateTo(this.xpObj.nav_link);
             if (this.xpObj.nav_link === 'HardTruth') {
             this.$navigateTo(HardTruth);}
+            else if (this.xpObj.xpType === 'engage_page') {
+                    console.log("Open SoldAStory_Engage.vue")
+            this.$navigateTo(SoldAStory_Engage);
+                }
             else {
                 console.log("Open SoldAStory.vue")
             this.$navigateTo(SoldAStory);

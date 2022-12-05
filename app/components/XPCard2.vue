@@ -28,8 +28,8 @@ import XPModal from "./XPModal";
 import ModalFacebook from "./ModalFacebook";
 import XPModalA from "./XPModalA";
 import XPModalB from "./XPModalB";
-import HardTruth from "./HardTruth";
 import SoldAStory from "./SoldAStory";
+import SoldAStory_Engage from "./SoldAStory_Engage"
 //import ModalDigraphs from "./modals/ModalDigraphs";
 import ModalImage from "./modals/ModalImage";
 // import Digraphs from "./Digraphs";
@@ -47,8 +47,9 @@ export default {
         return {
             apiKey: global.YTapiKey,
             ModalImage: ModalImage,
-            HardTruth: HardTruth,
-            SoldAStory: SoldAStory
+          //  HardTruth: HardTruth,
+            SoldAStory: SoldAStory,
+            SoldAStory_Engage: SoldAStory_Engage
         }
         },
     computed: { 
@@ -140,6 +141,10 @@ export default {
                     xpObj: this.xpObj.modal
                 }
              }); 
+                }
+                else if (this.xpObj.xpType === 'engage_page') {
+                    console.log("Open SoldAStory_Engage.vue")
+            this.$navigateTo(SoldAStory_Engage);
                 }
             else if (this.xpObj.xpType === 'challenge') {
                 console.info(HardTruth);
