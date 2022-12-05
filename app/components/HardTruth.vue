@@ -17,7 +17,7 @@
             <Label class="text-base leading-none p-4 pb-0" text="Imagine an urban school. It's near the asian district of a major city, across the freeway from the downtown, sports, and cultural areas. It borders neighborhoods of government housing complexes and abandoned brick factory buildings." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="The school is small. Unlike the nearby comprehensive high schools, this one is a special school, created and run by a special principal." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="Principal Juli was brought to this city because of his track record with difficult urban schools. He was known among progressive educators across the country, as a gentle, compassionate, inventive soul." textWrap="true" />
-             <XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard>
+             <XPCard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard>
              <!--XPCard :xpObj="pageXPDetails[0]" ></XPCard>
 
              
@@ -46,7 +46,7 @@
   import { SelectedPageService } from "../shared/selected-page-service";
 
   import XPModalA from "./XPModalA";
-  import XPCard from "./XPCard";
+  import XPCard from "./XPCard1";
   //import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
