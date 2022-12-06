@@ -1,16 +1,17 @@
 <template lang="html">
     <GridLayout rows="auto, *" class="nt-drawer__content">
         <StackLayout row="0" class="nt-drawer__header">
-            <Image class="nt-drawer__header-image fas t-36" src.decode="font://&#xf2bd;"/>
-            <Label class="nt-drawer__header-brand" text="User Name"/>
-            <Label class="nt-drawer__header-footnote" text="username@mail.com"/>
+          <Label class="nt-drawer__header-brand text-2xl" text="Teen Literacy Matters"></Label>
+            <Image class="nt-drawer__header-image fas h-2 t-36" src.decode="font://&#xf2bd;"/>
+            <Label class="nt-drawer__header-brand mb-32" text="User Name"></Label>
+            <!--Label class="nt-drawer__header-footnote" text="username@mail.com"></Label-->
         </StackLayout>
 
         <ScrollView row="1" class="nt-drawer__body">
             <StackLayout>
                 <GridLayout columns="auto, *"
                             :class="'nt-drawer__list-item' + (selectedPage === 'Home' ? ' -selected': '')"
-                            @tap="onNavigationItemTap(Home)">
+                            @tap="onNavigationItemTap(Home)" >
                     <Label col="0" text.decode="&#xf015;" class="nt-icon fas"/>
                     <Label col="1" text="Home" class="p-r-10"/>
                 </GridLayout>
@@ -94,6 +95,7 @@
 <style scoped lang="scss">
     // Start custom common variables
     @import '@nativescript/theme/scss/variables/blue';
+    @import '../_btlm.scss';
     // End custom common variables
 
     // Custom styles
