@@ -13,14 +13,13 @@
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
-          <Label class="text-2xl text-center" text="Sold A Story"  />
-            <Label class="text-base leading-none p-4 pb-0" text="Listen to three children read." textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="Is the difference how 'smart' they each are?" textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="Or is it more about how they were--or weren't--taught?" textWrap="true" />
+          <Label class="text-2xl text-center" text="Stumped by the Words"  />
+            <Label class="text-base leading-none p-4 pb-0" text="Up to 3/4 of adult prisoners suffer from trouble reading." textWrap="true" />
+            <Label class="text-base leading-none p-4 pb-0" text="It starts to show up in Juvenile Detention centers. Like this one." textWrap="true" />
              <!--XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard-->
              <XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
              <XPCard2 :xpObj="pageXPDetails[1]" ></XPCard2>
-             <XPCard2 :xpObj="pageXPDetails[2]" ></XPCard2>
+
 
              
           </StackLayout>
@@ -46,13 +45,13 @@ import { topicPages } from "../data/pages_list.js";
 
   export default {
     mounted() {
-      SelectedPageService.getInstance().updateSelectedPage("SoldAStory");
+      SelectedPageService.getInstance().updateSelectedPage("Prison");
     },
     components: {
       XPCard2
   },
     data() {
-      const page="SoldAStory";
+      const page="Prison";
     const pageXPDetails = XPs.filter(XP => {
         //console.info("In page filter, ", XP );
       return XP.Page.includes(page);

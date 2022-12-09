@@ -11,11 +11,11 @@
           <GridLayout rows="*,*">
           <StackLayout row="0">
           <Label class="text-2xl text-center" text="Why Are We Here?"  />
-             <Label class="text-base leading-none p-4 pb-0" text="Take a good look at this graphic. " textWrap="true" />
+             <Label class="text-base leading-none p-4 pb-0 mb-1" text="Take a good look at this graphic. " textWrap="true" />
                 <image src="~/images/NAEP_ethnicity.png" stretch="aspectFit" class="h-40" />
 
           </StackLayout>
-                  <StackLayout row="1" width="90%">
+                  <StackLayout row="1" width="90%" class="mt-28">
           <Label class="text2" text="What reasons would you give for why this is the case?" textWrap="true"> </Label>
           <TextView width="400" height="60" class="input-gray" editable="true" v-model="textViewValue" hint="Because..." returnKeyType="done" > </TextView>
           <Button class="btn-b" text="Submit" @tap="acceptInput" />

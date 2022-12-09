@@ -30,6 +30,7 @@ import XPModalA from "./XPModalA";
 import XPModalB from "./XPModalB";
 import HardTruth from "./HardTruth";
 import SoldAStory from "./SoldAStory";
+import Prison from "./Prison";
 //import ModalDigraphs from "./modals/ModalDigraphs";
 import ModalImage from "./modals/ModalImage";
 // import Digraphs from "./Digraphs";
@@ -48,7 +49,8 @@ export default {
             apiKey: global.YTapiKey,
             ModalImage: ModalImage,
             HardTruth: HardTruth,
-            SoldAStory: SoldAStory
+            SoldAStory: SoldAStory,
+            Prison: Prison
         }
         },
     computed: { 
@@ -146,6 +148,8 @@ export default {
             //this.$navigateTo(this.xpObj.nav_link);
             if (this.xpObj.nav_link === 'HardTruth') {
             this.$navigateTo(HardTruth);}
+            if (this.xpObj.nav_link === 'Prison') {
+            this.$navigateTo(Prison);}
             else if (this.xpObj.xpType === 'engage_page') {
                     console.log("Open SoldAStory_Engage.vue")
             this.$navigateTo(SoldAStory_Engage);
