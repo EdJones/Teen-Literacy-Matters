@@ -29,7 +29,9 @@ import ModalFacebook from "./ModalFacebook";
 import XPModalA from "./XPModalA";
 import XPModalB from "./XPModalB";
 import SoldAStory from "./SoldAStory";
-import SoldAStory_Engage from "./SoldAStory_Engage"
+import SoldAStory_Engage from "./SoldAStory_Engage";
+import PrisonEngage from "./PrisonEngage";
+import PrisonEngage2 from "./PrisonEngage2";
 //import ModalDigraphs from "./modals/ModalDigraphs";
 import ModalImage from "./modals/ModalImage";
 // import Digraphs from "./Digraphs";
@@ -142,15 +144,25 @@ export default {
                 }
              }); 
                 }
-                else if (this.xpObj.xpType === 'engage_page') {
+            else if (this.xpObj.xpType === 'engage_page') {
+                if (this.xpObj.nav_link === 'PrisonEngage') {
+                console.log("Prison engage");
+                this.$navigateTo(PrisonEngage);}
+            else if (this.xpObj.nav_link === 'PrisonEngage2') {
+                console.log("Prison engage2");
+                this.$navigateTo(PrisonEngage2);}
+            else if (this.xpObj.nav_link === 'SoldAStory') {
                     console.log("Open SoldAStory_Engage.vue")
-            this.$navigateTo(SoldAStory_Engage);
+                    this.$navigateTo(SoldAStory_Engage);
                 }
+            }
             else if (this.xpObj.xpType === 'challenge') {
                 console.info(HardTruth);
             //this.$navigateTo(this.xpObj.nav_link);
             if (this.xpObj.nav_link === 'HardTruth') {
+                console.log("HardTruth engage");
             this.$navigateTo(HardTruth);}
+
             else {
                 console.log("Open SoldAStory.vue")
             this.$navigateTo(SoldAStory);

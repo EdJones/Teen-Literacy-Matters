@@ -16,9 +16,9 @@
           <Label class="text-2xl text-center" text="Stumped by the Words"  />
             <Label class="text-base leading-none p-4 pb-0" text="Up to 3/4 of adult prisoners suffer from trouble reading." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="It starts to show up in Juvenile Detention centers. Like this one." textWrap="true" />
-             <!--XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard-->
-             <XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
-             <XPCard2 :xpObj="pageXPDetails[1]" ></XPCard2>
+             <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
+             
+             
 
 
              

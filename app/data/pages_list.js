@@ -36,7 +36,7 @@ export const topicPages = [
     page: "Prison",
     title: "(Black) Literacy Matters--Stumped by the Words",
     challenge: "",
-    pageXPs: ["XP10131","XP132"],
+    pageXPs: ["XP10131","XP132","XP10133","XP10134"],
     text1: "",
     text2: "",
     text3: "",
