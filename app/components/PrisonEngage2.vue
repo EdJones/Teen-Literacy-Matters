@@ -10,37 +10,30 @@
       </ActionBar>
 
         <GridLayout class="">
+          <ScrollView></ScrollView>
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-16" />
             <Label class="text-2xl text-center" text="Stumped By the Words 2"  />
-            <Label class="text-base leading-none p-4 pb-0" text="The building blocks DeShaun is trying to master here are called 'phonemes'. Meaning 'sound, speech.'" textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="For example, /b/ is the sound we spell with the letter 'b'. As in bat, ball, bozo, beef.'" textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="What phoneme is DeShaun working with here?" textWrap="true" />
-            <TextView width="400" height="45" class="input-gray" editable="true" v-model="textViewValue" hint="He's excited to tell Emily about the ____ phoneme." returnKeyType="next" > </TextView>
-          <Button class="btn-b" text="Submit" @tap="acceptInput1" />
-          
-            <Label class="text-base leading-none p-4 pb-0" text="Typically, we expect children to learn such phonemes in kindergarten or first grade." textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="Obviously, DeShaun was never taught this." textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="The particular phoneme DeSahun is so excited about is a little special. It's one of a few that are spelled with two letters." textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="The particular phoneme DeSahun is so excited about is a little special. These are called digraphs. ('Di' means 'two'; 'graph' means 'something written'.) There are seven digraphs in Engglish." textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="Can you guess or remember any other digraphs? Hint: 'Check'" textWrap="true" />
-            <TextView width="400" height="45" class="input-gray" editable="true" v-model="textViewValue" hint="" returnKeyType="done" > </TextView>
-          <Button class="btn-b" text="Submit" @tap="acceptInput2" />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="The building blocks DeShaun is trying to master here are called 'phonemes'. Meaning 'sound, speech.'" textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="For example, /b/ is the sound we spell with the letter 'b'. As in bat, ball, bozo, beef.'" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" text="What phoneme is DeShaun working with here?" textWrap="true" />
+            <TextView width="40" height="25" class="input-gray" editable="true" v-model="textViewValue1" hint="He's excited to tell Emily about the ____ phoneme." returnKeyType="next" > </TextView>
 
-            
-            
-            
-            
-            
-            <!--XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard-->
+          
+            <Label class="text-base leading-none font-light p-4 pb-0" text="Typically, we expect children to learn such phonemes in kindergarten or first grade." textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="Obviously, DeShaun was never taught this." textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="The particular phoneme DeSahun is so excited about is a little special. It's one of a few that are spelled with two letters." textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="The particular phoneme DeSahun is so excited about is a little special. These are called digraphs. ('Di' means 'two'; 'graph' means 'something written'.) There are seven digraphs in Engglish." textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="Can you guess or remember any other digraphs? Hint: 'Check'" textWrap="true" />
+            <TextView width="80%" height="45" class="input-gray" editable="true" v-model="textViewValue2" hint="" returnKeyType="done" > </TextView>
+          <Button class="btn-b" text="Submit" @tap="acceptInput" />
+
             
 
              
           </StackLayout>
-
-
-
+        </ScrollView>
         </GridLayout>
     </Page>
 </template>
@@ -50,10 +43,6 @@
   import { SelectedPageService } from "../shared/selected-page-service";
   import { Dialogs } from '@nativescript/core';
   import XPModalA from "./XPModalA";
-  //import { XPCard }  from "../WebpackHack.js";
-  //import XPCard from "./XPCard";
- // import XPCard2 from "./XPCard2";
-  //import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
@@ -106,8 +95,8 @@ const alertOptions = {
         utils.showDrawer();
       }, 
       
-      acceptInput1() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Prison Engage Input", this.textViewValue);
+      acceptInput() {
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Prison Engage 2 Input", this.textViewValue1,this.textViewValue);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);
@@ -134,33 +123,7 @@ Dialogs.alert(alertOptions).then(() => {
 })
 },
 
-acceptInput2() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Prison Input 2", this.textViewValue);
-        let now = new Date();
-        let docNum = now.getTime();
-        console.log("Now: ",  docNum);
-/*
-db.collection('LevelIII').doc(docNum.toString()).set({
-    UserID: global.userNum,
-    Time: now.toLocaleString().replace(',',''),
-    TimeInSec: now.getTime(),
-    LevelIII: this.textViewValue
-    }, { merge: false })
-    .then(() => {
-      console.log("LevelIII successfully written to db.");
-  })
-  .catch((error) => {
-      console.error("Error writing levelIII: ", error);
-  });
-    this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});
-this.$store.commit('addXP', {XP: "XP3000"});
-*/
-Dialogs.alert(alertOptions).then(() => {
-   // this.$navigateTo(Dashboard, {
-    //        clearHistory: true
-    //    });
-})
-}
+
     }
   };
 </script>
