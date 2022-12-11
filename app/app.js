@@ -1,6 +1,9 @@
 import Vue from 'nativescript-vue'
 import RadSideDrawer from 'nativescript-ui-sidedrawer/vue'
 import YoutubePlayer from '@triniwiz/nativescript-youtubeplayer/vue';
+import PreviousNextView from '@nativescript/iqkeyboardmanager';
+Vue.registerElement("PreviousNextView", () => require("@nativescript/iqkeyboardmanager"). PreviousNextView);
+Vue.registerElement('TextViewWithHint', () => require('@nativescript/iqkeyboardmanager').TextViewWithHint);
 Vue.use(YoutubePlayer);
 
 //import CardView from "@nativescript-cardview";

@@ -8,33 +8,38 @@
           <Label col="1" class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
         </GridLayout>
       </ActionBar>
-
+      <ScrollView>
         <GridLayout class="">
-          <ScrollView></ScrollView>
+         
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
+          <PreviousNextView>
           <StackLayout orientation="vertical">
+            
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-16" />
             <Label class="text-2xl text-center" text="Stumped By the Words 2"  />
             <Label class="text-base leading-none font-light p-4 pb-0" text="The building blocks DeShaun is trying to master here are called 'phonemes'. Meaning 'sound, speech.'" textWrap="true" />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="For example, /b/ is the sound we spell with the letter 'b'. As in bat, ball, bozo, beef.'" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" text="What phoneme is DeShaun working with here?" textWrap="true" />
-            <TextView width="40" height="25" class="input-gray" editable="true" v-model="textViewValue1" hint="He's excited to tell Emily about the ____ phoneme." returnKeyType="next" > </TextView>
+            <!--Label class="text-base leading-none font-light p-4 pb-0" text="For example, /b/ is the sound we spell with the letter 'b'. As in bat, ball, bozo, beef.'" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" text="What phoneme is DeShaun working with here?" textWrap="true" /-->
+            <TextViewWithHint width="100" height="40" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="He's excited to tell Emily about the ____ phoneme." returnKeyType="next" > </TextViewWithHint>
 
           
             <Label class="text-base leading-none font-light p-4 pb-0" text="Typically, we expect children to learn such phonemes in kindergarten or first grade." textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" text="Obviously, DeShaun was never taught this." textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" text="The particular phoneme DeSahun is so excited about is a little special. It's one of a few that are spelled with two letters." textWrap="true" />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="The particular phoneme DeSahun is so excited about is a little special. These are called digraphs. ('Di' means 'two'; 'graph' means 'something written'.) There are seven digraphs in Engglish." textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="These special phonemes are called digraphs. ('Di' means 'two'; 'graph' means 'something written'.) There are seven digraphs in English." textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" text="Can you guess or remember any other digraphs? Hint: 'Check'" textWrap="true" />
-            <TextView width="80%" height="45" class="input-gray" editable="true" v-model="textViewValue2" hint="" returnKeyType="done" > </TextView>
-          <Button class="btn-b" text="Submit" @tap="acceptInput" />
-
+            <TextViewWithHint width="80%" height="45" class="input-gray text-black text-xl" editable="true" v-model="textViewValue2" hint="" returnKeyType="done" > </TextViewWithHint>
+          
+            <Button class="btn-b" text="Submit" @tap="acceptInput" />
+          
             
 
              
           </StackLayout>
-        </ScrollView>
+        </PreviousNextView>
         </GridLayout>
+        </ScrollView>
+        
     </Page>
 </template>
 
@@ -46,6 +51,7 @@
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
+//import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
 const alertOptions = {
     title: 'Thank you',
@@ -82,7 +88,9 @@ const alertOptions = {
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
-      topicPages: topicPages
+      topicPages: topicPages,
+      textViewValue1: "",
+      textViewValue2: ""
     };
   },
     computed: {
