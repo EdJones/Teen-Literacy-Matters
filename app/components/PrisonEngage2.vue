@@ -104,30 +104,17 @@ const alertOptions = {
       }, 
       
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Prison Engage 2 Input", this.textViewValue1,this.textViewValue);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Prison Engage 2 Input", this.textViewValue1,this.textViewValue2);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);
 /*
-db.collection('LevelIII').doc(docNum.toString()).set({
-    UserID: global.userNum,
-    Time: now.toLocaleString().replace(',',''),
-    TimeInSec: now.getTime(),
-    LevelIII: this.textViewValue
-    }, { merge: false })
-    .then(() => {
-      console.log("LevelIII successfully written to db.");
-  })
-  .catch((error) => {
-      console.error("Error writing levelIII: ", error);
-  });
+
     this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   // this.$navigateTo(Dashboard, {
-    //        clearHistory: true
-    //    });
+   this.$navigateBack();
 })
 },
 

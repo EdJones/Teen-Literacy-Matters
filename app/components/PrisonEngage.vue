@@ -8,20 +8,21 @@
           <Label col="1" class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
         </GridLayout>
       </ActionBar>
-
+<ScrollView >
         <GridLayout class="">
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
+          <PreviousNextView>
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-32" />
             <Label class="text-2xl text-center" text="Stumped By the Words"  />
             <Label class="text-base leading-none p-4 pb-0" text="What age is DeShaun, who's being taught how to read?" textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="" textWrap="true" />
-            <TextView width="400" height="45" class="input-gray" editable="true" v-model="textViewValue" hint="He's ____" returnKeyType="done" > </TextView>
-          <Button class="btn-b" text="Submit" @tap="acceptInput1" />
+            <TextViewWithHint width="400" height="45" class="input-gray" editable="true" v-model="textViewValue1" hint="He's ____" returnKeyType="next" > </TextViewWithHint>
+          
           
             <Label class="text-base leading-none p-4 pb-0" text="At about what grade level is DeShaun (and the other teens) reading?" textWrap="true" />
-            <TextView width="400" height="45" class="input-gray" editable="true" v-model="textViewValue" hint="About ___ grade" returnKeyType="done" > </TextView>
-          <Button class="btn-b" text="Submit" @tap="acceptInput2" />
+            <TextViewWithHint width="400" height="45" class="input-gray" editable="true" v-model="textViewValue2" hint="About ___ grade" returnKeyType="done" > </TextViewWithHint>
+          <Button class="btn-b" text="Submit" @tap="acceptInput" />
 
             
             
@@ -35,8 +36,9 @@
           </StackLayout>
 
 
-
+        </PreviousNextView>
         </GridLayout>
+      </ScrollView>
     </Page>
 </template>
 
@@ -52,6 +54,7 @@
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
+//import Prison from "./Prison";
 
 const alertOptions = {
     title: 'Thank you',
@@ -88,7 +91,9 @@ const alertOptions = {
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
-      topicPages: topicPages
+      topicPages: topicPages,
+      textViewValue1: "",
+      textViewValue2: ""
     };
   },
     computed: {
@@ -101,8 +106,8 @@ const alertOptions = {
         utils.showDrawer();
       }, 
       
-      acceptInput1() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Prison Engage Input", this.textViewValue);
+      acceptInput() {
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Prison Engage Input", this.textViewValue1, this.textViewValue2);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);
@@ -123,39 +128,13 @@ db.collection('LevelIII').doc(docNum.toString()).set({
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   // this.$navigateTo(Dashboard, {
-    //        clearHistory: true
-    //    });
+  console.log("Done with prison engage");
+  this.$navigateBack();
 })
 },
 
-acceptInput2() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Prison Input 2", this.textViewValue);
-        let now = new Date();
-        let docNum = now.getTime();
-        console.log("Now: ",  docNum);
-/*
-db.collection('LevelIII').doc(docNum.toString()).set({
-    UserID: global.userNum,
-    Time: now.toLocaleString().replace(',',''),
-    TimeInSec: now.getTime(),
-    LevelIII: this.textViewValue
-    }, { merge: false })
-    .then(() => {
-      console.log("LevelIII successfully written to db.");
-  })
-  .catch((error) => {
-      console.error("Error writing levelIII: ", error);
-  });
-    this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});
-this.$store.commit('addXP', {XP: "XP3000"});
-*/
-Dialogs.alert(alertOptions).then(() => {
-   // this.$navigateTo(Dashboard, {
-    //        clearHistory: true
-    //    });
-})
-}
+
+
     }
   };
 </script>
