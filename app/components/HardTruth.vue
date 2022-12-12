@@ -9,35 +9,21 @@
         </GridLayout>
       </ActionBar>
 
-        <GridLayout class="">
+        <GridLayout class="font-light" rows="auto, *">
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
-          <StackLayout orientation="vertical">
+          <StackLayout orientation="vertical" row="0">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
           <Label class="text-2xl text-center" text="A Hard Truth"  />
-            <Label class="text-base leading-none p-4 pb-0" text="Imagine an urban school. It's near the asian district of a major city, across the freeway from the downtown, sports, and cultural areas. It borders neighborhoods of government housing complexes and abandoned brick factory buildings." textWrap="true" />
+            <Label class="text-base leading-none p-4 pb-0 font-light" text="Imagine an urban school. It's near the asian district of a major city, across the freeway from the downtown, sports, and cultural areas. It borders neighborhoods of government housing complexes and abandoned brick factory buildings." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="The school is small. Unlike the nearby comprehensive high schools, this one is a special school, created and run by a special principal." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="Principal Juli was brought to this city because of his track record with difficult urban schools. He was known among progressive educators across the country, as a gentle, compassionate, inventive soul." textWrap="true" />
              <!--XPCard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard -->
              <XPCard :xpObj="pageXPDetails[1]" ></XPCard>
              <XPCard :xpObj="pageXPDetails[2]" ></XPCard>
-
-             
- <!--Button text="Next" @tap="showModal(next)" class="button-active help-button page-link" width="50%" /-->
-          </StackLayout>
-
-          <!--StackLayout  class="p-20">
-            <StackLayout>
-              <Label class="challenge-label" :text="pageInfo.challenge" textWrap="true" ></Label>
             </StackLayout>
-            <StackLayout>
-            <Label :text="pageInfo.text1"  class="text-para" textWrap="true"  ></Label>
-
-            </StackLayout>
-             <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
-
-
-          <!--/StackLayout-->
-
+          <StackLayout row="1" class="mt-16" >
+          <Button class="btn-b" width="100" text="Back to Intro" @tap="goBack" />
+        </StackLayout>
         </GridLayout>
     </Page>
 </template>
@@ -95,6 +81,10 @@ import { topicPages } from "../data/pages_list.js";
     methods: {
       onDrawerButtonTap() {
         utils.showDrawer();
+      },
+      goBack() {
+        console.log("Done with HardTruth");
+        this.$navigateBack();
       }
     }
   };

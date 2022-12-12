@@ -9,9 +9,9 @@
         </GridLayout>
       </ActionBar>
 
-        <GridLayout class="">
+        <GridLayout class="" rows="auto,*">
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
-          <StackLayout orientation="vertical">
+          <StackLayout orientation="vertical" row="0">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
           <Label class="text-2xl text-center" text="Sold A Story"  />
             <Label class="text-base leading-none p-4 pb-0" text="Listen to three children read." textWrap="true" />
@@ -24,7 +24,9 @@
 
              
           </StackLayout>
-
+          <StackLayout row="1" class="mt-32" >
+          <Button class="btn-b" width="100" text="Back to Intro" @tap="goBack" />
+        </StackLayout>
 
 
         </GridLayout>
@@ -84,6 +86,10 @@ import { topicPages } from "../data/pages_list.js";
     methods: {
       onDrawerButtonTap() {
         utils.showDrawer();
+      },
+      goBack() {
+        console.log("Done with soldAStory engage");
+        this.$navigateBack();
       }
     }
   };

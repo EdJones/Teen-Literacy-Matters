@@ -134,30 +134,47 @@ export default {
                 }
             });
             }
-            else if (this.xpObj.xpType === 'engage') {
-             this.$showModal(XPModalB, {
-                props: {
-                    xpObj: this.xpObj.modal
-                }
-             }); 
-                }
+
             else if (this.xpObj.xpType === 'challenge') {
+                console.log("Navigate to a Challenge page.");
                 console.info(HardTruth);
             //this.$navigateTo(this.xpObj.nav_link);
             if (this.xpObj.nav_link === 'HardTruth') {
             this.$navigateTo(HardTruth);}
-            else if (this.xpObj.xpType === 'engage_page') {
-                    console.log("Open SoldAStory_Engage.vue")
-            this.$navigateTo(SoldAStory_Engage);
-                }
-            else {
+            else if (this.xpObj.nav_link === 'SoldAStory') {
                 console.log("Open SoldAStory.vue")
-            this.$navigateTo(SoldAStory);
-        }
+                this.$navigateTo(SoldAStory);
+                 }
+            else if (this.xpObj.nav_link === 'Prison') {
+            this.$navigateTo(Prison);}
 
+            }
+
+            else if (this.xpObj.xpType === 'engageModal') {
+                console.log("DIsplay engage modal");
+                this.$showModal(XPModalB, {
+                    props: {
+                     xpObj: this.xpObj.modal
+                 }
+                 }); 
                 }
-                 else 
-            if (this.xpObj.xpType ==='xp_pic') {
+
+                else if (this.xpObj.xpType === 'engage_page') {
+                if (this.xpObj.nav_link === 'PrisonEngage') {
+                console.log("Prison engage");
+                this.$navigateTo(PrisonEngage);}
+            else if (this.xpObj.nav_link === 'PrisonEngage2') {
+                console.log("Prison engage2");
+                this.$navigateTo(PrisonEngage2);}
+            else if (this.xpObj.nav_link === 'SoldAStory') {
+                    console.log("Open SoldAStory_Engage.vue")
+                    this.$navigateTo(SoldAStory_Engage);
+                }
+            }
+            
+
+            
+                 else if (this.xpObj.xpType ==='xp_pic') {
             this.$showModal(XPModalA, {
                 props: {
                     xpObj: this.xpObj

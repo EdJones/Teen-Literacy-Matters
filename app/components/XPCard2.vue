@@ -137,7 +137,7 @@ export default {
                 }
             });
             }
-            else if (this.xpObj.xpType === 'engage') {
+            else if (this.xpObj.xpType === 'engageModal') {
              this.$showModal(XPModalB, {
                 props: {
                     xpObj: this.xpObj.modal
@@ -146,12 +146,14 @@ export default {
                 }
             else if (this.xpObj.xpType === 'engage_page') {
                 if (this.xpObj.nav_link === 'PrisonEngage') {
-                console.log("Prison engage");
-                this.$navigateTo(PrisonEngage);}
-            else if (this.xpObj.nav_link === 'PrisonEngage2') {
-                console.log("Prison engage2");
-                this.$navigateTo(PrisonEngage2);}
-            else if (this.xpObj.nav_link === 'SoldAStory') {
+                    console.log("Prison engage");
+                    this.$navigateTo(PrisonEngage);
+                }
+                else if (this.xpObj.nav_link === 'PrisonEngage2') {
+                    console.log("Prison engage2");
+                    this.$navigateTo(PrisonEngage2);
+                }
+                else if (this.xpObj.nav_link === 'SoldAStory') {
                     console.log("Open SoldAStory_Engage.vue")
                     this.$navigateTo(SoldAStory_Engage);
                 }
