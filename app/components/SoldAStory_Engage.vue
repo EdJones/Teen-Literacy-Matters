@@ -10,19 +10,20 @@
       </ActionBar>
 
         <GridLayout class="">
+          <PreviousNextView>
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
             <Label class="text-base leading-none p-4 pb-0" text="What grade were these children in?" textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="" textWrap="true" />
-            <TextView width="400" height="45" class="input-gray" editable="true" v-model="textViewValue" hint="Say something" returnKeyType="done" > </TextView>
-          <Button class="btn-b" text="Submit" @tap="acceptInput1" />
+            <TextViewWithHint width="40" height="35" class="input-gray" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
+          
           
           <Label class="text-2xl text-center" text="Sold A Story"  />
             <Label class="text-base leading-none p-4 pb-0" text="Kids like the third child here will have a very unpleasant time in school." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="About what fraction of kids read like this little girl?" textWrap="true" />
-            <TextView width="400" height="45" class="input-gray" editable="true" v-model="textViewValue" hint="About ___ of kids" returnKeyType="done" > </TextView>
-          <Button class="btn-b" text="Submit" @tap="acceptInput2" />
+            <TextViewWithHint width="40" height="35" class="input-gray" editable="true" v-model="textViewValue2" hint="About ___ of kids" returnKeyType="done" > </TextViewWithHint>
+          <Button class="btn-b" text="Submit" @tap="acceptInput" />
             
             
             
@@ -34,7 +35,7 @@
              
           </StackLayout>
 
-
+          </PreviousNextView>
 
         </GridLayout>
     </Page>
@@ -101,8 +102,8 @@ const alertOptions = {
         utils.showDrawer();
       }, 
       
-      acceptInput1() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  SoldAStory Input", this.textViewValue);
+      acceptInput() {
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  SoldAStory Input", this.textViewValue1, this.textViewValue2);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);

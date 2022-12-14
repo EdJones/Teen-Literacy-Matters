@@ -3038,7 +3038,7 @@ export const XPs = [{
     "image": "",
     "xpType": "challenge",
     "YTvideoId": "",
-    "nav_link": "Hanford",
+    "nav_link": "SoldAStory",
     "Subtitle": "",
     "xpText": "Listen to a story about kids in schools and learning to read.",
     "text2": "",

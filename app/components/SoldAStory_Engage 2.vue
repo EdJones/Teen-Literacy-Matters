@@ -11,16 +11,17 @@
 
         <GridLayout class="">
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
+          <PreviousNextView>
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
             <Label class="text-base leading-none p-4 pb-0" text="1)" textWrap="true" />
-            <TextView width="400" height="45" class="input-gray" editable="true" v-model="textViewValue" hint="First type of response" returnKeyType="done" > </TextView>
+            <TextViewWithHint width="400" height="45" class="input-gray" editable="true" v-model="textViewValue" hint="First type of response" returnKeyType="done" > </TextViewWithHint>
           <Button class="btn-b" text="Submit" @tap="acceptInput1" />
           
           <Label class="text-2xl text-center" text="Sold A Story"  />
             <Label class="text-base leading-none p-4 pb-0" text="" textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="2) " textWrap="true" />
-            <TextView width="400" height="45" class="input-gray" editable="true" v-model="textViewValue" hint="Second type of response" returnKeyType="done" > </TextView>
+            <TextViewWithHint width="400" height="45" class="input-gray" editable="true" v-model="textViewValue" hint="Second type of response" returnKeyType="done" > </TextViewWithHint>
           <Button class="btn-b" text="Submit" @tap="acceptInput2" />
             
             
@@ -32,7 +33,7 @@
 
              
           </StackLayout>
-
+          </PreviousNextView>
 
 
         </GridLayout>

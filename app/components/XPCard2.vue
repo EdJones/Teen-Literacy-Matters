@@ -123,11 +123,12 @@ export default {
             },
     methods: {
         cardDetail() {
-            console.info("******* In cardDetail, in XPCard:  *******");
+            console.info("******* In cardDetail, in XPCard2:  *******");
             console.info("xpId: ", this.xpObj.xpId);
             console.info("xpType: ", this.xpObj.xpType);
             console.info("xpUrl: ", this.xpObj.xpUrl);
             console.info("points: ", this.xpObj.points );
+            console.info("nav_link: ", this.xpObj.nav_link );
 
             if (this.xpObj.xpType==='blog') {
                 console.log("in cardDetail, xpType: ", this.xpObj.xpType, "so show modal");
@@ -153,7 +154,7 @@ export default {
                     console.log("Prison engage2");
                     this.$navigateTo(PrisonEngage2);
                 }
-                else if (this.xpObj.nav_link === 'SoldAStory') {
+                else if (this.xpObj.nav_link === 'SoldAStory_Engage') {
                     console.log("Open SoldAStory_Engage.vue")
                     this.$navigateTo(SoldAStory_Engage);
                 }

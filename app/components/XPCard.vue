@@ -63,7 +63,7 @@ export default {
             }
         },
         mediaIcon() {
-        console.log("xpType: ", this.xpObj.xpType);
+        console.log("In mediaIcon, xpType: ", this.xpObj.xpType);
             if (this.xpObj.xpType === "podcast") {
             return String.fromCharCode(0xf025);
         } else if (this.xpObj.xpType === "YtVideo" ) {
@@ -139,7 +139,7 @@ export default {
 
             else if (this.xpObj.xpType === 'challenge') {
                 console.log("Navigate to a Challenge page.");
-                console.info(HardTruth);
+                console.info("nav_link: ", this.xpObj.nav_link);
             //this.$navigateTo(this.xpObj.nav_link);
             if (this.xpObj.nav_link === 'HardTruth') {
             this.$navigateTo(HardTruth);}
