@@ -2,27 +2,28 @@
     <Page class="page">
       <ActionBar class="action-bar">
         <NavigationButton visibility="hidden"/>
-        <GridLayout columns="*, 50">
+        <GridLayout columns="*, 70">
           <Label col="0" class="action-bar-title" text="(Black) Teen Literacy Matters" />
 
           <Label col="1" class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
         </GridLayout>
       </ActionBar>
 
-        <GridLayout class="">
+        <GridLayout class="" rows="*, 40">
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <PreviousNextView>
-          <StackLayout orientation="vertical">
+          <StackLayout orientation="vertical" row="0">
+            <Label class="text-2xl text-center" text="Sold A Story"  />
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
             <Label class="text-base leading-none p-4 pb-0" text="1)" textWrap="true" />
-            <TextViewWithHint width="400" height="45" class="input-gray" editable="true" v-model="textViewValue" hint="First type of response" returnKeyType="done" > </TextViewWithHint>
-          <Button class="btn-b" text="Submit" @tap="acceptInput1" />
+            <TextViewWithHint width="200" height="45" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="First type of response" returnKeyType="done" > </TextViewWithHint>
           
-          <Label class="text-2xl text-center" text="Sold A Story"  />
+          
+        
             <Label class="text-base leading-none p-4 pb-0" text="" textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="2) " textWrap="true" />
-            <TextViewWithHint width="400" height="45" class="input-gray" editable="true" v-model="textViewValue" hint="Second type of response" returnKeyType="done" > </TextViewWithHint>
-          <Button class="btn-b" text="Submit" @tap="acceptInput2" />
+            <TextViewWithHint width="200" height="45" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" hint="Second type of response" returnKeyType="done" > </TextViewWithHint>
+          <Button class="btn-b" text="Submit" @tap="acceptInput" />
             
             
             
@@ -34,7 +35,9 @@
              
           </StackLayout>
           </PreviousNextView>
-
+          <StackLayout row="1" class="mb-8" >
+          <Button class="btn-b" width="100" text="Back to Intro" @tap="goBack" />
+        </StackLayout>
 
         </GridLayout>
     </Page>
@@ -102,7 +105,7 @@ const alertOptions = {
       }, 
       
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  SoldAStory Input", this.textViewValue);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  SoldAStory Input", this.textViewValue1, this.textViewValue2);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);
@@ -123,38 +126,13 @@ db.collection('LevelIII').doc(docNum.toString()).set({
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
+  this.$navigateBack();
    // this.$navigateTo(Dashboard, {
     //        clearHistory: true
     //    });
 })
 },
-acceptInput2() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  SoldAStory Input", this.textViewValue);
-        let now = new Date();
-        let docNum = now.getTime();
-        console.log("Now: ",  docNum);
-/*
-db.collection('LevelIII').doc(docNum.toString()).set({
-    UserID: global.userNum,
-    Time: now.toLocaleString().replace(',',''),
-    TimeInSec: now.getTime(),
-    LevelIII: this.textViewValue
-    }, { merge: false })
-    .then(() => {
-      console.log("LevelIII successfully written to db.");
-  })
-  .catch((error) => {
-      console.error("Error writing levelIII: ", error);
-  });
-    this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});
-this.$store.commit('addXP', {XP: "XP3000"});
-*/
-Dialogs.alert(alertOptions).then(() => {
-   // this.$navigateTo(Dashboard, {
-    //        clearHistory: true
-    //    });
-})
-}
+
     }
   };
 </script>

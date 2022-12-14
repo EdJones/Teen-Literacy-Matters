@@ -21,10 +21,11 @@
              <XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
              <XPCard2 :xpObj="pageXPDetails[1]" ></XPCard2>
              <XPCard2 :xpObj="pageXPDetails[2]" ></XPCard2>
+             <XPCard2 :xpObj="pageXPDetails[3]" ></XPCard2>
 
              
           </StackLayout>
-          <StackLayout row="1" class="mt-32" >
+          <StackLayout row="1" class="mb-8" >
           <Button class="btn-b" width="100" text="Back to Intro" @tap="goBack" />
         </StackLayout>
 

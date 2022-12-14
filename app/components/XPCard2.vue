@@ -30,6 +30,7 @@ import XPModalA from "./XPModalA";
 import XPModalB from "./XPModalB";
 import SoldAStory from "./SoldAStory";
 import SoldAStory_Engage from "./SoldAStory_Engage";
+import SoldAStory_Engage2 from "./SoldAStory_Engage2";
 import PrisonEngage from "./PrisonEngage";
 import PrisonEngage2 from "./PrisonEngage2";
 //import ModalDigraphs from "./modals/ModalDigraphs";
@@ -51,7 +52,8 @@ export default {
             ModalImage: ModalImage,
           //  HardTruth: HardTruth,
             SoldAStory: SoldAStory,
-            SoldAStory_Engage: SoldAStory_Engage
+            SoldAStory_Engage: SoldAStory_Engage,
+            SoldAStory_Engage2: SoldAStory_Engage2
         }
         },
     computed: { 
@@ -157,6 +159,10 @@ export default {
                 else if (this.xpObj.nav_link === 'SoldAStory_Engage') {
                     console.log("Open SoldAStory_Engage.vue")
                     this.$navigateTo(SoldAStory_Engage);
+                }
+                else if (this.xpObj.nav_link === 'SoldAStory_Engage2') {
+                    console.log("Open SoldAStory_Engage2.vue")
+                    this.$navigateTo(SoldAStory_Engage2);
                 }
             }
             else if (this.xpObj.xpType === 'challenge') {
