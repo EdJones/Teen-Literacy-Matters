@@ -1,4 +1,4 @@
-import { firebase } from '@nativescript/firebase';
+//import { firebase } from '@nativescript/firebase';
 
 import Vue from "nativescript-vue";
 // import NSVuexPersistent from 'nativescript-vuex-persistent';
@@ -8,7 +8,7 @@ import NSVuexPersistent from 'nativescript-vuex-persistent';
 // Vue.registerElement('NSVuexPersistent', () => require('nativescript-vuex-persistent'))
 
 
-const db = firebase.firestore;
+//const db = firebase.firestore;
 
 Vue.use(Vuex);
 
