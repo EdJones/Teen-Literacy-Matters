@@ -1,6 +1,6 @@
 import { firebase } from '@nativescript/firebase-core'
 import '@nativescript/firebase-firestore'
-
+import { auth }  from '@nativescript/firebase-auth';
 import Vue from "nativescript-vue";
 // import NSVuexPersistent from 'nativescript-vuex-persistent';
 import Vuex from "vuex";
@@ -8,6 +8,57 @@ import Vuex from "vuex";
 import NSVuexPersistent from 'nativescript-vuex-persistent';
 // Vue.registerElement('NSVuexPersistent', () => require('nativescript-vuex-persistent'))
 
+firebase().initializeApp()
+    .then(FirebaseApp => {
+        console.log("FirebaseApp initialized");
+
+        firebase()
+            .auth()
+            .signInAnonymously().then(User => {
+                console.log("signInAnonomously completed. User is ", User.user.uid);
+                console.log(User);
+                global.userNum = User.user.uid;
+                //console.log("global.userNum: ", global.userNum);
+            })
+            .catch(error => {
+                console.log("signInAnonomously error", error)
+            })
+
+        firebase().auth()
+            .addAuthStateChangeListener((user) => {
+                console.log('in addAuthStateChangeListener');
+                if (!user) {
+                    console.log('User is currently signed out!');
+                } else {
+                    console.log('User is signed in!');
+                    store.dispatch("setTestMode");
+
+                }
+            })
+
+
+        let now = new Date();
+
+        firebase().firestore().collection('startUps').doc(global.userNum).set({
+                test: true,
+                time: now.getTime(),
+                latest: now.toUTCString(),
+                user: global.userNum
+            }, {
+                merge: true
+            })
+            .then(() => {
+                console.log("in store, startUp successfully written!");
+            })
+            .catch(error => {
+                console.error("in store, Error writing startup to firebase ", error);
+            });
+
+          
+
+    }).catch(error => {
+        console.info("error on firebase.initialize: ", error);
+    });
 
 const db = firebase.firestore;
 
