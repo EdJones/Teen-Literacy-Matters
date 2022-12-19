@@ -23,7 +23,7 @@ firebase().initializeApp()
             .catch(error => {
                 console.log("signInAnonomously error", error)
             })
-
+/*
         firebase().auth()
             .addAuthStateChangeListener((user) => {
                 console.log('in addAuthStateChangeListener');
@@ -35,10 +35,10 @@ firebase().initializeApp()
 
                 }
             })
-
+*/
 
         let now = new Date();
-
+        
         firebase().firestore().collection('startUps').doc(global.userNum).set({
                 test: true,
                 time: now.getTime(),
@@ -60,7 +60,7 @@ firebase().initializeApp()
         console.info("error on firebase.initialize: ", error);
     });
 
-const db = firebase.firestore;
+//const db = firebase().firestore;
 
 Vue.use(Vuex);
 
@@ -143,7 +143,7 @@ const store = new Vuex.Store({
           //console.dir(userRecord);
           //console.log("Latest:  ", now.toUTCString());
           console.log("global.userCreatedOn:  ", global.userCreatedOn);
-          db.collection('userProgress').doc(global.userNum).set({
+          firebase().firestore().collection('userProgress').doc(global.userNum).set({
             User: global.userNum,
             userCreated: global.userCreatedOn,
             lastUpdated: now.getTime(),
@@ -248,7 +248,7 @@ const store = new Vuex.Store({
           
           this.commit('add_page', {page: payload.pageString });
           console.log("state.PageProgress: ", state.pageProgress);
-          db.collection('userProgress').doc(global.userNum).update({
+          firebase().firestore().collection('userProgress').doc(global.userNum).update({
             pageProgress: state.pageProgress
             })
             .then(() => {
@@ -263,7 +263,7 @@ const store = new Vuex.Store({
           
           state.studyTime.push(payload.logTime);
           console.log("state.studyTime: ", state.studyTime);
-          db.collection('userProgress').doc(global.userNum).set({
+          firebase().firestore().collection('userProgress').doc(global.userNum).set({
             studyTime: state.studyTime
             }, { merge: true })
             .then(() => {
