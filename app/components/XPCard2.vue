@@ -169,7 +169,7 @@ export default {
                 }
             }
             else if (this.xpObj.xpType === 'challenge') {
-                console.info(HardTruth);
+                console.info("In XPCard2, its a challenge page");
             //this.$navigateTo(this.xpObj.nav_link);
             if (this.xpObj.nav_link === 'HardTruth') {
                 console.log("HardTruth engage");
