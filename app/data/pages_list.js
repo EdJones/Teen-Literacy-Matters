@@ -44,6 +44,17 @@ export const topicPages = [
     closingText2: "", 
     modal: ""
   },{
+    page: "HowKidsRead",
+    title: "(Black) Literacy Matters--How Kids Learn",
+    challenge: "",
+    pageXPs: ["XP0"],
+    text1: "Whoops! We're still building this.",
+    text2: "",
+    text3: "",
+    closingText: "",
+    closingText2: "", 
+    modal: ""
+  },{
         page: "Home",
         title: "Science of Reading--Caring",
         challenge: "Not everyone is cut out to care this much.",

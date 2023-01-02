@@ -9,16 +9,29 @@
         </GridLayout>
       </ActionBar>
 
-        <GridLayout class="" rows="*,35">
-          <StackLayout row="0" orientation="vertical">
+        <GridLayout class="" rows="auto,*">
+          <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
+          <StackLayout orientation="vertical" row="0">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
-          <Label class="text-2xl text-center" text="First Steps"  />
-            <Label class="text-base leading-none p-4 pb-0" text="Why Are We Here?" textWrap="true" />
-             <XPCard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard>
+          <Label class="text-2xl text-center" text="How Kids Learn to Read"  />
+            <Label class="text-base leading-none p-4 pb-0" text="We looked at what happens when kids aren't taught to read." textWrap="true" />
+            <Label class="text-base leading-none p-4 pb-0" text="Some pretty bad things happen to those kids." textWrap="true" />
+            <Label class="text-base leading-none p-4 pb-0" text="But why is it they don't learn when others do?" textWrap="true" />
+            <Label class="text-base leading-none p-4 pb-0" text="We need to look inside kids' brains." textWrap="true" />
+            <Label class="text-base leading-none p-4 pb-0" text="We need to see how some kids learn and others don't, and how to help them all." textWrap="true" />
+             <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
+             <!--XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
+             <XPCard2 :xpObj="pageXPDetails[1]" ></XPCard2>
+             <XPCard2 :xpObj="pageXPDetails[2]" ></XPCard2>
+             <XPCard2 :xpObj="pageXPDetails[3]" ></XPCard2-->
+
              
- <!--Button text="Next" @tap="nextPage()" class="button-active help-button page-link" width="50%" /-->
           </StackLayout>
-          <Button row="1" class="btn" text="Next Section" @tap="onNextSection" />
+          <StackLayout row="1" class="mb-8" >
+          <Button class="btn-b" width="100" text="Back to Intro" @tap="goBack" />
+        </StackLayout>
+
+
         </GridLayout>
     </Page>
 </template>
@@ -26,24 +39,25 @@
 <script>
   import * as utils from "~/shared/utils";
   import { SelectedPageService } from "../shared/selected-page-service";
-  import HardTruth from "./HardTruth";
+
   import XPModalA from "./XPModalA";
-  import XPCard   from "./XPCard";
+  //import { XPCard }  from "../WebpackHack.js";
+  //import XPCard from "./XPCard";
+  import XPCard2 from "./XPCard2";
+  //import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
-  //import ProgressBar from "./ProgressBar";
+  //import P rogressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
-import HowKidsRead from "./HowKidsRead";
 
   export default {
     mounted() {
-      SelectedPageService.getInstance().updateSelectedPage("Introduction");
+      SelectedPageService.getInstance().updateSelectedPage("SoldAStory");
     },
     components: {
-   // ProgressBar,
-    XPCard
+      XPCard2
   },
     data() {
-      const page="Introduction";
+      const page="HowKidsRead";
     const pageXPDetails = XPs.filter(XP => {
         //console.info("In page filter, ", XP );
       return XP.Page.includes(page);
@@ -65,7 +79,6 @@ import HowKidsRead from "./HowKidsRead";
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
       topicPages: topicPages
-
     };
   },
     computed: {
@@ -77,10 +90,10 @@ import HowKidsRead from "./HowKidsRead";
       onDrawerButtonTap() {
         utils.showDrawer();
       },
-      onNextSection() {
-        this.$navigateTo(HowKidsRead);
+      goBack() {
+        console.log("Done with soldAStory engage");
+        this.$navigateBack();
       }
-
     }
   };
 </script>

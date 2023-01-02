@@ -39,6 +39,7 @@
 
 <script>
   import * as utils from "~/shared/utils";
+  //import Prisoncopy from "./Prisoncopy";
   import { SelectedPageService } from "../shared/selected-page-service";
   import { Dialogs } from '@nativescript/core';
   import XPModalA from "./XPModalA";
@@ -108,7 +109,10 @@ const alertOptions = {
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(Prison);
+  // this.$navigateTo(Prisoncopy);
+  this.$navigateBack();
+  this.$navigateBack();
+  this.$navigateBack();
 })
 },
 

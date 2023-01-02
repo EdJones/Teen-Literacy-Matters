@@ -9,16 +9,25 @@
         </GridLayout>
       </ActionBar>
 
-        <GridLayout class="" rows="*,35">
-          <StackLayout row="0" orientation="vertical">
+        <GridLayout class="" rows="auto,*">
+          <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
+          <StackLayout orientation="vertical" row="0">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
-          <Label class="text-2xl text-center" text="First Steps"  />
-            <Label class="text-base leading-none p-4 pb-0" text="Why Are We Here?" textWrap="true" />
-             <XPCard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard>
+          <Label class="text-2xl text-center" text="Stumped by the Words"  />
+            <Label class="text-base leading-none p-4 pb-0" text="Up to 3/4 of adult prisoners suffer from trouble reading." textWrap="true" />
+            <Label class="text-base leading-none p-4 pb-0" text="It starts to show up in Juvenile Detention centers. Like this one." textWrap="true" />
+             <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
              
- <!--Button text="Next" @tap="nextPage()" class="button-active help-button page-link" width="50%" /-->
+             
+
+
+             
           </StackLayout>
-          <Button row="1" class="btn" text="Next Section" @tap="onNextSection" />
+          <StackLayout row="1" class="mt-32" >
+          <Button class="btn-b" width="100" text="Back to Intro" @tap="goBack" />
+        </StackLayout>
+
+
         </GridLayout>
     </Page>
 </template>
@@ -26,24 +35,25 @@
 <script>
   import * as utils from "~/shared/utils";
   import { SelectedPageService } from "../shared/selected-page-service";
-  import HardTruth from "./HardTruth";
+
   import XPModalA from "./XPModalA";
-  import XPCard   from "./XPCard";
+  //import { XPCard }  from "../WebpackHack.js";
+  //import XPCard from "./XPCard";
+  import XPCard2 from "./XPCard2";
+  //import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
-  //import ProgressBar from "./ProgressBar";
+  //import P rogressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
-import HowKidsRead from "./HowKidsRead";
 
   export default {
     mounted() {
-      SelectedPageService.getInstance().updateSelectedPage("Introduction");
+      SelectedPageService.getInstance().updateSelectedPage("Prison");
     },
     components: {
-   // ProgressBar,
-    XPCard
+      XPCard2
   },
     data() {
-      const page="Introduction";
+      const page="Prison";
     const pageXPDetails = XPs.filter(XP => {
         //console.info("In page filter, ", XP );
       return XP.Page.includes(page);
@@ -65,7 +75,6 @@ import HowKidsRead from "./HowKidsRead";
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
       topicPages: topicPages
-
     };
   },
     computed: {
@@ -77,10 +86,10 @@ import HowKidsRead from "./HowKidsRead";
       onDrawerButtonTap() {
         utils.showDrawer();
       },
-      onNextSection() {
-        this.$navigateTo(HowKidsRead);
+      goBack() {
+        console.log("Done with prison engage");
+        this.$navigateBack();
       }
-
     }
   };
 </script>

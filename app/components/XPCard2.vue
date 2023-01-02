@@ -13,6 +13,7 @@
                 <YoutubePlayer v-if="xpObj.xpType==='YtVideo'" ref="player" :videoId="xpObj.YTvideoId" :apiKey="apiKey" height="200" />
                 <Image v-if="xpObj.xpType==='video_pic'" :src="'~/images/'+xpObj.imageSource" stretch="aspectFit" />
                 <Image v-if="xpObj.xpType==='xp_pic'" :src="'~/images/'+xpObj.image" stretch="aspectFit" class="h-36" />
+                <Image v-if="xpObj.xpType==='construction'" :src="'~/images/'+xpObj.imageSource" stretch="aspectFit" class="h-36" />
                 <Label :text="xpObj.xpText" class="card-text break-all" textWrap="true"></Label>
                 <Label :text="xpObj.text2" class="card-text"></Label>
                 <Label :text="xpObj.Text3" class="card-text"></Label>
@@ -105,6 +106,8 @@ export default {
             return String.fromCharCode(0xf302);
         } else if (this.xpObj.xpType === "engage") {
             return String.fromCharCode(0xe4f6);
+        } else if (this.xpObj.xpType === "construction") {
+            return String.fromCharCode(0xf071);
         } else {
             return String.fromCharCode(0xf15c);
         }

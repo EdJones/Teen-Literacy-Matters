@@ -1,4 +1,19 @@
 export const XPs = [{
+    "Science": "",
+    "XP_NUM": "0",
+    "xpId": "XP0",
+    "Page": "HowKidsRead",
+    "title": "Under Construction",
+    "xpType": "construction",
+    "YTvideoId": "",
+    "Subtitle": "",
+    "xpText": "We're still working on this! ",
+    "text2": "",
+    "xpUrl": "",
+    "imageSource": "barn.jpg",
+    "Text3": "",
+    "points": "0"
+},{
     "Science": "TRUE",
     "XP_NUM": "1",
     "xpId": "XP1",
