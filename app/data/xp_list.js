@@ -3256,4 +3256,34 @@ export const XPs = [{
     "xpUrl": "",
     "Text3": "",
     "points": "2500"
+}, {
+    "Science": "",
+    "XP_NUM": "10134",
+    "xpId": "XP10202",
+    "Page": "HowKidsRead",
+    "title": "Rewiring Brains",
+    "xpType": "engage_page",
+    "YTvideoId": "",
+    "nav_link": "PrisonEngage2",
+    "Subtitle": "",
+    "xpText": "Answer questions about the previous passage.",
+    "text2": "",
+    "xpUrl": "",
+    "Text3": "",
+    "points": "2500"
+}, {
+    "Science": "",
+    "XP_NUM": "10200",
+    "xpId": "XP10203",
+    "Page": "HowKidsRead",
+    "title": "How Kids Learn to Read 2",
+    "xpType": "YtVideo",
+    "YTvideoId": "ZRUYuz4W_x8",
+    "nav_link": "LearnToRead",
+    "Subtitle": "",
+    "xpText": "It's time we dig in to how kids read!",
+    "text2": "Start at 6:17, and watch just until ~6:20",
+    "xpUrl": "",
+    "Text3": "",
+    "points": "2500"
 }, ]

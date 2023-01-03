@@ -8,7 +8,7 @@
           <Label col="1" class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
         </GridLayout>
       </ActionBar>
-
+      <ScrollView >
         <GridLayout class="" rows="auto,*">
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <StackLayout orientation="vertical" row="0">
@@ -16,9 +16,8 @@
           <Label class="text-2xl text-center" text="How Kids Learn to Read"  />
             <Label class="text-base leading-none p-4 pb-0" text="We looked at what happens when kids aren't taught to read." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="Some pretty bad things happen to those kids." textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="But why is it they don't learn when others do?" textWrap="true" />
+            <Label class="text-base leading-none p-4 pb-0" text="But why don't these kids learn, while many other kids do?" textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="We need to look inside kids' brains." textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="We need to see how some kids learn and others don't, and how to help them all." textWrap="true" />
              <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
              <!--XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
              <XPCard2 :xpObj="pageXPDetails[1]" ></XPCard2>
@@ -33,6 +32,7 @@
 
 
         </GridLayout>
+        </ScrollView>
     </Page>
 </template>
 

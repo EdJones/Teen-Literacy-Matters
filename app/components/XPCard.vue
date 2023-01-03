@@ -102,6 +102,8 @@ export default {
             return String.fromCharCode(0xf302);
         } else if (this.xpObj.xpType === "engage") {
             return String.fromCharCode(0xe4f6);
+        } else if (this.xpObj.xpType === "engage_page") {
+            return String.fromCharCode(0xe4e3);
         } else {
             return String.fromCharCode(0xf15c);
         }
