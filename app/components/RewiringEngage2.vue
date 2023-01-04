@@ -16,8 +16,8 @@
           <StackLayout orientation="vertical">
             
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
-            <Label class="text-2xl text-center" text="It's Not Natural"  />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="Here we get a brief look at some of the tools scientists use to find out how kids learn to read.'" textWrap="true" />
+            <Label class="text-2xl text-center" text="It's Not Natural 2"  />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" text="You don't need to remember those tools, or even the words 'neuronal recycling. But it means that we use parts of our brain to do new things, things that it didn't naturally evolve to do." textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" text="Why? Why do we need to rewire parts of our brain for reading?" textWrap="true" />
             <TextViewWithHint width="100" height="40" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>

@@ -14,8 +14,7 @@
           <StackLayout orientation="vertical" row="0">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
           <Label class="text-2xl text-center" text="How Kids Learn to Read"  />
-            <Label class="text-base leading-none p-4 pb-0" text="We looked at what happens when kids aren't taught to read." textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="Some pretty bad things happen to those kids." textWrap="true" />
+            <Label class="text-base leading-none p-4 pb-0" text="We looked at what happens when kids aren't taught to read. Some pretty bad things happen to some of those kids." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="But why don't these kids learn, while many other kids do?" textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="We need to look inside kids' brains." textWrap="true" />
              <XPCard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard>

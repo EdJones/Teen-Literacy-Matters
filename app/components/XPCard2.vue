@@ -59,8 +59,7 @@ export default {
         },
     computed: { 
         dotStatus() {
-           // if (this.$store.state.completedXPs.includes(this.xpObj.xpId)) {
-            if (true) {
+            if (this.$store.state.completedXPs.includes(this.xpObj.xpId)) {
                 return "completed-dot";
             } else {
                 return "incomplete-dot";

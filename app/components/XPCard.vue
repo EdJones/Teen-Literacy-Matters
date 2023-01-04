@@ -57,12 +57,15 @@ export default {
         },
     computed: { 
         dotStatus() {
-           // if (this.$store.state.completedXPs.includes(this.xpObj.xpId)) {
-            if (true) {
+            if (this.xpObj.xpType === 'challenge') 
+                { console.log("need to fix dotstatus for challenges")}
+            else {
+                if (this.$store.state.completedXPs.includes(this.xpObj.xpId)) {
                 return "completed-dot";
             } else {
                 return "incomplete-dot";
             }
+        }
         },
         mediaIcon() {
         console.log("In mediaIcon, xpType: ", this.xpObj.xpType);
@@ -232,6 +235,10 @@ export default {
 
             
             //confirm("Did you learn from this resource?");
+
+            if (this.xpObj.xpType === 'challenge') 
+                { console.log("need to fix dotstatus for challenges")}
+                else {
             this.$store.commit('increment', {
                 XP: this.xpObj.xpId,
                 newPoints: parseInt(this.xpObj.points)
@@ -239,7 +246,7 @@ export default {
             this.$store.commit('addXP', {
                 XP: this.xpObj.xpId
             });
-
+        }
         
     },
 
