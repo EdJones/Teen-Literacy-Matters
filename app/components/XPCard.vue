@@ -11,6 +11,7 @@
 
             <StackLayout v-if="xpObj.xpType!='challenge'">
                 <YoutubePlayer v-if="xpObj.xpType==='YtVideo'" ref="player" :videoId="xpObj.YTvideoId" :apiKey="apiKey" height="200" />
+                <YoutubePlayer v-if="xpObj.xpType==='YtVideo2nd'" ref="player" :videoId="xpObj.YTvideoId" :apiKey="apiKey" height="150" width="250"  />
                 <Image v-if="xpObj.xpType==='video_pic'" :src="'~/images/'+xpObj.imageSource" stretch="aspectFit" />
                 <Image v-if="xpObj.xpType==='xp_pic'" :src="'~/images/'+xpObj.image" stretch="aspectFit" class="h-36" />
                 <Label :text="xpObj.xpText" class="card-text break-all" textWrap="true"></Label>
@@ -31,6 +32,7 @@ import XPModalB from "./XPModalB";
 import HardTruth from "./HardTruth";
 import SoldAStory from "./SoldAStory";
 import Prison from "./Prison";
+import RewiringEngage from "./RewiringEngage";
 //import ModalDigraphs from "./modals/ModalDigraphs";
 import ModalImage from "./modals/ModalImage";
 // import Digraphs from "./Digraphs";
@@ -64,7 +66,7 @@ export default {
         },
         mediaIcon() {
         console.log("In mediaIcon, xpType: ", this.xpObj.xpType);
-            if (this.xpObj.xpType === "podcast") {
+        if (this.xpObj.xpType === "podcast") {
             return String.fromCharCode(0xf025);
         } else if (this.xpObj.xpType === "YtVideo" ) {
             return String.fromCharCode(0xf26c);
@@ -174,6 +176,10 @@ export default {
                     console.log("Open SoldAStory_Engage.vue")
                     this.$navigateTo(SoldAStory_Engage);
                 }
+                else if (this.xpObj.nav_link === 'RewiringEngage') {
+                    console.log("Open RewiringEngage.vue")
+                    this.$navigateTo(RewiringEngage);
+                }
             }
             
 
@@ -185,7 +191,7 @@ export default {
                 }
             });
             }
-            else if (this.xpObj.xpType !='YtVideo') {
+            else if (this.xpObj.xpType !='YtVideo' && this.xpObj.xpType !='YtVideo2nd') {
             console.log("in cardDetail, xpType: ", this.xpObj.xpType, "so show modal");
             this.$showModal(XPModal, {
                 props: {

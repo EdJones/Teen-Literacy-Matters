@@ -18,7 +18,7 @@
             <Label class="text-base leading-none p-4 pb-0" text="Some pretty bad things happen to those kids." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="But why don't these kids learn, while many other kids do?" textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="We need to look inside kids' brains." textWrap="true" />
-             <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
+             <XPCard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard>
              <!--XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
              <XPCard2 :xpObj="pageXPDetails[1]" ></XPCard2>
              <XPCard2 :xpObj="pageXPDetails[2]" ></XPCard2>
@@ -43,7 +43,7 @@
   import XPModalA from "./XPModalA";
   //import { XPCard }  from "../WebpackHack.js";
   //import XPCard from "./XPCard";
-  import XPCard2 from "./XPCard2";
+  import XPCard from "./XPCard";
   //import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
@@ -54,7 +54,7 @@ import { topicPages } from "../data/pages_list.js";
       SelectedPageService.getInstance().updateSelectedPage("SoldAStory");
     },
     components: {
-      XPCard2
+      XPCard
   },
     data() {
       const page="HowKidsRead";
