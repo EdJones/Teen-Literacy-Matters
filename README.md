@@ -11,18 +11,26 @@ It specifically addresses two workforce issues:
 1. The inequitable teaching of literacy in K-3, and the lifelong consequences.
 2. The abysmal shortage of Black teacher candiates. 
 
-As a prototype, it will help iterate entirely new processes for developing, testing, and fiedling such credentialed learning.
+As a prototype, it will help iterate entirely new processes for developing, testing, and fielding such credentialed learning.
 
 
 ### Features
 * Made with [NativeScript](https://features.apmreports.org/sold-a-story/), the open source, cross-platform framework for mobile apps.
-* Designed to offer one ten hour course 
+* Designed to offer one ten-hour course 
 * Designed to be used with Ohio's unique [Credit Flexibility option](https://education.ohio.gov/Topics/Ohio-Education-Options/Credit-Flexibility-Plan) to organically grow a new, highest quality Industry Credential.
 
 ### Try it now
 1. Install the Nativescript Preview app on your phone
+
+> | [iOS](https://apps.apple.com/us/app/nativescript-preview/id1264484702) | [Android](https://play.google.com/store/apps/details?id=org.nativescript.preview.android&pli=1)  |
+
 2. Scan this QR code
+
+
 ![qr_stackblitz](qr_stackblitz.png)
+
+3. Start learning how to upgrade both K-3 and high school.
+
 ```
 
 
