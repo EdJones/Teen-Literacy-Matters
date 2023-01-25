@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "623846788561",
+    "project_id": "teenliteracy-46127",
+    "storage_bucket": "teenliteracy-46127.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623846788561:android:6d8786d62719b1f1bfa4f0",
+        "android_client_info": {
+          "package_name": "com.edwincjones.teenliteracymatters"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623846788561-vt5e9m6un2q76a4a8nifv5450ab2eitb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl467QMiCepVbS6-LkmTbyt38KFEBWdnw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623846788561-vt5e9m6un2q76a4a8nifv5450ab2eitb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "623846788561-5et900ank5bd4e6ois5ekmgpotmce0rn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.edwincjones.blackteenliteracymatters",
+                "app_store_id": "12162022"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

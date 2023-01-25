@@ -9,7 +9,8 @@ android {
   // ndkVersion ""
 
   defaultConfig {
-    minSdkVersion 17
+    applicationId "com.edwincjones.teenliteracymatters"
+    minSdkVersion 19
     // targetSdkVersion 32
 
     // Version Information
