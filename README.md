@@ -20,14 +20,12 @@ As a prototype, it will help iterate entirely new processes for developing, test
 * Designed to be used with Ohio's unique [Credit Flexibility option](https://education.ohio.gov/Topics/Ohio-Education-Options/Credit-Flexibility-Plan) to organically grow a new, highest quality Industry Credential.
 
 ### Try it now
-1. Install the Nativescript Preview app on your phone
-
-> | [iOS](https://apps.apple.com/us/app/nativescript-preview/id1264484702) | [Android](https://play.google.com/store/apps/details?id=org.nativescript.preview.android&pli=1)  |
-
-2. Scan this QR code
+1. You'll need [Apple's TestFlight app](https://apps.apple.com/us/app/testflight/id899247664) to access this beta software. 
 
 
-![qr_stackblitz](qr_stackblitz.png)
+2. Install the Teen Literacy Matters app (if you don't have TestFlight, it will guide you): 
+
+
 
 3. Start learning how to upgrade both K-3 and high school.
 
