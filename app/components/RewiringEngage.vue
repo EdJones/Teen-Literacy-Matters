@@ -20,7 +20,7 @@
             <Label class="text-base leading-none font-light p-4 pb-0" text="Here we get a brief look at some of the tools scientists use to find out how kids learn to read.'" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" text="You don't need to remember those tools, or even the words 'neuronal recycling. But it means that we use parts of our brain to do new things, things that it didn't naturally evolve to do." textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" text="Why? Why do we need to rewire parts of our brain for reading?" textWrap="true" />
-            <TextViewWithHint width="100" height="40" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
+            <TextViewWithHint width="200" height="100" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
 
           
             <!--Label class="text-base leading-none font-light p-4 pb-0" text="Typically, we expect children to learn such phonemes in kindergarten or first grade." textWrap="true" />
