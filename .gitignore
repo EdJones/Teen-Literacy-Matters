@@ -28,3 +28,4 @@ typings/
 !.vscode/extensions.json
 
 App_Resources/iOS/GoogleService-Info.plist
+.env
