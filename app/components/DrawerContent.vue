@@ -17,34 +17,20 @@
                 </GridLayout>
 
                 <GridLayout columns="auto, *"
-                            :class="'nt-drawer__list-item' + (selectedPage === 'Browse' ? ' -selected': '')"
-                            @tap="onNavigationItemTap(Browse)">
+                            :class="'nt-drawer__list-item' + (selectedPage === 'Intro' ? ' -selected': '')"
+                            @tap="onNavigationItemTap(Intro)">
                     <Label col="0" text.decode="&#xf1ea;" class="nt-icon far"/>
-                    <Label col="1" text="Browse" class="p-r-10"/>
+                    <Label col="1" text="First Steps" class="p-r-10"/>
                 </GridLayout>
 
                 <GridLayout columns="auto, *"
-                            :class="'nt-drawer__list-item' + (selectedPage === 'Search' ? ' -selected': '')"
-                            @tap="onNavigationItemTap(Search)">
+                            :class="'nt-drawer__list-item' + (selectedPage === 'HowKidsREad' ? ' -selected': '')"
+                            @tap="onNavigationItemTap(HowKidsRead)">
                     <Label col="0" text.decode="&#xf002;" class="nt-icon fas"/>
-                    <Label col="1" text="Search" class="p-r-10"/>
+                    <Label col="1" text="How Kids Learn to Read" class="p-r-10"/>
                 </GridLayout>
 
-                <GridLayout columns="auto, *"
-                            :class="'nt-drawer__list-item' + (selectedPage === 'Featured' ? ' -selected': '')"
-                            @tap="onNavigationItemTap(Featured)">
-                    <Label col="0" text.decode="&#xf005;" class="nt-icon fas"/>
-                    <Label col="1" text="Featured" class="p-r-10"/>
-                </GridLayout>
-
-                <StackLayout class="hr"/>
-
-                <GridLayout columns="auto, *"
-                            :class="'nt-drawer__list-item' + (selectedPage === 'Settings' ? ' -selected': '')"
-                            @tap="onNavigationItemTap(Settings)">
-                    <Label col="0" text.decode="&#xf013;" class="nt-icon fas"/>
-                    <Label col="1" text="Settings" class="p-r-10"/>
-                </GridLayout>
+                
             </StackLayout>
         </ScrollView>
     </GridLayout>
@@ -52,8 +38,8 @@
 
 <script>
   import Home from "./Home";
-  import Browse from "./Browse";
-  import Featured from "./Featured";
+  import Intro from "./Intro";
+  import HowKidsRead from "./HowKidsRead";
   import Search from "./Search";
   import Settings from "./Settings";
   import * as utils from "~/shared/utils";
@@ -67,8 +53,8 @@
     data() {
       return {
         Home: Home,
-        Browse: Browse,
-        Featured: Featured,
+        Intro: Intro,
+        HowKidsRead: HowKidsRead,
         Search: Search,
         Settings: Settings,
         selectedPage: ""
@@ -76,8 +62,8 @@
     },
     components: {
       Home,
-      Browse,
-      Featured,
+      Intro,
+      HowKidsRead,
       Search,
       Settings
     },
