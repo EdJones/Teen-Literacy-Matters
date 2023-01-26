@@ -19,15 +19,16 @@ As a prototype, it will help iterate entirely new processes for developing, test
 * Designed to offer one ten-hour course 
 * Designed to be used with Ohio's unique [Credit Flexibility option](https://education.ohio.gov/Topics/Ohio-Education-Options/Credit-Flexibility-Plan) to organically grow a new, highest quality Industry Credential.
 
-### Try it now
+### Try it now 
+ 
 1. You'll need [Apple's TestFlight app](https://apps.apple.com/us/app/testflight/id899247664) to access this beta software. 
 
 
-2. Install the Teen Literacy Matters app (if you don't have TestFlight, it will guide you): 
+2. Install the Teen Literacy Matters app (if you don't have TestFlight, it will guide you): https://testflight.apple.com/join/aYPhiJFj 
 
 
 
-3. Start learning how to upgrade both K-3 and high school.
+3. Start learning how to upgrade both K-3 and high school. 
 
 ```
 
