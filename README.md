@@ -24,7 +24,7 @@ As a prototype, it will help iterate entirely new processes for developing, test
 1. You'll need [Apple's TestFlight app](https://apps.apple.com/us/app/testflight/id899247664) to access this beta software. 
 
 
-2. Install the Teen Literacy Matters app (if you don't have TestFlight, it will guide you): https://testflight.apple.com/join/aYPhiJFj 
+2. Install the Teen Literacy Matters app (if you don't have TestFlight, it will guide you): https://testflight.apple.com/join/aYPhiJFj ![QR code](https://github.com/EdJones/-Black-Teen-Literacy-Matters/blob/main/BTLM-qr-code-sm.png)
 
 
 
