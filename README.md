@@ -35,6 +35,9 @@ As a prototype, it will help iterate entirely new processes for developing, test
 
 ```
 
+###Our Pedagogy Here
+We'll try to practice the science of learning in developing this, to the extent this kinds of tech currently allows. 
+[Pedagogy](/pedagogy.md)
 
 ### License
 EdJones/-Black-Teen-Literacy-Matters is licensed under the
