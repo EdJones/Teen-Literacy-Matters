@@ -18,9 +18,8 @@
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
             <Label class="text-2xl text-center" text="It's Not Natural"  />
             <Label class="text-base leading-none font-light p-4 pb-0" text="Here we get a brief look at some of the tools scientists use to find out how kids learn to read.'" textWrap="true" />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="You don't need to remember those tools, or even the words 'neuronal recycling. But it means that we use parts of our brain to do new things, things that it didn't naturally evolve to do." textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" text="Why? Why do we need to rewire parts of our brain for reading?" textWrap="true" />
-            <TextViewWithHint width="200" height="100" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
+            <Label class="text-base leading-none font-light  p-4 pb-0" text="Why does Joe say `It's pretty weird that we can read at all`?" textWrap="true" />
+            <TextViewWithHint width="400" height="150" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
 
           
             <!--Label class="text-base leading-none font-light p-4 pb-0" text="Typically, we expect children to learn such phonemes in kindergarten or first grade." textWrap="true" />
@@ -30,7 +29,7 @@
             <Label class="text-base leading-none font-light p-4 pb-0" text="Can you guess or remember any other digraphs? Hint: 'Check'" textWrap="true" />
             <TextViewWithHint width="80%" height="45" class="input-gray text-black text-xl" editable="true" v-model="textViewValue2" hint="" returnKeyType="done" > </TextViewWithHint-->
           
-            <Button class="btn-b" text="Submit" @tap="acceptInput" />
+            <Button class="btn-b" text="Enter" @tap="acceptInput" />
           
             
 
