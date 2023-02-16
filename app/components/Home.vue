@@ -34,6 +34,11 @@
     mounted() {
       SelectedPageService.getInstance().updateSelectedPage("Home");
     },
+    data() {
+    return {
+      Introduction: Introduction,
+    };
+  },
     computed: {
       message() {
         return "<!-- Page content goes here -->";
