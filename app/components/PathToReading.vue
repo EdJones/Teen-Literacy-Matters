@@ -40,6 +40,7 @@
 
 <script>
   import * as utils from "~/shared/utils";
+  import { preparePageInfo, preparePageDetails } from "./pageData.js";
   import { SelectedPageService } from "../shared/selected-page-service";
   import { Dialogs } from '@nativescript/core';
   import XPModalA from "./XPModalA";
@@ -64,17 +65,12 @@ const alertOptions = {
     //  XPCard2
   },
     data() {
-      const page="RewiringEngage";
-    const pageXPDetails = XPs.filter(XP => {
-        //console.info("In page filter, ", XP );
-      return XP.Page.includes(page);
-     });
-    // console.info("In page filter, topicPage is", topicPages[3]);
-
-    const pageInfo = topicPages.filter(topicPage => {
-      //  console.info("In page filter 2, ", topicPage );
-    //  return topicPage.page.includes(page);
-     });
+      const page="PathToReading";
+      const pageInfo = preparePageInfo(page, topicPages);
+    console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
+    console.info("RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );
+      
+    const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
 
 
     return {

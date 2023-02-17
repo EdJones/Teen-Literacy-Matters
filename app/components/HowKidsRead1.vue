@@ -17,13 +17,7 @@
             <Label class="text-base leading-none p-4 pb-0" text="In order to start helping more kids, we need to look inside them." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="We need to see what's going on inside their brains." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="It's really not what people expected!" textWrap="true" />
-             <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
-             <!--XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
-             <XPCard2 :xpObj="pageXPDetails[1]" ></XPCard2>
-             <XPCard2 :xpObj="pageXPDetails[2]" ></XPCard2>
-             <XPCard2 :xpObj="pageXPDetails[3]" ></XPCard2-->
-
-             
+             <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>             
           </StackLayout>
           <StackLayout row="1" class="mb-8" >
           <Button class="btn-b" width="100" text="Back to Intro" @tap="goBack" />
@@ -36,6 +30,7 @@
 
 <script>
   import * as utils from "~/shared/utils";
+  import { preparePageInfo, preparePageDetails } from "./pageData.js";
   import { SelectedPageService } from "../shared/selected-page-service";
 
   import XPModalA from "./XPModalA";
@@ -44,7 +39,7 @@
   import XPCard2 from "./XPCard2";
   //import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
-  //import P rogressBar from "./ProgressBar";
+  //import ProgressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
 
   export default {
@@ -56,22 +51,11 @@ import { topicPages } from "../data/pages_list.js";
   },
     data() {
       const page="HowKidsRead1";
-    const pageXPDetails = XPs.filter(XP => {
-        //console.info("In page filter, ", XP );
-      return XP.Page.includes(page);
-     });
-    // console.info("In page filter, topicPage is", topicPages[3]);
-
-    const pageInfo = topicPages.filter(topicPage => {
-        console.info("In page filter 2, ", topicPage );
-      return topicPage.page.includes(page);
-     });
-    // pageInfo = topicPages[1];
-    
-     console.info("In data, pageInfo is: ", pageInfo);
-     console.info("In data, topicPage.page is: ", pageInfo[0].page );
-    // console.info("In data, topicPage.title is: ", topicPages[3].title );
-    // console.info("In data, topicPage.challenge is: ", topicPages[3].challenge );
+      const pageInfo = preparePageInfo(page, topicPages);
+    //console.info("HowKidsRead1e>data(), pageInfo is: ", pageInfo);
+    console.info("HowKidsRead1>data, pageInfo[0].page is: ", pageInfo[0].page );
+      
+    const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
 
     return {
       pageXPDetails: pageXPDetails,
