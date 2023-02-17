@@ -43,7 +43,7 @@ export const topicPages = [
     closingText: "",
     closingText2: "", 
     modal: ""
-  },{
+  }, {
     page: "HowKidsRead",
     title: "(Black) Literacy Matters--How Kids Learn",
     challenge: "",
@@ -52,9 +52,20 @@ export const topicPages = [
     text2: "",
     text3: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  },{
+  }, {
+    page: "Rewiring",
+    title: "Science of Reading--Caring",
+    challenge: "Not everyone is cut out to care this much.",
+    pageXPs: [],
+    text1: "Let's take a brief look at some of the tools scientists use to find out how kids learn to read.",
+    text2: "Many different experiments have been conducted over the past decades.",
+    text3: "",
+    closingText: "",
+    closingText2: "",
+    modal: ""
+  }, {
         page: "Home",
         title: "Science of Reading--Caring",
         challenge: "Not everyone is cut out to care this much.",

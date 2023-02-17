@@ -6,6 +6,7 @@
                 <Label row="0" col="0" :text="mediaIcon" :class="iconPackage" verticalAlignment="top" ></Label>
                 <Label row="0" col="1" :text="xpObj.title" class="card-title"  textWrap="true" ></Label>
                 <Label row="0" col="2" :class="dotStatus" ></Label>
+                <Label row="1" col="1" v-if="xpObj.xpType!='challenge'" :text="xpObj.Subtitle" class="card-subtitle" textWrap="true"></Label>
                 <Label row="1" colSpan="3" v-if="xpObj.xpType==='challenge'" :text="xpObj.xpText" class="card-text break-all" textWrap="true"></Label>
             </Gridlayout>
 
@@ -15,11 +16,10 @@
                 <Image v-if="xpObj.xpType==='video_pic'" :src="'~/images/'+xpObj.imageSource" stretch="aspectFit" />
                 <Image v-if="xpObj.xpType==='xp_pic'" :src="'~/images/'+xpObj.image" stretch="aspectFit" class="h-36" />
                 <Label :text="xpObj.xpText" class="card-text break-all" textWrap="true"></Label>
-                <Label :text="xpObj.text2" class="card-text"></Label>
-                <Label :text="xpObj.Text3" class="card-text"></Label>
-                <Label :text="xpObj.text4" class="card-text"></Label>
+                <Label :text="xpObj.text2" class="card-text" textWrap="true"></Label>
+                <Label :text="xpObj.Text3" class="card-text" textWrap="true"></Label>
+                <Label :text="xpObj.text4" class="card-text" textWrap="true"></Label>
             </StackLayout>
-
         </stack-layout>
     </card-view>
 </template>

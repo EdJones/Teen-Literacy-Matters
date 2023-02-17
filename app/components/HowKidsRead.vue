@@ -64,7 +64,7 @@ import { topicPages } from "../data/pages_list.js";
     // console.info("In page filter, topicPage is", topicPages[3]);
 
     const pageInfo = topicPages.filter(topicPage => {
-        console.info("In page filter 2, ", topicPage );
+       // console.info("In page filter 2, ", topicPage );
       return topicPage.page.includes(page);
      });
     // pageInfo = topicPages[1];
