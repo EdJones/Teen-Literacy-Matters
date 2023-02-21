@@ -13,32 +13,32 @@
           <PreviousNextView>
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
-            <StackLayout orientation="vertical" row="0">
-            <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
-            <Label class="text-2xl text-center" :text="pageInfo.challenge" textWrap="true"  />
+            <Label class="text-2xl text-center" text="It's Not Natural"  />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text3" textWrap="true" />
-            <XPCard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard>
-          </StackLayout>
-            <TextViewWithHint width="250" height="50" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Button class="btn-b" text="Submit" @tap="acceptInput" />
+            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
+            <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
+            <Label class="text-base leading-none font-light  p-4 pb-0" text="Why does Joe say `It's pretty weird that we can read at all`?" textWrap="true" />
+            <TextViewWithHint width="350" height="70" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
+            <Button class="btn-b" text="Enter" @tap="acceptInput" />  
           </StackLayout>
         </PreviousNextView>
         </GridLayout>
         </ScrollView>
-        
     </Page>
 </template>
 
 <script>
   import * as utils from "~/shared/utils";
-  import { preparePageInfo, preparePageDetails } from "./pageData.js";
   import { SelectedPageService } from "../shared/selected-page-service";
+  import { preparePageInfo, preparePageDetails } from "./pageData.js";
   import { Dialogs } from '@nativescript/core';
+  import XPCard2 from "./XPCard2";
   import XPModalA from "./XPModalA";
   import { XPs } from "../data/xp_list.js";
   import PrisonEngage3 from "./PrisonEngage3";
+  import Rewiring2 from "./Rewiring2";
+  import PathToReading from './PathToReading';
+  //import P rogressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
 //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
@@ -50,18 +50,18 @@ const alertOptions = {
   }; 
   export default {
     mounted() {
-      SelectedPageService.getInstance().updateSelectedPage("Rewiring2");
+      SelectedPageService.getInstance().updateSelectedPage("NotNatural");
     },
     components: {
-    //  XPCard2
+      XPCard2
   },
     data() {
-      const page="Rewiring2";
+      const page="NotNatural";
       const pageInfo = preparePageInfo(page, topicPages);
-    //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
-    console.info("In RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );
-      
-    const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
+      //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
+      console.info("In RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );
+      const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
+
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
@@ -81,7 +81,7 @@ const alertOptions = {
       }, 
       
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Rewiring Input", this.textViewValue1,this.textViewValue2);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Rewiring Engage Input", this.textViewValue1,this.textViewValue2);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);
@@ -91,7 +91,7 @@ const alertOptions = {
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(PrisonEngage3);
+   this.$navigateTo(Rewiring2);
 })
 },
 

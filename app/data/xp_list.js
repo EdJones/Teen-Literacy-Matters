@@ -3266,7 +3266,7 @@ export const XPs = [{
     "YTvideoId": "",
     "nav_link": "RewiringEngage",
     "Subtitle": "",
-    "xpText": "Answer questions about the previous passage.",
+    "xpText": "Is Reading Natural?",
     "text2": "",
     "xpUrl": "",
     "Text3": "",
@@ -3288,7 +3288,7 @@ export const XPs = [{
     "points": "2500"
 },{
     "Science": "",
-    "XP_NUM": "10200",
+    "XP_NUM": "10204",
     "xpId": "XP10204",
     "Page": "HowKidsRead",
     "title": "Tools: fMRI",
@@ -3300,5 +3300,20 @@ export const XPs = [{
     "text2": "",
     "xpUrl": "",
     "Text3": "",
+    "points": "2500"
+},{
+    "Science": "",
+    "XP_NUM": "10205",
+    "xpId": "XP10205",
+    "Page": "HowKidsRead",
+    "title": "Tools: fMRI",
+    "xpType": "YtVideo",
+    "YTvideoId": "5ozikJR3oY8",
+    "nav_link": "",
+    "Subtitle": "Say it again: we're not wired",
+    "xpText": "Just watch this through 2:00. (Stop at '2> Spins')",
+    "text2": "For only 90 seconds, this gets a little repetative. But, we need to hear it again.",
+    "xpUrl": "",
+    "Text3": "Start at 10:05, and watch through 11:35",
     "points": "2500"
 }]

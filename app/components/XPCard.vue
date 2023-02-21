@@ -32,7 +32,7 @@ import XPModalB from "./XPModalB";
 import HardTruth from "./HardTruth";
 import SoldAStory from "./SoldAStory";
 import Prison from "./Prison";
-import RewiringEngage from "./RewiringEngage";
+import NotNatural from "./NotNatural";
 //import ModalDigraphs from "./modals/ModalDigraphs";
 import ModalImage from "./modals/ModalImage";
 // import Digraphs from "./Digraphs";
@@ -180,8 +180,8 @@ export default {
                     this.$navigateTo(SoldAStory_Engage);
                 }
                 else if (this.xpObj.nav_link === 'RewiringEngage') {
-                    console.log("Open RewiringEngage.vue")
-                    this.$navigateTo(RewiringEngage);
+                    console.log("Open NotNatural.vue")
+                    this.$navigateTo(NotNatural);
                 }
             }
             
