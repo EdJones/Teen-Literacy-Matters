@@ -13,6 +13,7 @@
   import DrawerContent from './DrawerContent'
   import Home from './Home'
   import { SlideInOnTopTransition } from 'nativescript-ui-sidedrawer';
+  import XPCard1 from "./XPCard1.vue"
 
   export default {
     data() {

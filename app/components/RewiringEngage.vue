@@ -4,41 +4,24 @@
         <NavigationButton visibility="hidden"/>
         <GridLayout columns="*, 50">
           <Label col="0" class="action-bar-title" text="(Black) Teen Literacy Matters - Brains" />
-
           <Label col="1" class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
         </GridLayout>
       </ActionBar>
       <ScrollView>
         <GridLayout class="">
-         
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <PreviousNextView>
           <StackLayout orientation="vertical">
-            
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
             <Label class="text-2xl text-center" text="It's Not Natural"  />
             <Label class="text-base leading-none font-light p-4 pb-0" text="Once we start to ask why SOME kids don't read naturally, it's a pretty obvious step to ask, 'How do human brains do this? Joe Hanson starts us off." textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" text="Why does Joe say `It's pretty weird that we can read at all`?" textWrap="true" />
             <TextViewWithHint width="400" height="150" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-
-          
-            <!--Label class="text-base leading-none font-light p-4 pb-0" text="Typically, we expect children to learn such phonemes in kindergarten or first grade." textWrap="true" />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="Obviously, DeShaun was never taught this." textWrap="true" />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="The particular phoneme DeSahun is so excited about is a little special. It's one of a few that are spelled with two letters." textWrap="true" />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="These special phonemes are called digraphs. ('Di' means 'two'; 'graph' means 'something written'.) There are seven digraphs in English." textWrap="true" />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="Can you guess or remember any other digraphs? Hint: 'Check'" textWrap="true" />
-            <TextViewWithHint width="80%" height="45" class="input-gray text-black text-xl" editable="true" v-model="textViewValue2" hint="" returnKeyType="done" > </TextViewWithHint-->
-          
-            <Button class="btn-b" text="Enter" @tap="acceptInput" />
-          
-            
-
-             
+            <Button class="btn-b" text="Enter" @tap="acceptInput" />  
           </StackLayout>
         </PreviousNextView>
         </GridLayout>
         </ScrollView>
-        
     </Page>
 </template>
 

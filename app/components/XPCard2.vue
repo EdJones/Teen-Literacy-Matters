@@ -15,9 +15,9 @@
                 <Image v-if="xpObj.xpType==='xp_pic'" :src="'~/images/'+xpObj.image" stretch="aspectFit" class="h-36" />
                 <Image v-if="xpObj.xpType==='construction'" :src="'~/images/'+xpObj.imageSource" stretch="aspectFit" class="h-36" />
                 <Label :text="xpObj.xpText" class="card-text break-all" textWrap="true"></Label>
-                <Label :text="xpObj.text2" class="card-text"></Label>
-                <Label :text="xpObj.Text3" class="card-text"></Label>
-                <Label :text="xpObj.text4" class="card-text"></Label>
+                <Label :text="xpObj.text2" class="card-text" textWrap="true"></Label>
+                <Label :text="xpObj.Text3" class="card-text" textWrap="true"></Label>
+                <Label :text="xpObj.text4" class="card-text" textWrap="true"></Label>
             </StackLayout>
 
         </stack-layout>

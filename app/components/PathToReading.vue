@@ -4,17 +4,14 @@
         <NavigationButton visibility="hidden"/>
         <GridLayout columns="*, 50">
           <Label col="0" class="action-bar-title" text="(Black) Teen Literacy Matters - Brains" />
-
           <Label col="1" class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
         </GridLayout>
       </ActionBar>
       <ScrollView>
         <GridLayout class="">
-         
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <PreviousNextView>
           <StackLayout orientation="vertical">
-            
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
             <Label class="text-2xl text-center" text="The Path to Reading is Through Sound" textWrap="true"  />
             <Label class="text-base leading-none font-light p-4 pb-0" text="It's the least expected thing, to most people. You'd think seeing the word 'dog' in print would go straight to a mental outline of a four-legged animal. Right?" textWrap="true" />
@@ -24,17 +21,14 @@
             
             <Label class="text-base leading-none font-light  p-4 pb-0 mt-8" text="Write that last insight here:" textWrap="true" />
             <TextViewWithHint width="360" height="150" class="text-black input-gray text-xl mt-8" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-
-            <Button class="btn-b" text="Enter" @tap="acceptInput" />
-          
-            
-
-             
+            <Label class="text-base leading-none font-light  p-4 pb-0 mt-8" text="Write that last insight again, here, please. 
+                          And, capitalize the 'written words' and 'sounds':" textWrap="true" />
+            <TextViewWithHint width="360" height="150" class="text-black input-gray text-xl mt-8" editable="true" v-model="textViewValue2" hint="" returnKeyType="next" > </TextViewWithHint>
+            <Button class="btn-b" text="Enter" @tap="acceptInput" />   
           </StackLayout>
         </PreviousNextView>
         </GridLayout>
         </ScrollView>
-        
     </Page>
 </template>
 
@@ -44,15 +38,15 @@
   import { SelectedPageService } from "../shared/selected-page-service";
   import { Dialogs } from '@nativescript/core';
   import XPModalA from "./XPModalA";
+  import { topicPages } from "../data/pages_list.js";
   import { XPs } from "../data/xp_list.js";
-  import PrisonEngage3 from "./PrisonEngage3";
   import Rewiring2 from "./Rewiring2";
-  //import P rogressBar from "./ProgressBar";
-import { topicPages } from "../data/pages_list.js";
-//import PreviousNextView from '@nativescript/iqkeyboardmanager';
+  import Tools4BrainScience from "./Tools4BrainScience"
+  //import ProgressBar from "./ProgressBar";
+  //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
 const alertOptions = {
-    title: 'Thank you',
+    title: 'Yes, thank you!',
     message: 'Keep going!',
     okButtonText: 'Okay',
     cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
@@ -67,11 +61,9 @@ const alertOptions = {
     data() {
       const page="PathToReading";
       const pageInfo = preparePageInfo(page, topicPages);
-    console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
-    console.info("RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );
-      
-    const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
-
+    //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
+      console.info("RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );   
+      const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
 
     return {
       pageXPDetails: pageXPDetails,
@@ -92,7 +84,7 @@ const alertOptions = {
       }, 
       
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Rewiring Engage Input", this.textViewValue1,this.textViewValue2);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Path to Reading Input", this.textViewValue1,this.textViewValue2);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);
@@ -102,7 +94,7 @@ const alertOptions = {
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(Rewiring2);
+   this.$navigateTo(Tools4BrainScience);
 })
 },
 

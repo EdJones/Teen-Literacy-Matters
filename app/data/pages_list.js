@@ -87,4 +87,15 @@ export const topicPages = [
     closingText: "",
     closingText2: "",
     modal: ""
+  }, {
+    page: "Tools4BrainScience",
+    title: "Tools for Brain Science",
+    challenge: "What are some newer tools that learning scientists use?",
+    pageXPs: ["XP10203","XP10204"],
+    text1: "While the science of reading goes back many decades, we have access to some cool new tools, too.",
+    text2: "These give us a clearer picture of what cognitive scientists have known. ",
+    text3: "",
+    closingText: "",
+    closingText2: "",
+    modal: ""
   } ]

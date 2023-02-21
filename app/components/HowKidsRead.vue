@@ -13,23 +13,15 @@
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <StackLayout orientation="vertical" row="0">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
-          <Label class="text-2xl text-center" text="How Kids Learn to Read"  />
+            <Label class="text-2xl text-center" text="How Kids Learn to Read"  />
             <Label class="text-base leading-none p-4 pb-0" text="We looked at what happens when kids aren't taught to read. Some pretty bad things happen to some of those kids." textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="But why don't these kids learn, while many other kids do?" textWrap="true" />
             <Label class="text-base leading-none p-4 pb-0" text="We need to look inside kids' brains." textWrap="true" />
-             <XPCard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard>
-             <!--XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
-             <XPCard2 :xpObj="pageXPDetails[1]" ></XPCard2>
-             <XPCard2 :xpObj="pageXPDetails[2]" ></XPCard2>
-             <XPCard2 :xpObj="pageXPDetails[3]" ></XPCard2-->
-
-             
+            <XPCard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard>
           </StackLayout>
           <StackLayout row="1" class="mb-8" >
           <Button class="btn-b" width="100" text="Back to Intro" @tap="goBack" />
         </StackLayout>
-
-
         </GridLayout>
         </ScrollView>
     </Page>
@@ -40,13 +32,11 @@
   import { SelectedPageService } from "../shared/selected-page-service";
 
   import XPModalA from "./XPModalA";
-  //import { XPCard }  from "../WebpackHack.js";
-  //import XPCard from "./XPCard";
   import XPCard from "./XPCard";
   //import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
-import { topicPages } from "../data/pages_list.js";
+  import { topicPages } from "../data/pages_list.js";
 
   export default {
     mounted() {

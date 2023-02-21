@@ -35,7 +35,7 @@ import ModalImage from "./modals/ModalImage";
 // import Digraphs from "./Digraphs";
 
 export default {
-    name: "XPCard",
+    name: "XPCard1",
     mounted() {},
     props: {
     xpObj: {

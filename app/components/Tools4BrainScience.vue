@@ -13,17 +13,14 @@
           <PreviousNextView>
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
-            <Label class="text-2xl text-center" text="It's Not Natural 2"  />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="" textWrap="true" />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="You don't need to remember those tools, or even the words 'neuronal recycling. But it means that we use parts of our brain to do new things, things that it didn't naturally evolve to do." textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" text="Why? Why do we need to rewire parts of our brain for reading?" textWrap="true" />
-            <TextViewWithHint width="250" height="50" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Button class="btn-b" text="Submit" @tap="acceptInput" />
+            <Label class="text-2xl text-center" :text="pageInfo.title" textWrap="true"  />
+            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
+            <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2> 
           </StackLayout>
         </PreviousNextView>
         </GridLayout>
         </ScrollView>
-        
     </Page>
 </template>
 
@@ -32,32 +29,34 @@
   import { preparePageInfo, preparePageDetails } from "./pageData.js";
   import { SelectedPageService } from "../shared/selected-page-service";
   import { Dialogs } from '@nativescript/core';
+  import XPCard2 from "./XPCard2";
   import XPModalA from "./XPModalA";
   import { XPs } from "../data/xp_list.js";
-  import PrisonEngage3 from "./PrisonEngage3";
+  import Rewiring2 from "./Rewiring2";
+  //import ProgressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
 //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
 const alertOptions = {
-    title: 'Thank you',
+    title: 'Yes, thank you!',
     message: 'Keep going!',
     okButtonText: 'Okay',
     cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
   }; 
   export default {
     mounted() {
-      SelectedPageService.getInstance().updateSelectedPage("Rewiring2");
+      SelectedPageService.getInstance().updateSelectedPage("Tools4BrainScience");
     },
     components: {
-    //  XPCard2
+      XPCard2
   },
     data() {
-      const page="Rewiring2";
+      const page="Tools4BrainScience";
       const pageInfo = preparePageInfo(page, topicPages);
     //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
-    console.info("In RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );
-      
-    const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
+      console.info("Tools4BarinScience>data, pageInfo[0].page is: ", pageInfo[0].page );   
+      const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
+
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
@@ -77,7 +76,7 @@ const alertOptions = {
       }, 
       
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Prison Engage 2 Input", this.textViewValue1,this.textViewValue2);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$   Input", this.textViewValue1,this.textViewValue2);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);
@@ -87,7 +86,7 @@ const alertOptions = {
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(PrisonEngage3);
+   this.$navigateTo(Rewiring2);
 })
 },
 
