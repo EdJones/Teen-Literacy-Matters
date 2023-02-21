@@ -3,7 +3,7 @@
       <ActionBar class="action-bar">
         <NavigationButton visibility="hidden"/>
         <GridLayout columns="*, 50">
-          <Label col="0" class="action-bar-title" text="(Black) Teen Literacy Matters" />
+          <Label col="0" class="action-bar-title" :text="pageInfo.title />
 
           <Label col="1" class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
         </GridLayout>
@@ -13,10 +13,10 @@
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <StackLayout orientation="vertical" row="0">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
-            <Label class="text-2xl text-center" text="How Kids Learn to Read"  />
-            <Label class="text-base leading-none p-4 pb-0" text="We looked at what happens when kids aren't taught to read. Some pretty bad things happen to some of those kids." textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="But why don't these kids learn, while many other kids do?" textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="We need to look inside kids' brains." textWrap="true" />
+            <Label class="text-2xl text-center" :text="pageInfo.challenge" textWrap="true"  />
+            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text3" textWrap="true" />
             <XPCard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard>
           </StackLayout>
           <StackLayout row="1" class="mb-8" >
@@ -30,7 +30,7 @@
 <script>
   import * as utils from "~/shared/utils";
   import { SelectedPageService } from "../shared/selected-page-service";
-
+  import { preparePageInfo, preparePageDetails } from "./pageData.js";
   import XPModalA from "./XPModalA";
   import XPCard from "./XPCard";
   //import XPCardSmall from "./XPCardSmall";
@@ -47,22 +47,11 @@
   },
     data() {
       const page="HowKidsRead";
-    const pageXPDetails = XPs.filter(XP => {
-        //console.info("In page filter, ", XP );
-      return XP.Page.includes(page);
-     });
-    // console.info("In page filter, topicPage is", topicPages[3]);
-
-    const pageInfo = topicPages.filter(topicPage => {
-       // console.info("In page filter 2, ", topicPage );
-      return topicPage.page.includes(page);
-     });
-    // pageInfo = topicPages[1];
-    
-     console.info("In data, pageInfo is: ", pageInfo);
-     console.info("In data, topicPage.page is: ", pageInfo[0].page );
-    // console.info("In data, topicPage.title is: ", topicPages[3].title );
-    // console.info("In data, topicPage.challenge is: ", topicPages[3].challenge );
+      const pageInfo = preparePageInfo(page, topicPages);
+    //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
+      console.info("HowKidsRead>data, pageInfo[0].page is: ", pageInfo[0].page );   
+      const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
+      console.info(page);
 
     return {
       pageXPDetails: pageXPDetails,

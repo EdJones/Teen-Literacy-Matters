@@ -46,11 +46,11 @@ export const topicPages = [
   }, {
     page: "HowKidsRead",
     title: "(Black) Literacy Matters--How Kids Learn",
-    challenge: "",
-    pageXPs: ["XP0"],
-    text1: "Whoops! We're still building this.",
-    text2: "",
-    text3: "",
+    challenge: "How Kids Learn to Read",
+    pageXPs: ["XP10201","XP10202"],
+    text1: "We looked at what happens when kids aren't taught to read. Some pretty bad things happen to some of those kids.",
+    text2: "But why don't these kids learn, while many other kids do?",
+    text3: "We need to look inside kids' brains.",
     closingText: "",
     closingText2: "",
     modal: ""
