@@ -40,7 +40,6 @@
   import XPModalA from "./XPModalA";
   import { topicPages } from "../data/pages_list.js";
   import { XPs } from "../data/xp_list.js";
-  import Rewiring2 from "./Rewiring2";
   import Tools4BrainScience from "./Tools4BrainScience"
   //import ProgressBar from "./ProgressBar";
   //import PreviousNextView from '@nativescript/iqkeyboardmanager';
