@@ -56,7 +56,7 @@ const alertOptions = {
       XPCard2
   },
     data() {
-      const page="NotNatural";
+      const page="NotNatural2";
       const pageInfo = preparePageInfo(page, topicPages);
       //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
       console.info("In RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );

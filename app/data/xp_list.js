@@ -3258,7 +3258,7 @@ export const XPs = [{
     "points": "2500"
 }, {
     "Science": "",
-    "XP_NUM": "10134",
+    "XP_NUM": "10202",
     "xpId": "XP10202",
     "Page": "HowKidsRead",
     "title": "Rewiring Brains",
@@ -3273,8 +3273,55 @@ export const XPs = [{
     "points": "2500"
 }, {
     "Science": "",
-    "XP_NUM": "10200",
+    "XP_NUM": "10203",
     "xpId": "XP10203",
+    "Page": "HowKidsRead",
+    "title": "Rewiring Brains",
+    "xpType": "engage_page",
+    "YTvideoId": "",
+    "nav_link": "RewiringEngage",
+    "Subtitle": "",
+    "xpText": "Is Reading Natural?",
+    "text2": "",
+    "xpUrl": "",
+    "Text3": "",
+    "points": "2500"
+},{
+    "Science": "",
+    "XP_NUM": "10205",
+    "xpId": "XP10205",
+    "Section": "HowKidsRead",
+    "Page": "NotNatural2",
+    "title": "Decoding is Not Natural",
+    "xpType": "YtVideo",
+    "YTvideoId": "5ozikJR3oY8",
+    "nav_link": "",
+    "Subtitle": "Say it again: we're not wired",
+    "xpText": "Just watch this through 2:00. (Stop at '2> Spins')",
+    "text2": "For only 90 seconds, this gets a little repetative. But, we need to hear it again.",
+    "xpUrl": "",
+    "Text3": "Start at 10:05, and watch through 11:35",
+    "points": "2500"
+},{
+    "Science": "",
+    "XP_NUM": "10206",
+    "xpId": "XP10206",
+    "Section": "HowKidsRead",
+    "Page": "NotNatural2",
+    "title": "Decoding is Not Natural",
+    "xpType": "YtVideo",
+    "YTvideoId": "5ozikJR3oY8",
+    "nav_link": "",
+    "Subtitle": "Say it again: we're not wired",
+    "xpText": "Just watch this through 2:00. (Stop at '2> Spins')",
+    "text2": "For only 90 seconds, this gets a little repetative. But, we need to hear it again.",
+    "xpUrl": "",
+    "Text3": "Start at 10:05, and watch through 11:35",
+    "points": "2500"
+}, {
+    "Science": "",
+    "XP_NUM": "10200",
+    "xpId": "XP10210",
     "Page": "HowKidsRead",
     "title": "Tools: fNIRS",
     "xpType": "YtVideo2nd",
@@ -3288,8 +3335,8 @@ export const XPs = [{
     "points": "2500"
 },{
     "Science": "",
-    "XP_NUM": "10204",
-    "xpId": "XP10204",
+    "XP_NUM": "10211",
+    "xpId": "XP10211",
     "Page": "HowKidsRead",
     "title": "Tools: fMRI",
     "xpType": "YtVideo2nd",
@@ -3300,20 +3347,5 @@ export const XPs = [{
     "text2": "",
     "xpUrl": "",
     "Text3": "",
-    "points": "2500"
-},{
-    "Science": "",
-    "XP_NUM": "10205",
-    "xpId": "XP10205",
-    "Page": "HowKidsRead",
-    "title": "Tools: fMRI",
-    "xpType": "YtVideo",
-    "YTvideoId": "5ozikJR3oY8",
-    "nav_link": "",
-    "Subtitle": "Say it again: we're not wired",
-    "xpText": "Just watch this through 2:00. (Stop at '2> Spins')",
-    "text2": "For only 90 seconds, this gets a little repetative. But, we need to hear it again.",
-    "xpUrl": "",
-    "Text3": "Start at 10:05, and watch through 11:35",
     "points": "2500"
 }]

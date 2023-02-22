@@ -77,6 +77,19 @@ export const topicPages = [
     closingText2: "",
     modal: ""
   }, {
+    page: "NotNatural2",
+    title: "(Black) Literacy Matters--How Kids Learn",
+    challenge: "It's Not Natural--2",
+    pageXPs: ["XP10205","XP10206"],
+    text1: "You probably knew what she meant by 'code' there.",
+    text2: "But, just to make sure, lets skip back and listen to Dr. Strom tell us about kids and seeing a written code. ",
+    text3: "",
+    text4: "You probably knew what she meant by 'code' there.",
+    text5: "But, just to make sure, lets skip back and listen to Dr. Strom tell us about kids and seeing a written code. ",
+    closingText: "",
+    closingText2: "",
+    modal: ""
+  }, {
     page: "Rewiring2",
     title: "(Black) Literacy Matters--How Kids Learn",
     challenge: "",
