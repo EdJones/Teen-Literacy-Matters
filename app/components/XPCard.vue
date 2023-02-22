@@ -33,6 +33,7 @@ import HardTruth from "./HardTruth";
 import SoldAStory from "./SoldAStory";
 import Prison from "./Prison";
 import NotNatural from "./NotNatural";
+import LetterBox from "./LetterBox";
 //import ModalDigraphs from "./modals/ModalDigraphs";
 import ModalImage from "./modals/ModalImage";
 // import Digraphs from "./Digraphs";
@@ -156,7 +157,10 @@ export default {
                  }
             else if (this.xpObj.nav_link === 'Prison') {
             this.$navigateTo(Prison);}
-
+            else if (this.xpObj.nav_link === 'LetterBox') {
+                    console.log("Open LetterBox.vue")
+                    this.$navigateTo(LetterBox);
+                }
             }
 
             else if (this.xpObj.xpType === 'engageModal') {
@@ -182,6 +186,9 @@ export default {
                 else if (this.xpObj.nav_link === 'RewiringEngage') {
                     console.log("Open NotNatural.vue")
                     this.$navigateTo(NotNatural);
+                } else if (this.xpObj.nav_link === 'LetterBox') {
+                    console.log("Open LetterBox.vue")
+                    this.$navigateTo(LetterBox);
                 }
             }
             

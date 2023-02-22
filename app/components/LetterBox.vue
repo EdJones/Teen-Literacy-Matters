@@ -13,16 +13,16 @@
           <PreviousNextView>
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
-            <Label class="text-2xl text-center" text="It's Not Natural--2"  />
+            <Label class="text-2xl text-center" :text="pageInfo.challenge"  />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
             <XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
+            <Label class="text-base leading-none font-light  p-4 pb-0" text="Here, Dr. Strom points at a green area we call the 'Letter Box'. What's the more technical name for the brain's Letter Box?" textWrap="true" />
+            <TextViewWithHint width="350" height="70" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
+            <Button class="btn-b" text="Enter" @tap="acceptInput" /> 
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text4" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text5" textWrap="true" />
-             <XPCard2 :xpObj="pageXPDetails[1]" ></XPCard2>
-            <Label class="text-base leading-none font-light  p-4 pb-0" text="When Dr. Strom says 'We`re not wired to read', what she really means is 'Our brains aren't wired to' ... do what?" textWrap="true" />
-            <TextViewWithHint width="350" height="70" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Button class="btn-b" text="Enter" @tap="acceptInput" />  
+             <!--XPCard2 :xpObj="pageXPDetails[1]" ></XPCard2--> 
           </StackLayout>
         </PreviousNextView>
         </GridLayout>
@@ -51,13 +51,13 @@ const alertOptions = {
   }; 
   export default {
     mounted() {
-      SelectedPageService.getInstance().updateSelectedPage("NotNatural");
+      SelectedPageService.getInstance().updateSelectedPage("LetterBox");
     },
     components: {
       XPCard2
   },
     data() {
-      const page="NotNatural2";
+      const page="LetterBox";
       const pageInfo = preparePageInfo(page, topicPages);
       //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
       console.info("In RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );
