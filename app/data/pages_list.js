@@ -47,7 +47,7 @@ export const topicPages = [
     page: "HowKidsRead",
     title: "(Black) Literacy Matters--How Kids Learn",
     challenge: "How Kids Learn to Read",
-    pageXPs: ["XP10202","XP10203"],
+    pageXPs: ["XP10202","XP10203","XP10204"],
     text1: "We looked at what happens when kids aren't taught to read. Some pretty bad things happen to some of those kids.",
     text2: "But why don't these kids learn, while many other kids do?",
     text3: "We need to look inside kids' brains.",

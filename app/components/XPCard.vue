@@ -34,6 +34,7 @@ import SoldAStory from "./SoldAStory";
 import Prison from "./Prison";
 import NotNatural from "./NotNatural";
 import LetterBox from "./LetterBox";
+import PathToReading from "./PathToReading";
 //import ModalDigraphs from "./modals/ModalDigraphs";
 import ModalImage from "./modals/ModalImage";
 // import Digraphs from "./Digraphs";
@@ -160,6 +161,10 @@ export default {
             else if (this.xpObj.nav_link === 'LetterBox') {
                     console.log("Open LetterBox.vue")
                     this.$navigateTo(LetterBox);
+                }
+                else if (this.xpObj.nav_link === 'PathToReading') {
+                    console.log("Open PathToReading.vue")
+                    this.$navigateTo(PathToReading);
                 }
             }
 

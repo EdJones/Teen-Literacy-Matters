@@ -19,11 +19,9 @@
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text3" textWrap="true" />
             <XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text4" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" text="Any ideas?" textWrap="true" />
             <TextViewWithHint width="350" height="70" class="text-black input-gray text-xl mt-6" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Label class="text-base leading-none font-light  p-4 pb-0" text="text here" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" text="text here" textWrap="true" />
-            <TextViewWithHint width="350" height="70" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Button class="btn-b" text="Enter" @tap="acceptInput" /> 
+             <Button class="btn-b" text="Enter" @tap="acceptInput" /> 
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text5" textWrap="true" />
              <!--XPCard2 :xpObj="pageXPDetails[1]" ></XPCard2--> 
           </StackLayout>
@@ -41,15 +39,16 @@
   import XPCard2 from "./XPCard2";
   import XPModalA from "./XPModalA";
   import { XPs } from "../data/xp_list.js";
-  import PathToReading from './PathToReading';
+  import Tools4BrainScience from "./Tools4BrainScience";
+  //import HowKidsRead from './';
   //import P rogressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
 //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
 const alertOptions = {
-    title: 'Thank you',
+    title: '',
     message: 'Keep going!',
-    okButtonText: 'Okay',
+    okButtonText: 'Next',
     cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
   }; 
   export default {
@@ -95,7 +94,7 @@ const alertOptions = {
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(PathToReading);
+   this.$navigateTo(Tools4BrainScience);
 })
 },
 
