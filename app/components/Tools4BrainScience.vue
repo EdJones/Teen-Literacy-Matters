@@ -17,6 +17,9 @@
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
             <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2> 
+            <Label class="text-base leading-none font-light  p-4 pb-0 mt-8" text="When we say 'a brain area becomes `activated`'', what is happening inside the brain tissue?" textWrap="true" />
+            <TextViewWithHint width="360" height="150" class="text-black input-gray text-xl mt-8" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
+           <Button class="btn-b" text="Enter" @tap="acceptInput" /> 
           </StackLayout>
         </PreviousNextView>
         </GridLayout>

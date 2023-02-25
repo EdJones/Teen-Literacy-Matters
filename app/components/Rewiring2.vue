@@ -13,16 +13,12 @@
           <PreviousNextView>
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
-            <StackLayout orientation="vertical" row="0">
-            <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
             <Label class="text-2xl text-center" :text="pageInfo.challenge" textWrap="true"  />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text3" textWrap="true" />
-            <XPCard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard>
-          </StackLayout>
-            <TextViewWithHint width="250" height="50" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Button class="btn-b" text="Submit" @tap="acceptInput" />
+            <Label class="text-base leading-none font-light  p-4 pb-0 mt-8" :text="pageInfo.closingText" textWrap="true" />
+            <Button class="btn-b mt-16" width="250" text="Back to 'How Kids Read'" @tap="navigateTo" />
           </StackLayout>
         </PreviousNextView>
         </GridLayout>
@@ -38,7 +34,7 @@
   import { Dialogs } from '@nativescript/core';
   import XPModalA from "./XPModalA";
   import { XPs } from "../data/xp_list.js";
-  import PrisonEngage3 from "./PrisonEngage3";
+  //import HowKidsRead from "./HowKidsRead";
 import { topicPages } from "../data/pages_list.js";
 //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
@@ -91,10 +87,15 @@ const alertOptions = {
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(PrisonEngage3);
+   this.$navigateTo(Intro);
 })
 },
-
+    navigateTo() {
+      this.$navigateBack();
+      this.$navigateBack();
+      this.$navigateBack();
+      this.$navigateBack();
+    }
 
     }
   };

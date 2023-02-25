@@ -120,10 +120,10 @@ export const topicPages = [
     title: "(Black) Literacy Matters--How Kids Learn",
     challenge: "",
     pageXPs: [],
-    text1: "Let's take a brief look at some of the tools scientists use to find out how kids learn to read.",
-    text2: "Many different experiments have been conducted over the past decades.",
-    text3: "",
-    closingText: "",
+    text1: "Many different experiments have been conducted over the past decades.",
+    text2: "Cognitive scientists around the world keep asking: 'How do we learn to read?",
+    text3: "In the next section, we'll go back to 1987, and an experiment that changed everything.",
+    closingText: "This might be a good time to take a break.",
     closingText2: "",
     modal: ""
   }, {
@@ -131,6 +131,17 @@ export const topicPages = [
     title: "(Black) Literacy Matters--The Path to Reading in the Brain",
     challenge: "",
     pageXPs: [],
+    text1: "",
+    text2: "",
+    text3: "",
+    closingText: "",
+    closingText2: "",
+    modal: ""
+  }, {
+    page: "PathToReading2",
+    title: "(Black) Literacy Matters--The Path to Reading in the Brain--2",
+    challenge: "",
+    pageXPs: ["XP0"],
     text1: "",
     text2: "",
     text3: "",
