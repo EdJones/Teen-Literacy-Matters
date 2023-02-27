@@ -15,7 +15,8 @@
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
             <Label class="text-2xl text-center" text="The Path to Reading is Through Sound--2" textWrap="true"  />
             <Label class="text-base leading-none font-light p-4 pb-0" text="What goes here next?" textWrap="true" />
-            
+            <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
+
             <Label class="text-base leading-none font-light  p-4 pb-0 mt-8" text="Prompt" textWrap="true" />
             <TextViewWithHint width="360" height="80" class="text-black input-gray text-xl mt-8" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
            <Button class="btn-b" text="Enter" @tap="acceptInput" />   
@@ -34,6 +35,7 @@
   import XPModalA from "./XPModalA";
   import { topicPages } from "../data/pages_list.js";
   import { XPs } from "../data/xp_list.js";
+  import XPCard2 from "./XPCard2.vue";
   import Intro from "./Intro";
   //import ProgressBar from "./ProgressBar";
   //import PreviousNextView from '@nativescript/iqkeyboardmanager';
@@ -49,7 +51,7 @@ const alertOptions = {
       SelectedPageService.getInstance().updateSelectedPage("Path2Reading2");
     },
     components: {
-    //  XPCard2
+      XPCard2
   },
     data() {
       const page="PathToReading2";

@@ -3401,4 +3401,32 @@ export const XPs = [{
     "xpUrl": "",
     "Text3": "",
     "points": "2500"
+}, {
+    "Science": "TRUE",
+    "xpId": "XP10225",
+    "Page": "VanOrden",
+    "title": "The Van Orden Experiments--Background",
+    "xpType": "YtVideo",
+    "YTvideoId": "bjqsI-JH4Os",
+    "start": 90,
+    "Subtitle": "",
+    "xpText": "First, a little background...",
+    "text2": "Start at 1:30, and stop at 2:45.",
+    "xpUrl": "",
+    "Text3": "",
+    "points": "2500"
+}, {
+    "Science": "TRUE",
+    "xpId": "XP10226",
+    "Page": "VanOrden",
+    "title": "Van Orden--The Experiment",
+    "xpType": "YtVideo",
+    "YTvideoId": "bjqsI-JH4Os",
+    "start": 90,
+    "Subtitle": "",
+    "xpText": "Now lets look at the experimental setup here.",
+    "text2": "Start at 3:03 and watch to the end.",
+    "xpUrl": "",
+    "Text3": "",
+    "points": "2500"
 }]
