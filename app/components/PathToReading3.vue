@@ -13,18 +13,21 @@
           <PreviousNextView>
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
-            <Label class="text-2xl text-center" text="The Path to Reading is Through Sound" textWrap="true"  />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="It's the least expected thing, to most people. You'd think seeing the word 'dog' in print would go straight to a mental outline of a four-legged animal. Right?" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" text="Yet it doesn't." textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" text="In 1987, the Van Orden experiments proved the unexpected opposite:" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0 italic" text="We all process written words as sounds." textWrap="true" />
-            
-            <Label class="text-base leading-none font-light  p-4 pb-0 mt-4" text="Write that last insight here:" textWrap="true" />
-            <TextViewWithHint width="360" height="80" class="text-black input-gray text-xl mt-1" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Label class="text-base leading-none font-light  p-4 pb-0 mt-4" text="Write that last insight again, here, please. 
-                And, capitalize the 'written words' and 'sounds':" textWrap="true" />
-            <TextViewWithHint width="360" height="89" class="text-black input-gray text-xl mt-0" editable="true" v-model="textViewValue2" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Button class="btn-b" text="Enter" @tap="acceptInput" />   
+            <Label class="text-2xl text-center" text="The Path to Reading is Through Sound--3" textWrap="true"  />
+            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text" textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
+            <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
+
+            <Label class="text-base leading-none font-light  p-4 pb-0 mt-8" :text="pageInfo.prompt1" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt1a" textWrap="true" />
+            <TextViewWithHint width="360" height="80" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
+            <Label class="text-base leading-none font-light  p-4 pb-0 mt-4" :text="pageInfo.prompt2" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt2a" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt2b" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt2c" textWrap="true" />
+            <TextViewWithHint width="360" height="50" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" hint="" returnKeyType="next" > </TextViewWithHint>
+           <Button class="btn-b" text="Enter" @tap="acceptInput" />   
           </StackLayout>
         </PreviousNextView>
         </GridLayout>
@@ -37,30 +40,29 @@
   import { preparePageInfo, preparePageDetails } from "./pageData.js";
   import { SelectedPageService } from "../shared/selected-page-service";
   import { Dialogs } from '@nativescript/core';
-  import XPModalA from "./XPModalA";
   import { topicPages } from "../data/pages_list.js";
   import { XPs } from "../data/xp_list.js";
-  import PathToReading2 from "./PathToReading2";
+  import XPCard2 from "./XPCard2.vue";
+  import Intro from "./Intro";
   //import ProgressBar from "./ProgressBar";
   //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
 const alertOptions = {
-    title: 'Yes, thank you!',
+    title: '',
     message: 'Keep going!',
-    okButtonText: 'Okay',
+    okButtonText: 'Next',
     cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
   }; 
   export default {
     mounted() {
-      SelectedPageService.getInstance().updateSelectedPage("PrisonEngage");
+      SelectedPageService.getInstance().updateSelectedPage("Path2Reading3");
     },
     components: {
-    //  XPCard2
+      XPCard2
   },
     data() {
-      const page="PathToReading";
+      const page="PathToReading3";
       const pageInfo = preparePageInfo(page, topicPages);
-    //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
       console.info("RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );   
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
 
@@ -83,7 +85,7 @@ const alertOptions = {
       }, 
       
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Path to Reading Input", this.textViewValue1,this.textViewValue2);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Path to Reading 3 Input", this.textViewValue1,this.textViewValue2);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);
@@ -93,7 +95,7 @@ const alertOptions = {
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(PathToReading2);
+   this.$navigateTo(Intro);
 })
 },
 
