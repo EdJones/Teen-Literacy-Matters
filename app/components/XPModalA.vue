@@ -59,10 +59,11 @@ export default {
     },
     acceptInput(inputValue) {
 
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  XPModalB answer entered: ", inputValue);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  XPModalA answer entered: ", inputValue);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);
+        this.$modal.close();
         /*
         db.collection('LevelIII').doc(docNum.toString()).set({
             UserID: global.userNum,
