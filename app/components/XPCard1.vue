@@ -183,9 +183,9 @@ export default {
              } 
              */
 
-        },
+        
 
-        /*
+        
                     
                     //confirm("Did you learn from this resource?");
                     this.$store.commit('increment', {
@@ -195,7 +195,7 @@ export default {
                     this.$store.commit('addXP', {
                         XP: this.xpObj.xpId
                     });
-        */
+                },
 
     },
 

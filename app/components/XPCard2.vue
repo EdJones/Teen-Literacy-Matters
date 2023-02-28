@@ -202,13 +202,6 @@ export default {
             });
             } 
             */
-            
-
-        },
-          
-/*
-            
-            //confirm("Did you learn from this resource?");
             this.$store.commit('increment', {
                 XP: this.xpObj.xpId,
                 newPoints: parseInt(this.xpObj.points)
@@ -216,8 +209,13 @@ export default {
             this.$store.commit('addXP', {
                 XP: this.xpObj.xpId
             });
-*/
-        
+
+        },
+          
+
+            
+            //confirm("Did you learn from this resource?");
+         
     },
 
   created() {
