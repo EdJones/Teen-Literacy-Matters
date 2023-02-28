@@ -23,6 +23,7 @@
                 <TextViewWithHint width="70" height="35" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" hint="" returnKeyType="done"> </TextViewWithHint>
                 <Button class="btn-b" text="Submit" @tap="acceptInput" />
             </StackLayout>
+          </PreviousNextView>
             <StackLayout row="1" class="mb-8">
                 <Button class="btn-b" width="100" text="Back" @tap="goBack" />
             </StackLayout>

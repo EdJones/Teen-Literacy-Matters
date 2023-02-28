@@ -66,53 +66,31 @@ export default {
             }
         },
         mediaIcon() {
-        console.log("xpType: ", this.xpObj.xpType);
-            if (this.xpObj.xpType === "podcast") {
-            return String.fromCharCode(0xf025);
-        } else if (this.xpObj.xpType === "YtVideo" ) {
-            return String.fromCharCode(0xf26c);
-        } else if (this.xpObj.xpType === "video" ) {
-            return String.fromCharCode(0xf26c);
-        } else if (this.xpObj.xpType === "challenge" ) {
-            return String.fromCharCode(0xf022);
-        } else if (this.xpObj.xpType === "article") {
-            return String.fromCharCode(0xf1ea);
-        } else if (this.xpObj.xpType === "book") {
-            return String.fromCharCode(0xf02d);
-        }  else if (this.xpObj.xpType === "Facebook") {
-            return String.fromCharCode(0xf39e);
-        }  else if (this.xpObj.xpType === "Research") {
-            return String.fromCharCode(0xf0c3);
-        }   else if (this.xpObj.xpType === "blog") {
-            return String.fromCharCode(0xf781);
-        } else if (this.xpObj.xpType === "lab") {
-            return String.fromCharCode(0xf610);
-        } else if (this.xpObj.xpType === "list") {
-            return String.fromCharCode(0xf46d);
-        } else if (this.xpObj.xpType === "study") {
-            return String.fromCharCode(0xf558);
-        } else if (this.xpObj.xpType === "page") {
-            return String.fromCharCode(0xf558);
-        } else if (this.xpObj.xpType === "paper") {
-            return String.fromCharCode(0xf558);
-        } else if (this.xpObj.xpType === "lit_survey") {
-            return String.fromCharCode(0xf24e);
-         } else if (this.xpObj.xpType === "radio") {
-            return String.fromCharCode(0xf025);
-        } else if (this.xpObj.xpType === "checklist") {
-            return String.fromCharCode(0xf0ae);
-        } else if (this.xpObj.xpType === "xp_image") {
-            return String.fromCharCode(0xf302);
-        } else if (this.xpObj.xpType === "engage") {
-            return String.fromCharCode(0xe4f6);
-        } else if (this.xpObj.xpType === "engage_page") {
-            return String.fromCharCode(0xe4e3);
-        } else if (this.xpObj.xpType === "construction") {
-            return String.fromCharCode(0xf071);
-        } else {
-            return String.fromCharCode(0xf15c);
-        }
-
+            const iconMap = {
+                podcast: 0xf025,
+                radio: 0xf025,
+                YtVideo: 0xf26c,
+                video: 0xf26c,
+                challenge: 0xf022,
+                article: 0xf1ea,
+                book: 0xf02d,
+                Facebook: 0xf39e,
+                Research: 0xf0c3,
+                blog: 0xf781,
+                lab: 0xf610,
+                list: 0xf46d,
+                study: 0xf558,
+                page: 0xf558,
+                paper: 0xf558,
+                lit_survey: 0xf24e,
+                checklist: 0xf0ae,
+                xp_image: 0xf302,
+                engage: 0xe4f6,
+                engage_page: 0xe4e3,
+                default: 0xf15c,
+            };
+            const icon = String.fromCharCode(iconMap[this.xpObj.xpType] || iconMap.default);
+            return icon;
         },
 
         iconPackage() {
