@@ -43,7 +43,7 @@
   import { topicPages } from "../data/pages_list.js";
   import { XPs } from "../data/xp_list.js";
   import XPCard2 from "./XPCard2.vue";
-  import Intro from "./Intro";
+  import End from "./End";
   //import ProgressBar from "./ProgressBar";
   //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
@@ -95,7 +95,7 @@ const alertOptions = {
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(Intro);
+   this.$navigateTo(End);
 })
 },
 

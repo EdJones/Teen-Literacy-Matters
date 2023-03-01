@@ -182,4 +182,15 @@ export const topicPages = [
     closingText: "",
     closingText2: "",
     modal: ""
+  }, {
+    page: "End",
+    title: "Finish!",
+    challenge: "That's it! (For now.) We've still got lots to share.",
+    pageXPs: ["XP0"],
+    text1: "We could def use $$ help to speed things up.!",
+    text2: "Stay tuned. Or, join us and help.  ",
+    text3: "",
+    closingText: "",
+    closingText2: "",
+    modal: ""
   } ]
