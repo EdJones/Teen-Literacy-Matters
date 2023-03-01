@@ -17,12 +17,12 @@
             
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
           
-            <Label class="text-base leading-none font-light p-4 pb-0" text="Typically, we expect children to learn such phonemes in kindergarten or first grade." textWrap="true" />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="Obviously, DeShaun was never taught this." textWrap="true" />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="The particular phoneme DeSahun is so excited about is a little special. It's one of a few that are spelled with two letters." textWrap="true" />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="These special phonemes are called digraphs. ('Di' means 'two'; 'graph' means 'something written'.) There are seven digraphs in English." textWrap="true" />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="Can you guess or remember any other digraphs? Hint: 'Check'" textWrap="true" />
-            <TextViewWithHint width="80%" height="45" class="input-gray text-black text-xl" editable="true" v-model="textViewValue2" hint="" returnKeyType="done" > </TextViewWithHint>
+            <Label class="text-base leading-none font-light p-4 pb-0" text="Early in this(~2:227), we hear from a mother who says:" textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="I knew that my son had a problem, in first grade, when I was..." textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="...And for many parents, we get tears,..I was right.." textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="...my child is finally getting help. And you get the tears..." textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="'But they're...'" textWrap="true" />
+            <TextViewWithHint width="80%" height="45" class="input-gray text-black text-xl" editable="true" v-model="textViewValue2" hint="But they're..." returnKeyType="done" > </TextViewWithHint>
           
             <Button class="btn-b" text="Submit" @tap="acceptInput" />
           
@@ -39,14 +39,13 @@
 
 <script>
   import * as utils from "~/shared/utils";
-  //import Prisoncopy from "./Prisoncopy";
+  import { preparePageInfo, preparePageDetails } from "./pageData.js";
   import { SelectedPageService } from "../shared/selected-page-service";
   import { Dialogs } from '@nativescript/core';
   import XPModalA from "./XPModalA";
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
-import PrisonEngage4 from "./PrisonEngage4";
 //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
 const alertOptions = {
@@ -63,23 +62,10 @@ const alertOptions = {
     //  XPCard2
   },
     data() {
-      const page="PrisonEngage";
-    const pageXPDetails = XPs.filter(XP => {
-        //console.info("In page filter, ", XP );
-      return XP.Page.includes(page);
-     });
-    // console.info("In page filter, topicPage is", topicPages[3]);
-
-    const pageInfo = topicPages.filter(topicPage => {
-        console.info("In page filter 2, ", topicPage );
-    //  return topicPage.page.includes(page);
-     });
-    // pageInfo = topicPages[1];
-    
-    // console.info("In data, pageInfo is: ", pageInfo);
-    // console.info("In data, topicPage.page is: ", pageInfo[0].page );
-    // console.info("In data, topicPage.title is: ", topicPages[3].title );
-    // console.info("In data, topicPage.challenge is: ", topicPages[3].challenge );
+      const page="Prison";
+      const pageInfo = preparePageInfo(page, topicPages);
+      console.info("PrisonEngage4>data, pageInfo[0].page is: ", pageInfo[0].page );   
+      const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
 
     return {
       pageXPDetails: pageXPDetails,
@@ -110,10 +96,10 @@ const alertOptions = {
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-  this.$navigateTo(PrisonEngage4);
-  //this.$navigateBack();
-  //this.$navigateBack();
-  //this.$navigateBack();
+  // this.$navigateTo(Prisoncopy);
+  this.$navigateBack();
+  this.$navigateBack();
+  this.$navigateBack();
 })
 },
 

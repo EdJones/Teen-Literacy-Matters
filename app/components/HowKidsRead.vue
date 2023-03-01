@@ -20,7 +20,7 @@
             <XPCard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard>
           </StackLayout>
           <StackLayout row="1" class="mb-8" >
-          <Button class="btn-b" width="100" text="Back to Intro" @tap="goBack" />
+          <Button class="btn-b" width="100" text="Back to First Steps" @tap="goBack" />
         </StackLayout>
         </GridLayout>
         </ScrollView>
