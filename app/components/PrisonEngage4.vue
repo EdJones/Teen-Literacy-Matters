@@ -49,8 +49,8 @@ import { topicPages } from "../data/pages_list.js";
 //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
 const alertOptions = {
-    title: 'Thank you',
-    message: 'Keep going!',
+    title: '',
+    message: 'Great!',
     okButtonText: 'Okay',
     cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
   }; 

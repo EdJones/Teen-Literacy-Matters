@@ -3,13 +3,13 @@
       <ActionBar class="action-bar">
         <NavigationButton visibility="hidden"/>
         <GridLayout columns="*, 50">
-          <Label col="0" class="action-bar-title" :text="pageInfo.title />
+          <Label col="0" class="action-bar-title" :text="pageInfo.title" />
 
           <Label col="1" class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
         </GridLayout>
       </ActionBar>
       <ScrollView >
-        <GridLayout class="" rows="auto,*">
+        <GridLayout class="" rows="*,100">
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <StackLayout orientation="vertical" row="0">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
@@ -19,8 +19,8 @@
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text3" textWrap="true" />
             <XPCard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard>
           </StackLayout>
-          <StackLayout row="1" class="mb-8" >
-          <Button class="btn-b" width="100" text="Back to First Steps" @tap="goBack" />
+          <StackLayout row="1" class="mb-4" >
+          <Button class="btn-b" width="170" text="Back to First Steps" @tap="goBack" />
         </StackLayout>
         </GridLayout>
         </ScrollView>

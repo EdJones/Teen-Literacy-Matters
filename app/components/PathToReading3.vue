@@ -49,7 +49,7 @@
 
 const alertOptions = {
     title: '',
-    message: 'Keep going!',
+    message: 'Sweet!',
     okButtonText: 'Next',
     cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
   }; 

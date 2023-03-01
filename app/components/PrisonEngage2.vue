@@ -57,7 +57,7 @@ import { topicPages } from "../data/pages_list.js";
 const alertOptions = {
     title: 'Thank you',
     message: 'Keep going!',
-    okButtonText: 'Okay',
+    okButtonText: 'Next',
     cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
   }; 
   export default {
