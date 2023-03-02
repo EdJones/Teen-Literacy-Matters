@@ -3,32 +3,37 @@
       <ActionBar class="action-bar">
         <NavigationButton visibility="hidden"/>
         <GridLayout columns="*, 50">
-          <Label col="0" class="action-bar-title" text="(Black) Teen Literacy Matters - Brains" />
+          <Label col="0" class="action-bar-title" text="(Black) Teen Literacy Matters - Prison" />
+
           <Label col="1" class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
         </GridLayout>
       </ActionBar>
       <ScrollView>
         <GridLayout class="">
+         
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <PreviousNextView>
           <StackLayout orientation="vertical">
-            <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
-            <Label class="text-1xl text-center" text="The Path to Reading is Through Sound" textWrap="true"  />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="It's the least expected thing, to most people. You'd think seeing the word 'dog' in print would go straight to a mental outline of a four-legged animal. Right?" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" text="Yet it doesn't." textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" text="In 1987, the Van Orden experiments proved the unexpected opposite:" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0 italic" text="We all process written words as sounds." textWrap="true" />
             
-            <Label class="text-base leading-none font-light  p-4 pb-0 mt-4" text="Write that last insight here:" textWrap="true" />
-            <TextViewWithHint width="360" height="60" class="text-black input-gray text-xl mt-1" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Label class="text-base leading-none font-light  p-4 pb-0 mt-4" text="Write that last insight again, here, please. 
-                And, capitalize the 'written words' and 'sounds':" textWrap="true" />
-            <TextViewWithHint width="360" height="60" class="text-black input-gray text-xl mt-0" editable="true" v-model="textViewValue2" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Button class="btn-b" text="Enter" @tap="acceptInput" />   
+            <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
+          
+            <Label class="text-base leading-none font-light p-4 pb-0" text="Early in this(~2:227), we hear from a mother who says:" textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="I knew that my son had a problem, in first grade, when I was..." textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="...And for many parents, we get tears,..I was right.." textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="...my child is finally getting help. And you get the tears..." textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" text="'But they're...'" textWrap="true" />
+            <TextViewWithHint width="80%" height="45" class="input-gray text-black text-xl" editable="true" v-model="textViewValue2" hint="But they're..." returnKeyType="done" > </TextViewWithHint>
+          
+            <Button class="btn-b" text="Submit" @tap="acceptInput" />
+          
+            
+
+             
           </StackLayout>
         </PreviousNextView>
         </GridLayout>
         </ScrollView>
+        
     </Page>
 </template>
 
@@ -38,16 +43,15 @@
   import { SelectedPageService } from "../shared/selected-page-service";
   import { Dialogs } from '@nativescript/core';
   import XPModalA from "./XPModalA";
-  import { topicPages } from "../data/pages_list.js";
   import { XPs } from "../data/xp_list.js";
-  import PathToReading2 from "./PathToReading2";
-  //import ProgressBar from "./ProgressBar";
-  //import PreviousNextView from '@nativescript/iqkeyboardmanager';
+  //import P rogressBar from "./ProgressBar";
+import { topicPages } from "../data/pages_list.js";
+//import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
 const alertOptions = {
     title: '',
-    message: 'Keep going!',
-    okButtonText: 'Next',
+    message: 'Great!',
+    okButtonText: 'Okay',
     cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
   }; 
   export default {
@@ -58,10 +62,9 @@ const alertOptions = {
     //  XPCard2
   },
     data() {
-      const page="PathToReading";
+      const page="Prison";
       const pageInfo = preparePageInfo(page, topicPages);
-    //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
-      console.info("RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );   
+      console.info("PrisonEngage4>data, pageInfo[0].page is: ", pageInfo[0].page );   
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
 
     return {
@@ -83,7 +86,7 @@ const alertOptions = {
       }, 
       
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Path to Reading Input", this.textViewValue1,this.textViewValue2);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Prison Engage 3 Input", this.textViewValue2);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);
@@ -93,7 +96,10 @@ const alertOptions = {
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(PathToReading2);
+  // this.$navigateTo(Prisoncopy);
+  this.$navigateBack();
+  this.$navigateBack();
+  this.$navigateBack();
 })
 },
 

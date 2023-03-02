@@ -46,6 +46,7 @@
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
+import PrisonEngage4 from "./PrisonEngage4";
 //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
 const alertOptions = {
@@ -109,10 +110,10 @@ const alertOptions = {
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-  // this.$navigateTo(Prisoncopy);
-  this.$navigateBack();
-  this.$navigateBack();
-  this.$navigateBack();
+  this.$navigateTo(PrisonEngage4);
+  //this.$navigateBack();
+  //this.$navigateBack();
+  //this.$navigateBack();
 })
 },
 

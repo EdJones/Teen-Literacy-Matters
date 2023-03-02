@@ -14,11 +14,18 @@
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
             <Label class="text-2xl text-center" text="The Path to Reading is Through Sound--2" textWrap="true"  />
-            <Label class="text-base leading-none font-light p-4 pb-0" text="What goes here next?" textWrap="true" />
-            <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
-
-            <Label class="text-base leading-none font-light  p-4 pb-0 mt-8" text="Prompt" textWrap="true" />
-            <TextViewWithHint width="360" height="80" class="text-black input-gray text-xl mt-8" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
+            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text" textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
+            <XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
+            <Label class="text-base leading-none font-light  p-4 pb-0 mt-6" :text="pageInfo.prompt1" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt1a" textWrap="true" />
+            <TextViewWithHint width="360" height="50" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
+            <Label class="text-base leading-none font-light  p-4 pb-0 mt-4" :text="pageInfo.prompt2" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt2a" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt2b" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt2c" textWrap="true" />
+            <TextViewWithHint width="360" height="80" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" hint="Pear and.." returnKeyType="next" > </TextViewWithHint>
            <Button class="btn-b" text="Enter" @tap="acceptInput" />   
           </StackLayout>
         </PreviousNextView>
@@ -32,18 +39,17 @@
   import { preparePageInfo, preparePageDetails } from "./pageData.js";
   import { SelectedPageService } from "../shared/selected-page-service";
   import { Dialogs } from '@nativescript/core';
-  import XPModalA from "./XPModalA";
   import { topicPages } from "../data/pages_list.js";
   import { XPs } from "../data/xp_list.js";
   import XPCard2 from "./XPCard2.vue";
-  import Intro from "./Intro";
+  import PathToReading3 from "./PathToReading3";
   //import ProgressBar from "./ProgressBar";
   //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
 const alertOptions = {
-    title: 'Yes, thank you!',
+    title: '',
     message: 'Keep going!',
-    okButtonText: 'Okay',
+    okButtonText: 'Next',
     cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
   }; 
   export default {
@@ -56,7 +62,6 @@ const alertOptions = {
     data() {
       const page="PathToReading2";
       const pageInfo = preparePageInfo(page, topicPages);
-    //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
       console.info("RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );   
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
 
@@ -89,7 +94,7 @@ const alertOptions = {
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(Intro);
+   this.$navigateTo(PathToReading3);
 })
 },
 

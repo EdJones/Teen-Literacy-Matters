@@ -17,10 +17,10 @@
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text3" textWrap="true" />
-            <XPCard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard>
+            <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
           </StackLayout>
           <StackLayout row="1" class="mb-4" >
-          <Button class="btn-b" width="170" text="Back to First Steps" @tap="goBack" />
+          <Button class="btn-b" width="170" text="Back to Home" @tap="goTo()" />
         </StackLayout>
         </GridLayout>
         </ScrollView>
@@ -32,7 +32,8 @@
   import { SelectedPageService } from "../shared/selected-page-service";
   import { preparePageInfo, preparePageDetails } from "./pageData.js";
   import XPModalA from "./XPModalA";
-  import XPCard from "./XPCard";
+  import XPCard2 from "./XPCard2";
+  import Home from "./Home";
   //import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
@@ -43,13 +44,13 @@
       SelectedPageService.getInstance().updateSelectedPage("SoldAStory");
     },
     components: {
-      XPCard
+      XPCard2
   },
     data() {
-      const page="HowKidsRead";
+      const page="End";
       const pageInfo = preparePageInfo(page, topicPages);
     //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
-      console.info("HowKidsRead>data, pageInfo[0].page is: ", pageInfo[0].page );   
+      console.info("End>data, pageInfo[0].page is: ", pageInfo[0].page );   
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
       console.info(page);
 
@@ -71,6 +72,9 @@
       goBack() {
         console.log("Done with soldAStory engage");
         this.$navigateBack();
+      },
+      goTo() {
+        this.$navigateTo(Home);
       }
     }
   };
