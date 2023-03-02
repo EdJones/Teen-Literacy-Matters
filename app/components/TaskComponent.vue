@@ -1,109 +1,139 @@
 <template>
-    <Page class="page">
-      <ActionBar class="action-bar">
-        <NavigationButton visibility="hidden"/>
-        <GridLayout columns="*, 50">
-          <Label col="0" class="action-bar-title" text="(Black) Teen Literacy Matters - Brains" />
-          <Label col="1" class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
-        </GridLayout>
-      </ActionBar>
-      <ScrollView>
-        <GridLayout class="">
-          <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
-          <PreviousNextView>
-          <StackLayout orientation="vertical">
-            <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
-            <Label class="text-2xl text-center" text="It's Not Natural"  />
-            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
-            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
-            <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
-            <Label class="text-base leading-none font-light  p-4 pb-0" text="Why does Joe say `It's pretty weird that we can read at all`?" textWrap="true" />
-            <TextViewWithHint width="350" height="70" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Button class="btn-b" text="Enter" @tap="acceptInput" />  
-          </StackLayout>
-        </PreviousNextView>
-        </GridLayout>
-        </ScrollView>
-    </Page>
+    <card-view class="cardStyle1 card-small" margin="10" elevation="50" radius="12"  @tap="cardDetail">
+        <stack-layout class="cardContent">
+
+           <Gridlayout columns="20,*, 20" rows="50,120" class=card-small>
+                <Label row="0" col="0" :text="mediaIcon" :class="iconPackage" verticalAlignment="top" ></Label>
+                <Label row="0" col="1" :text="xpObj.title" class="card-title"  textWrap="true" ></Label>
+                <Label row="0" col="2" :class="dotStatus" ></Label>
+                <Label v-if="xpObj.xpType!='challenge'" row="1" col="1" :text="xpObj.Subtitle" class="card-subtitle"  textWrap="true" ></Label>
+            </Gridlayout>
+
+        </stack-layout>
+    </card-view>
 </template>
 
 <script>
-  import * as utils from "~/shared/utils";
-  import { SelectedPageService } from "../shared/selected-page-service";
-  import { preparePageInfo, preparePageDetails } from "./pageData.js";
-  import { Dialogs } from '@nativescript/core';
-  import XPCard2 from "./XPCard2";
-  import XPModalA from "./XPModalA";
-  import { XPs } from "../data/xp_list.js";
-  import PrisonEngage3 from "./PrisonEngage3";
-  import NotNatural2 from "./NotNatural2";
-  import PathToReading from './PathToReading';
-  //import P rogressBar from "./ProgressBar";
-import { topicPages } from "../data/pages_list.js";
-//import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
-const alertOptions = {
-    title: 'Thank you',
-    message: 'Keep going!',
-    okButtonText: 'Okay',
-    cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
-  }; 
-  export default {
-    mounted() {
-      SelectedPageService.getInstance().updateSelectedPage("NotNatural");
+
+export default {
+    name: "TaskComponent",
+    mounted() {},
+    props: {
+    xpObj: {
+      type: Object,
+      required: true
     },
-    components: {
-      XPCard2
-  },
+    },
     data() {
-      const page="NotNatural";
-      const pageInfo = preparePageInfo(page, topicPages);
-      //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
-      console.info("In RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );
-      const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
+        return {
+        }
+        },
+    computed: { 
+        dotStatus() {
+           // if (this.$store.state.completedXPs.includes(this.xpObj.xpId)) {
+            if (true) {
+                return "completed-dot";
+            } else {
+                return "incomplete-dot";
+            }
+        },
+        mediaIcon() {
+        console.log("taskType: ", this.taskObj.taskType);
+            if (this.taskObj.taskType === "text") {
+            return String.fromCharCode(0xf11c);
+        } 
+        } else {
+            return String.fromCharCode(0xf11c);
+        }
 
-    return {
-      pageXPDetails: pageXPDetails,
-      pageInfo: pageInfo[0],
-      topicPages: topicPages,
-      textViewValue1: "",
-      textViewValue2: ""
-    };
-  },
-    computed: {
-      message() {
-        return "<!-- Page content goes here -->";
-      }
-    },
+        },
+
+        iconPackage() {
+        console.log("in iconPackage, xpType: ", this.xpObj.xpType);
+
+        if (this.xpObj.xpType === "Image") {
+            return "fa-brands media";
+        }
+         else {
+             return "fas media"
+         }  
+
+        }
+            },
     methods: {
-      onDrawerButtonTap() {
-        utils.showDrawer();
-      }, 
-      
-      acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Rewiring Engage Input", this.textViewValue1,this.textViewValue2);
-        let now = new Date();
-        let docNum = now.getTime();
-        console.log("Now: ",  docNum);
+        cardDetail() {
+            console.info("******* In cardDetail, in XPCard:  *******");
+            console.info("xpUrl: ", this.xpObj.xpUrl);
+            console.info("points: ", this.xpObj.points );
+
+      if (this.xpObj.xpType = 'challenge') {
+            this.$navigateTo(this.xpObj.nav_link);
+                }
+
+         else if (this.xpObj.xpType = 'engage') {
+             this.$showModal(XPModalA, {
+                props: {
+                    xpObj: this.xpObj.modal
+                }
+            });
+                }
+           
+           /*
+          else if (this.xpObj.xpType ==='page') {
+            this.$showModal(ModalDigraphs, {
+                props: {
+                    xpPage: this.xpObj.xpPage
+                }
+            });
+            } 
+            */
+            else 
+           if (this.xpObj.xpType ==='xp_pic') {
+            this.$showModal(XPModalA, {
+                props: {
+                    xpObj: this.xpObj
+                }
+            });
+            } 
+            else 
+           if (this.xpObj.xpType!='YtVideo') {
+            this.$showModal(XPModal, {
+                props: {
+                    xpUrl: this.xpObj.xpUrl
+                }
+            });
+            }
+        else { console.log("Bad xpType: ", this.xpObj.xpType);
+        }
+        },
+          
 /*
-
-    this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});
-this.$store.commit('addXP', {XP: "XP3000"});
+            
+            //confirm("Did you learn from this resource?");
+            this.$store.commit('increment', {
+                XP: this.xpObj.xpId,
+                newPoints: parseInt(this.xpObj.points)
+            });
+            this.$store.commit('addXP', {
+                XP: this.xpObj.xpId
+            });
 */
-Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(NotNatural2);
-})
-},
+        
+    },
 
-
-    }
-  };
+  created() {
+      console.info("***********************Creating Webcard***********************");
+      console.info("Title: ", this.xpObj.title );
+  }
+       
+    };
 </script>
 
 <style scoped lang="scss">
-    // Start custom common variables
-    @import '@nativescript/theme/scss/variables/blue';
-    // End custom common variables
-
-    // Custom styles
+ // @import '../app-variables';
+ @import '../_btlm.scss';
+  .media {
+  padding-top: 2;
+}
 </style>

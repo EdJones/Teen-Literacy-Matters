@@ -18,15 +18,8 @@
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
             <XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
-            <Label class="text-base leading-none font-light  p-4 pb-0 mt-6" :text="pageInfo.prompt1" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt1a" textWrap="true" />
-            <TextViewWithHint width="360" height="50" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Label class="text-base leading-none font-light  p-4 pb-0 mt-4" :text="pageInfo.prompt2" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt2a" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt2b" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt2c" textWrap="true" />
-            <TextViewWithHint width="360" height="80" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" hint="Pear and.." returnKeyType="next" > </TextViewWithHint>
-           <Button class="btn-b" text="Enter" @tap="acceptInput" />   
+            <TaskView class=""></TaskView>
+                <Button class="btn-b" text="Enter" @tap="acceptInput" />   
           </StackLayout>
         </PreviousNextView>
         </GridLayout>
@@ -42,6 +35,7 @@
   import { topicPages } from "../data/pages_list.js";
   import { XPs } from "../data/xp_list.js";
   import XPCard2 from "./XPCard2.vue";
+  import TaskView from "./TaskView.vue";
   import PathToReading3 from "./PathToReading3";
   //import ProgressBar from "./ProgressBar";
   //import PreviousNextView from '@nativescript/iqkeyboardmanager';
@@ -57,7 +51,8 @@ const alertOptions = {
       SelectedPageService.getInstance().updateSelectedPage("Path2Reading2");
     },
     components: {
-      XPCard2
+      XPCard2,
+      TaskView
   },
     data() {
       const page="PathToReading2";

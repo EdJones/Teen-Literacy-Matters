@@ -1,16 +1,16 @@
 <template>
       <ScrollView>
-        <GridLayout class="">
+        <GridLayout class="border-dotted border-2 bg-slate-50 rounded-md m-2">
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <PreviousNextView>
-          <StackLayout orientation="vertical">
-            <Label class="text-base leading-none font-light  p-4 pb-0 mt-6" :text="pageInfo.prompt1" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt1a" textWrap="true" />
+          <StackLayout orientation="vertical" class="mt-2">
+            <Label class="text-base leading-none font-light  p-4 pb-0 mt-2" :text="task.prompt1" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt1a" textWrap="true" />
             <TextViewWithHint width="360" height="50" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Label class="text-base leading-none font-light  p-4 pb-0 mt-4" :text="pageInfo.prompt2" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt2a" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt2b" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt2c" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0 mt-4" :text="task.prompt2" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2a" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2b" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2c" textWrap="true" />
             <TextViewWithHint width="360" height="80" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" hint="Pear and.." returnKeyType="next" > </TextViewWithHint>
            <Button class="btn-b" text="Enter" @tap="acceptInput" />   
           </StackLayout>
@@ -21,9 +21,9 @@
 
 <script>
   import * as utils from "~/shared/utils";
-  import { preparePageInfo, preparePageDetails } from "./pageData.js";
+  import { preparetask, preparePageDetails } from "./pageData.js";
   import { Dialogs } from '@nativescript/core';
-  import { Tasks } from "../data/Tasks.js";
+  import { Tasks } from "../data/Task_list.js";
   //import ProgressBar from "./ProgressBar";
   //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
@@ -34,22 +34,17 @@ const alertOptions = {
     cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
   }; 
   export default {
+    name: "TaskView",
     mounted() {
     },
     components: {
       
   },
     data() {
-      const page="PathToReading2";
-      const pageInfo = preparePageInfo(page, topicPages);
-      console.info("RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );   
-      const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
+      const Task=Tasks[3]
 
     return {
-      tasks: Tasks,
-      pageXPDetails: pageXPDetails,
-      pageInfo: pageInfo[0],
-      topicPages: topicPages,
+      task: Task,
       textViewValue1: "",
       textViewValue2: ""
     };
@@ -65,7 +60,7 @@ const alertOptions = {
       }, 
       
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Input for task ", this.textViewValue1,this.textViewValue2);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Input for task ", textViewValue1,this.textViewValue2);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);
