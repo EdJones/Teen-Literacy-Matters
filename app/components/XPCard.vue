@@ -192,16 +192,7 @@ export default {
             });
             } 
             */
-            /*
-             else 
-            if (this.xpObj.xpType ==='xp_pic') {
-             this.$showModal(XPModalA, {
-                 props: {
-                     xpObj: this.xpObj
-                 }
-             });
-             } 
-             */
+           
 
             // },
 
