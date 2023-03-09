@@ -12,7 +12,6 @@
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2b" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2c" textWrap="true" />
             <TextViewWithHint width="360" height="80" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" :hint="task.hint2" returnKeyType="next"> </TextViewWithHint>
-
         </StackLayout>
         <!--/PreviousNextView-->
     </GridLayout>
@@ -21,16 +20,7 @@
 
 <script>
 import * as utils from "~/shared/utils";
-import {
-    preparetask,
-    preparePageDetails
-} from "./pageData.js";
-import {
-    Dialogs
-} from '@nativescript/core';
-import { Tasks } from "../data/Task_list.js";
-//import ProgressBar from "./ProgressBar";
-//import PreviousNextView from '@nativescript/iqkeyboardmanager';
+import { Dialogs } from '@nativescript/core';
 
 const alertOptions = {
     title: '',
@@ -46,13 +36,12 @@ export default {
             required: true
         },
     },
-    mounted() {},
+    mounted() {
+    },
     components: {
-
     },
     data() {
       return {
-      //task: task,
       textViewValue1: "",
       textViewValue2: ""
     };
@@ -64,17 +53,12 @@ export default {
         }
     },
     methods: {
-        onDrawerButtonTap() {
-            utils.showDrawer();
-        },
-
         acceptInput() {
             console.log("$$$$$$$$$$$$$  Input for task ", this.textViewValue1, this.textViewValue2);
             let now = new Date();
             let docNum = now.getTime();
             console.log("Now: ", docNum);
             /*
-
                 this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});
             this.$store.commit('addXP', {XP: "XP3000"});
             */
@@ -91,6 +75,5 @@ export default {
 // Start custom common variables
 @import '@nativescript/theme/scss/variables/blue';
 // End custom common variables
-
 // Custom styles
 </style>

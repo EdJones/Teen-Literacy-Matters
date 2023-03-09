@@ -20,6 +20,7 @@
             <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
 
             <TaskView :task="task" class=""></TaskView>  
+            <Button class="btn-b" text="Enter" @tap="acceptInput" />  
           </StackLayout>
         </PreviousNextView>
         </GridLayout>
