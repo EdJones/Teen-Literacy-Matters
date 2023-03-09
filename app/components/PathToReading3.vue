@@ -19,15 +19,7 @@
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
             <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
 
-            <Label class="text-base leading-none font-light  p-4 pb-0 mt-8" :text="pageInfo.prompt1" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt1a" textWrap="true" />
-            <TextViewWithHint width="360" height="80" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Label class="text-base leading-none font-light  p-4 pb-0 mt-4" :text="pageInfo.prompt2" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt2a" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt2b" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.prompt2c" textWrap="true" />
-            <TextViewWithHint width="360" height="50" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" hint="" returnKeyType="next" > </TextViewWithHint>
-           <Button class="btn-b" text="Enter" @tap="acceptInput" />   
+            <TaskView :task="task" class=""></TaskView>  
           </StackLayout>
         </PreviousNextView>
         </GridLayout>
@@ -42,7 +34,9 @@
   import { Dialogs } from '@nativescript/core';
   import { topicPages } from "../data/pages_list.js";
   import { XPs } from "../data/xp_list.js";
+  import { Tasks } from "../data/Task_list.js";
   import XPCard2 from "./XPCard2.vue";
+  import TaskView from "./TaskView";
   import End from "./End";
   //import ProgressBar from "./ProgressBar";
   //import PreviousNextView from '@nativescript/iqkeyboardmanager';
@@ -58,18 +52,21 @@ const alertOptions = {
       SelectedPageService.getInstance().updateSelectedPage("Path2Reading3");
     },
     components: {
-      XPCard2
+      XPCard2,
+      TaskView
   },
     data() {
       const page="PathToReading3";
       const pageInfo = preparePageInfo(page, topicPages);
       console.info("RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );   
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
+      const task=Tasks[4];
 
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
       topicPages: topicPages,
+      task: task,
       textViewValue1: "",
       textViewValue2: ""
     };

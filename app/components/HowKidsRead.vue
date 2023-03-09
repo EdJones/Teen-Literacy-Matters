@@ -37,7 +37,6 @@
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
   import { topicPages } from "../data/pages_list.js";
-
   export default {
     mounted() {
       SelectedPageService.getInstance().updateSelectedPage("SoldAStory");
