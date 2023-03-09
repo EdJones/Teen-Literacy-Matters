@@ -19,11 +19,7 @@
             <Label class="text-base leading-none font-light  p-4 pb-0" text="In 1987, the Van Orden experiments proved the unexpected opposite:" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0 italic" text="We all process written words as sounds." textWrap="true" />
             
-            <Label class="text-base leading-none font-light  p-4 pb-0 mt-4" text="Write that last insight here:" textWrap="true" />
-            <TextViewWithHint width="360" height="60" class="text-black input-gray text-xl mt-1" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Label class="text-base leading-none font-light  p-4 pb-0 mt-4" text="Write that last insight again, here, please. 
-                And, capitalize the 'written words' and 'sounds':" textWrap="true" />
-            <TextViewWithHint width="360" height="60" class="text-black input-gray text-xl mt-0" editable="true" v-model="textViewValue2" hint="" returnKeyType="next" > </TextViewWithHint>
+            <TaskView :task="task" class=""></TaskView>
             <Button class="btn-b" text="Enter" @tap="acceptInput" />   
           </StackLayout>
         </PreviousNextView>
@@ -40,6 +36,8 @@
   import XPModalA from "./XPModalA";
   import { topicPages } from "../data/pages_list.js";
   import { XPs } from "../data/xp_list.js";
+  import { Tasks } from "../data/Task_list.js";
+  import TaskView from "./TaskView.vue";
   import PathToReading2 from "./PathToReading2";
   //import ProgressBar from "./ProgressBar";
   //import PreviousNextView from '@nativescript/iqkeyboardmanager';
@@ -55,7 +53,7 @@ const alertOptions = {
       SelectedPageService.getInstance().updateSelectedPage("PrisonEngage");
     },
     components: {
-    //  XPCard2
+      TaskView
   },
     data() {
       const page="PathToReading";
@@ -63,12 +61,14 @@ const alertOptions = {
     //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
       console.info("RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );   
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
+      const task=Tasks[2];
 
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
       topicPages: topicPages,
-      textViewValue1: "",
+      task: task,
+      textViewValue1: this.textViewValue1,
       textViewValue2: ""
     };
   },

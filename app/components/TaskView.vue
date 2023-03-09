@@ -6,12 +6,12 @@
         <StackLayout orientation="vertical" class="mt-2">
             <Label class="text-base leading-none font-light  p-4 pb-0 mt-2" :text="task.prompt1" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt1a" textWrap="true" />
-            <TextView width="360" height="50" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next"> </TextView>
+            <TextView width="360" height="50" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" :hint="task.hint1" returnKeyType="next"> </TextView>
             <Label class="text-base leading-none font-light  p-4 pb-0 mt-4" :text="task.prompt2" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2a" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2b" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2c" textWrap="true" />
-            <TextViewWithHint width="360" height="80" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" hint="Pear and.." returnKeyType="next"> </TextViewWithHint>
+            <TextViewWithHint width="360" height="80" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" :hint="task.hint2" returnKeyType="next"> </TextViewWithHint>
 
         </StackLayout>
         <!--/PreviousNextView-->
@@ -28,7 +28,7 @@ import {
 import {
     Dialogs
 } from '@nativescript/core';
-//import { Tasks } from "../data/Task_list.js";
+import { Tasks } from "../data/Task_list.js";
 //import ProgressBar from "./ProgressBar";
 //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
