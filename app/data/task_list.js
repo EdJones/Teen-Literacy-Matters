@@ -57,7 +57,25 @@ export const Tasks = [
     closingText2: "", 
     modal: ""
   },{
-    taskID: 2,
+    taskID: 4,
+    title: "(Black) Literacy Matters--Intro",
+    challenge: "",
+    text1: "",
+    text2: "",
+    text3: "",
+    prompt1: "Summarize what the experimental subjects do here.",
+    prompt1a: "",
+    prompt2: "In this experiment, the subjects' brains seemed to play a trick on them. Their brains did something not expected.",
+    prompt2a: "In a sentence, what was that 'trick'?",
+    prompt2b: "",
+    prompt2c: "",
+    hint1: "",
+    hint2: "",
+    closingText: "",
+    closingText2: "", 
+    modal: ""
+  },{
+    taskID: 5,
     title: "(Black) Literacy Matters--Intro",
     challenge: "",
     text1: "",
@@ -72,15 +90,5 @@ export const Tasks = [
     closingText: "",
     closingText2: "", 
     modal: ""
-  },
-  {
-    taskID: 4,
-    title: "(Black) Literacy Matters--Intro",
-    challenge: "",
-    text1: "",
-    text2: "",
-    text3: "",
-    closingText: "",
-    closingText2: "", 
-    modal: ""
-  } ]
+  }
+   ]

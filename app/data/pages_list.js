@@ -162,12 +162,6 @@ export const topicPages = [
     text1: "How do we know that we process written words AS SOUNDS?",
     text2: "Van Orden's 1987 experiments showed us.",
     text3: "Here's how it happened.",
-    prompt1: "Summarize what the experimental subjects do here.",
-    prompt1a: "",
-    prompt2: "In this experiment, the subjects' brains seemed to play a trick on them. Their brains did something not expected.",
-    prompt2a: "In a sentence, what was that 'trick'?",
-    prompt2b: "",
-    prompt2c: "",
     closingText: "",
     closingText2: "",
     modal: ""
