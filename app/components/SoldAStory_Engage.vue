@@ -13,8 +13,9 @@
             <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
             <StackLayout row="0" orientation="vertical">
                 <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
-                <Label class="text-2xl text-center" text="Sold A Story" />
-                <TaskView :task="task" class=""></TaskView><Button class="btn-b" text="Submit" @tap="acceptInput" />
+                
+                <Label class="text-center" :text="taskResponses[1]" />
+                <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView><Button class="btn-b" text="Submit" @tap="acceptInput" />
             </StackLayout>
           </PreviousNextView>
             <StackLayout row="1" class="mb-8">
@@ -40,12 +41,12 @@ import XPModalA from "./XPModalA";
 // import XPCard2 from "./XPCard2";
 //import XPCardSmall from "./XPCardSmall";
 import {
-    XPs
-} from "../data/xp_list.js";
+    XPs } from "../data/xp_list.js";
 //import P rogressBar from "./ProgressBar";
-import {
-    topicPages
-} from "../data/pages_list.js";
+import { topicPages } from "../data/pages_list.js";
+import { preparePageInfo, preparePageDetails } from "./pageData.js";
+import { Tasks } from "../data/Task_list.js";
+import TaskView from "./TaskView.vue";
 
 const alertOptions = {
     title: 'Thank you',
@@ -59,30 +60,26 @@ export default {
     },
     components: {
         //  XPCard2
+        TaskView
     },
     data() {
         const page = "SoldAStory";
-        const pageXPDetails = XPs.filter(XP => {
-            //console.info("In page filter, ", XP );
-            return XP.Page.includes(page);
-        });
-        // console.info("In page filter, topicPage is", topicPages[3]);
-
-        const pageInfo = topicPages.filter(topicPage => {
-            console.info("In page filter 2, ", topicPage);
-            return topicPage.page.includes(page);
-        });
-        // pageInfo = topicPages[1];
-
-        console.info("In data, pageInfo is: ", pageInfo);
-        console.info("In data, topicPage.page is: ", pageInfo[0].page);
-        // console.info("In data, topicPage.title is: ", topicPages[3].title );
-        // console.info("In data, topicPage.challenge is: ", topicPages[3].challenge );
-
+        const pageInfo = preparePageInfo(page, topicPages);
+      //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
+        console.info("In LetterBox2>data, pageInfo[0].page is: ", pageInfo[0].page );
+        const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
+        const task=Tasks[6];
+        const textViewValue1 = "";
+        const textViewValue2 = "";
+        const taskResponses = ["blue", "fuschia"];
         return {
             pageXPDetails: pageXPDetails,
             pageInfo: pageInfo[0],
-            topicPages: topicPages
+            topicPages: topicPages,
+            task: task,
+            textViewValue1: textViewValue1,
+            textViewValue2: textViewValue2,
+            taskResponses: taskResponses
         };
     },
     computed: {
@@ -100,6 +97,7 @@ export default {
             let now = new Date();
             let docNum = now.getTime();
             console.log("Now: ", docNum);
+            console.log("textViewValue1: ", this.textViewValue1);
 
             Dialogs.alert(alertOptions).then(() => {
                 this.$navigateBack();

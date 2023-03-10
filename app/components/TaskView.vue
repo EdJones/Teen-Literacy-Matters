@@ -7,13 +7,13 @@
             <Label row="0" col="0" :text="mediaIcon" class="fa-solid fas text-center text-2xl" verticalAlignment="top"></Label>
             <Label class="text-base leading-none font-light  p-4 pb-0 mt-2" :text="task.prompt1" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt1a" textWrap="true" />
-            <TextView width="360" height="50" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" :hint="task.hint1" returnKeyType="next"> </TextView>
+            <TextView width="360" height="50" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="task.hint1" returnKeyType="next"> </TextView>
             <Label class="text-base leading-none font-light  p-4 pb-0 mt-4" :text="task.prompt2" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2a" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2b" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2c" textWrap="true" />
-            <TextViewWithHint width="360" height="80" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" :hint="task.hint2" returnKeyType="next"> </TextViewWithHint>
-        </StackLayout>
+            <TextView width="360" height="80" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" hint="task.hint2" returnKeyType="next"> </TextView>
+            <Button class="btn-b" text="Enter" @tap="updateTaskResponse" />  </StackLayout>
         <!--/PreviousNextView-->
     </GridLayout>
 </ScrollView>
@@ -60,7 +60,16 @@ export default {
     },
     methods: {
        
-       
+        updateTaskResponse() {
+            console.info("Updating task input");
+            console.info( this.textViewValue1);
+            console.info( this.textViewValue2);
+            //let taskResponses = [this.textViewValue1, this.textViewValue2];
+            let taskResponses = [this.textViewValue1, this.textViewValue2];
+            console.info("taskResponses: ", taskResponses);
+     this.$emit('updateTaskResponses', taskResponses);
+    
+   },
         acceptInput() {
             console.log("$$$$$$$$$$$$$  Input for task ", this.textViewValue1, this.textViewValue2);
             let now = new Date();

@@ -99,10 +99,12 @@ export const Tasks = [
     text3: "",
     prompt1: "What grade were these children in?",
     prompt1a: "",
+    hint1: "color",
     prompt2: "Kids like the third child here will have a very unpleasant time in school.",
     prompt2a: "About what fraction of kids read like this little girl?",
     prompt2b: "",
     prompt2c: "",
+    hint2: "hue",
     closingText: "",
     closingText2: "", 
     modal: ""
