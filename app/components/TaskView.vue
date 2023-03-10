@@ -4,6 +4,7 @@
         <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
         <!--PreviousNextView-->
         <StackLayout orientation="vertical" class="mt-2">
+            <Label row="0" col="0" :text="mediaIcon" class="fa-solid fas text-center text-2xl" verticalAlignment="top"></Label>
             <Label class="text-base leading-none font-light  p-4 pb-0 mt-2" :text="task.prompt1" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt1a" textWrap="true" />
             <TextView width="360" height="50" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" :hint="task.hint1" returnKeyType="next"> </TextView>
@@ -50,9 +51,16 @@ export default {
     computed: {
         message() {
             return "<!-- Page content goes here -->";
+        },
+        mediaIcon() {
+            
+            const icon = String.fromCharCode(0xf0f0);
+            return icon;
         }
     },
     methods: {
+       
+       
         acceptInput() {
             console.log("$$$$$$$$$$$$$  Input for task ", this.textViewValue1, this.textViewValue2);
             let now = new Date();
@@ -74,6 +82,7 @@ export default {
 <style lang="scss" scoped>
 // Start custom common variables
 @import '@nativescript/theme/scss/variables/blue';
+@import '../_btlm.scss';
 // End custom common variables
 // Custom styles
 </style>
