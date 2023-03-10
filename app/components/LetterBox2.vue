@@ -10,7 +10,7 @@
       <ScrollView>
         <GridLayout class="">
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
-          <PreviousNextView>
+          <!--PreviousNextView-->
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
             <Label class="text-2xl text-center" :text="pageInfo.challenge"  />
@@ -18,14 +18,12 @@
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text3" textWrap="true" />
             <XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
-            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text4" textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" text="Any ideas?" textWrap="true" />
-            <TextViewWithHint width="350" height="70" class="text-black input-gray text-xl mt-6" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-             <Button class="btn-b" text="Enter" @tap="acceptInput" /> 
+            <TaskView :task="task" class=""></TaskView>
+            <Button class="btn-b" text="Enter" @tap="acceptInput" />  
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text5" textWrap="true" />
              <!--XPCard2 :xpObj="pageXPDetails[1]" ></XPCard2--> 
           </StackLayout>
-        </PreviousNextView>
+        <!--/PreviousNextView-->
         </GridLayout>
         </ScrollView>
     </Page>
@@ -39,6 +37,8 @@
   import XPCard2 from "./XPCard2";
   import XPModalA from "./XPModalA";
   import { XPs } from "../data/xp_list.js";
+  import { Tasks } from "../data/Task_list.js";
+  import TaskView from "./TaskView.vue";
   import Tools4BrainScience from "./Tools4BrainScience";
   //import HowKidsRead from './';
   //import P rogressBar from "./ProgressBar";
@@ -56,19 +56,23 @@ const alertOptions = {
       SelectedPageService.getInstance().updateSelectedPage("LetterBox2");
     },
     components: {
-      XPCard2
+      XPCard2,
+      TaskView
   },
     data() {
       const page="LetterBox2";
       const pageInfo = preparePageInfo(page, topicPages);
       //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
       console.info("In LetterBox2>data, pageInfo[0].page is: ", pageInfo[0].page );
+      console.info("In LetterBox2>data, pageInfo[0].page is: ", pageInfo[0].page );
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
+      const task=Tasks[pageInfo[0].task];
 
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
       topicPages: topicPages,
+      task: task,
       textViewValue1: "",
       textViewValue2: ""
     };
