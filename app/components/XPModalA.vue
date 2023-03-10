@@ -48,7 +48,7 @@ export default {
     },
   methods: {
     onPageLoaded() {
-      console.log("#####################      Modal page loading:       #################");
+      console.log("#####################      XPModalA page loading:       #################");
       this.startTime = new Date();
      console.log("Modal loaded: ", this.startTime );
     },
