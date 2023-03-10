@@ -14,14 +14,7 @@
             <StackLayout row="0" orientation="vertical">
                 <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
                 <Label class="text-2xl text-center" text="Sold A Story" />
-                <Label class="text-base leading-none p-4 pb-0" text="What grade were these children in?" textWrap="true" />
-                <Label class="text-base leading-none p-4 pb-0" text="" textWrap="true" />
-                <TextViewWithHint width="40" height="35" class="text-black text-center input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next"> </TextViewWithHint>
-
-                <Label class="text-base leading-none p-4 pb-0" text="Kids like the third child here will have a very unpleasant time in school." textWrap="true" />
-                <Label class="text-base leading-none p-4 pb-0" text="About what fraction of kids read like this little girl?" textWrap="true" />
-                <TextViewWithHint width="70" height="35" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" hint="" returnKeyType="done"> </TextViewWithHint>
-                <Button class="btn-b" text="Submit" @tap="acceptInput" />
+                <TaskView :task="task" class=""></TaskView><Button class="btn-b" text="Submit" @tap="acceptInput" />
             </StackLayout>
           </PreviousNextView>
             <StackLayout row="1" class="mb-8">
@@ -103,7 +96,7 @@ export default {
         },
 
         acceptInput() {
-            console.log("$$$$$$$  SoldAStory Input", this.textViewValue1, this.textViewValue2);
+            //console.log("$$$$$$$  SoldAStory Input", this.textViewValue1, this.textViewValue2);
             let now = new Date();
             let docNum = now.getTime();
             console.log("Now: ", docNum);

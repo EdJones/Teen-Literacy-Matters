@@ -68,7 +68,7 @@
         utils.showDrawer();
       },
       goBack() {
-        console.log("Done with soldAStory engage");
+        console.log("Done with HowKidsRead");
         this.$navigateBack();
       }
     }
