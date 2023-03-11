@@ -15,7 +15,7 @@
                 <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
                 
                 <Label class="text-center" :text="taskResponses[1]" />
-                <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView><Button class="btn-b" text="Submit" @tap="acceptInput" />
+                <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView>
             </StackLayout>
           </PreviousNextView>
             <StackLayout row="1" class="mb-8">
