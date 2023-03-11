@@ -1,105 +1,136 @@
 <template>
-    <Page class="page">
-      <ActionBar class="action-bar">
-        <NavigationButton visibility="hidden"/>
+<Page class="page">
+    <ActionBar class="action-bar">
+        <NavigationButton visibility="hidden" />
         <GridLayout columns="*, 50">
-          <Label col="0" class="action-bar-title" text="(Black) Teen Literacy Matters" />
+            <Label col="0" class="action-bar-title" text="(Black) Teen Literacy Matters" />
 
-          <Label col="1" class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
+            <Label col="1" class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
         </GridLayout>
-      </ActionBar>
-
+    </ActionBar>
+    <ScrollView row="1" height="auto">
         <GridLayout class="" rows="auto,*">
-          <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
-          <StackLayout orientation="vertical" row="0">
-            <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
-          <Label class="text-2xl text-center" text="Sold A Story"  />
-            <Label class="text-base leading-none p-4 pb-0" text="Listen to three children read." textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="Is the difference how 'smart' they each are?" textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="Or is it more about how they were--or weren't--taught?" textWrap="true" />
-             <!--XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard-->
-             <XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
-             <XPCard2 :xpObj="pageXPDetails[1]" ></XPCard2>
-             <XPCard2 :xpObj="pageXPDetails[2]" ></XPCard2>
-             <XPCard2 :xpObj="pageXPDetails[3]" ></XPCard2>
+            <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
+            <StackLayout orientation="vertical" row="0">
+                <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
+                <Label class="text-2xl text-center" text="Sold A Story" />
+                <Label class="text-base leading-none p-4 pb-0" text="Listen to three children read." textWrap="true" />
+                <Label class="text-base leading-none p-4 pb-0" text="Is the difference how 'smart' they each are?" textWrap="true" />
+                <Label class="text-base leading-none p-4 pb-0" text="Or is it more about how they were--or weren't--taught?" textWrap="true" />
+                <!--XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard-->
+                <XPCard2 :xpObj="pageXPDetails[0]"></XPCard2>
+                <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView>
 
-             
-          </StackLayout>
-          <StackLayout row="1" class="mb-8" >
-          <Button class="btn-b" width="100" text="Back to Intro" @tap="goBack" />
-        </StackLayout>
-
+            </StackLayout>
+            <StackLayout row="1" class="mb-8">
+                <Button class="btn-b" width="100" text="Back to Intro" @tap="goBack" />
+            </StackLayout>
 
         </GridLayout>
-    </Page>
+    </ScrollView>
+</Page>
 </template>
 
 <script>
-  import * as utils from "~/shared/utils";
-  import { SelectedPageService } from "../shared/selected-page-service";
+import * as utils from "~/shared/utils";
+import {
+    Dialogs
+} from '@nativescript/core';
+import {
+    SelectedPageService
+} from "../shared/selected-page-service";
+import { preparePageInfo, preparePageDetails } from "./pageData.js";
+import XPModalA from "./XPModalA";
+//import { XPCard }  from "../WebpackHack.js";
+//import XPCard from "./XPCard";
+import XPCard2 from "./XPCard2";
+//import XPCardSmall from "./XPCardSmall";
+import {
+    XPs
+} from "../data/xp_list.js";
+//import P rogressBar from "./ProgressBar";
+import {
+    topicPages
+} from "../data/pages_list.js";
+import {
+    Tasks
+} from "../data/Task_list.js";
+import TaskView from "./TaskView.vue";
+import SoldAStory2 from "./SoldAStory";
 
-  import XPModalA from "./XPModalA";
-  //import { XPCard }  from "../WebpackHack.js";
-  //import XPCard from "./XPCard";
-  import XPCard2 from "./XPCard2";
-  //import XPCardSmall from "./XPCardSmall";
-  import { XPs } from "../data/xp_list.js";
-  //import P rogressBar from "./ProgressBar";
-import { topicPages } from "../data/pages_list.js";
+const alertOptions = {
+            title: 'Thank you',
+            message: 'Keep going!',
+            okButtonText: 'Okay',
+            cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
+        };
 
-  export default {
+export default {
     mounted() {
-      SelectedPageService.getInstance().updateSelectedPage("SoldAStory");
+        SelectedPageService.getInstance().updateSelectedPage("SoldAStory");
     },
     components: {
-      XPCard2
-  },
+        XPCard2,
+        TaskView
+    },
     data() {
-      const page="SoldAStory";
-    const pageXPDetails = XPs.filter(XP => {
-        //console.info("In page filter, ", XP );
-      return XP.Page.includes(page);
-     });
-    // console.info("In page filter, topicPage is", topicPages[3]);
-
-    const pageInfo = topicPages.filter(topicPage => {
-        console.info("In page filter 2, ", topicPage );
-      return topicPage.page.includes(page);
-     });
-    // pageInfo = topicPages[1];
-    
-     console.info("In data, pageInfo is: ", pageInfo);
-     console.info("In data, topicPage.page is: ", pageInfo[0].page );
-    // console.info("In data, topicPage.title is: ", topicPages[3].title );
-    // console.info("In data, topicPage.challenge is: ", topicPages[3].challenge );
-
-    return {
-      pageXPDetails: pageXPDetails,
-      pageInfo: pageInfo[0],
-      topicPages: topicPages
-    };
-  },
+        const page = "SoldAStory";
+        const pageInfo = preparePageInfo(page, topicPages);
+        console.info("In SoldASTor>data, pageInfo[0].page is: ", pageInfo[0].page );
+        const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
+        const task = Tasks[6];
+        const textViewValue1 = "";
+        const textViewValue2 = "";
+        const taskResponses = ["blue", "fuschia"];
+        return {
+            pageXPDetails: pageXPDetails,
+            pageInfo: pageInfo[0],
+            topicPages: topicPages,
+            task: task,
+            textViewValue1: textViewValue1,
+            textViewValue2: textViewValue2,
+            taskResponses: taskResponses
+        };
+    },
     computed: {
-      message() {
-        return "<!-- Page content goes here -->";
-      }
+        message() {
+            return "<!-- Page content goes here -->";
+        }
+    },
+    watch: {
+        taskResponses(newtaskResponses, oldtaskResponses) {
+            console.log("Watcher updated");
+            console.info(newtaskResponses);
+            this.acceptInput();
+        },
     },
     methods: {
-      onDrawerButtonTap() {
-        utils.showDrawer();
-      },
-      goBack() {
-        console.log("Done with soldAStory engage");
-        this.$navigateBack();
-      }
+        onDrawerButtonTap() {
+            utils.showDrawer();
+        },
+        goBack() {
+            console.log("Done with soldAStory engage");
+            this.$navigateBack();
+        },
+        acceptInput() {
+            console.log("$$$$$$$$$$$$$  Sold a Story Input", this.taskResponse);
+
+            /*
+                this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});
+            this.$store.commit('addXP', {XP: "XP3000"});
+            */
+            Dialogs.alert(alertOptions).then(() => {
+                this.$navigateTo(SoldAStory2);
+            })
+        },
     }
-  };
+};
 </script>
 
-<style scoped lang="scss">
-    // Start custom common variables
-    @import '@nativescript/theme/scss/variables/blue';
-    // End custom common variables
+<style lang="scss" scoped>
+// Start custom common variables
+@import '@nativescript/theme/scss/variables/blue';
+// End custom common variables
 
-    // Custom styles
+// Custom styles
 </style>
