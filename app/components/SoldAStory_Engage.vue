@@ -87,6 +87,12 @@ export default {
             return "<!-- Page content goes here -->";
         }
     },
+    watch: {
+        taskResponses(oldtaskResponses, newtaskResponses) {
+            console.log("Watcher updated");
+            console.info(newtaskResponses);
+        },
+    },
     methods: {
         onDrawerButtonTap() {
             utils.showDrawer();
