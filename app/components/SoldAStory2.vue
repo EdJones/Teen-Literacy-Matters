@@ -2,7 +2,7 @@
 <Page class="page">
     <ActionBar class="action-bar">
         <NavigationButton visibility="hidden" />
-        <GridLayout columns="*, 50">
+        <GridLayout columns="*, 80">
             <Label col="0" class="action-bar-title" text="(Black) Teen Literacy Matters" />
 
             <Label col="1" class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
@@ -22,8 +22,8 @@
                 <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView>
 
             </StackLayout>
-            <StackLayout row="1" class="mb-8">
-                <Button class="btn-b" width="100" text="Back to Intro" @tap="goBack" />
+            <StackLayout row="1" class="py-4">
+                <Button class="pt-4 btn-b" width="100" text="Back to Intro" @tap="goBack" />
             </StackLayout>
 
         </GridLayout>
@@ -41,8 +41,6 @@ import {
 } from "../shared/selected-page-service";
 import { preparePageInfo, preparePageDetails } from "./pageData.js";
 import XPModalA from "./XPModalA";
-//import { XPCard }  from "../WebpackHack.js";
-//import XPCard from "./XPCard";
 import XPCard2 from "./XPCard2";
 //import XPCardSmall from "./XPCardSmall";
 import {
@@ -56,10 +54,10 @@ import {
     Tasks
 } from "../data/Task_list.js";
 import TaskView from "./TaskView.vue";
-import SoldAStory2 from "./SoldAStory";
+//import SoldAStory2 from "./SoldAStory";
 
 const alertOptions = {
-            title: 'Thank you',
+            title: '',
             message: 'Keep going!',
             okButtonText: 'Okay',
             cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
@@ -67,18 +65,18 @@ const alertOptions = {
 
 export default {
     mounted() {
-        SelectedPageService.getInstance().updateSelectedPage("SoldAStory");
+        SelectedPageService.getInstance().updateSelectedPage("SoldAStory2");
     },
     components: {
         XPCard2,
         TaskView
     },
     data() {
-        const page = "SoldAStory";
+        const page = "SoldAStory2";
         const pageInfo = preparePageInfo(page, topicPages);
         console.info("In SoldASTor>data, pageInfo[0].page is: ", pageInfo[0].page );
         const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
-        const task = Tasks[6];
+        const task = Tasks[7];
         const textViewValue1 = "";
         const textViewValue2 = "";
         const taskResponses = ["blue", "fuschia"];
@@ -113,7 +111,7 @@ export default {
             this.$navigateBack();
         },
         acceptInput() {
-            console.log("$$$$$$$$$$$$$  Sold a Story Input", this.taskResponse);
+            console.log("$$$$$$$$$$$$$  Sold a Story 2 Input", this.taskResponse);
 
             /*
                 this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});

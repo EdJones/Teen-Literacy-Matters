@@ -33,6 +33,17 @@ export const topicPages = [
     closingText2: "", 
     modal: ""
   },{
+    page: "SoldAStory2",
+    title: "(Black) Literacy Matters--Sold A Story",
+    challenge: "",
+    pageXPs: ["XP10122"],
+    text1: "",
+    text2: "",
+    text3: "",
+    closingText: "",
+    closingText2: "", 
+    modal: ""
+  },{
     page: "Prison",
     title: "(Black) Literacy Matters--Stumped by the Words",
     challenge: "",

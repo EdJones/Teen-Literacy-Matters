@@ -92,7 +92,7 @@ export const Tasks = [
     modal: ""
   },{
     taskID: 6,
-    title: "Sold A Story 2",
+    title: "Sold A Story",
     challenge: "",
     text1: "",
     text2: "",
@@ -110,22 +110,23 @@ export const Tasks = [
     modal: ""
   },{
     taskID: 7,
-    title: "The Brain's Letterbox 2",
+    title: "Sold A Story 2",
     challenge: "",
     text1: "",
     text2: "",
     text3: "",
-    prompt1: "",
+    prompt1: "What",
     prompt1a: "",
-    prompt2: "",
-    prompt2a: "",
+    hint1: "color",
+    prompt2: "Kids like ",
+    prompt2a: "About w",
     prompt2b: "",
     prompt2c: "",
+    hint2: "hue",
     closingText: "",
     closingText2: "", 
     modal: ""
-  }
-  ,{
+  },{
     taskID: 8,
     title: "The Brain's Letterbox 2",
     challenge: "",

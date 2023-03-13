@@ -13,7 +13,9 @@
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2b" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2c" textWrap="true" />
             <TextView width="360" height="80" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" hint="task.hint2" returnKeyType="next"> </TextView>
-            <Button class="btn-b" text="Enter" @tap="updateTaskResponse" />  </StackLayout>
+            <Label text="_" class="h-px bg-gray-200 border-2 bg-slate-50 border-solid dark:bg-gray-700" />
+            <Button class="btn-b mt-2 mb-4" text="Enter" @tap="updateTaskResponse" />  
+        </StackLayout>
         <!--/PreviousNextView-->
     </GridLayout>
 </ScrollView>
