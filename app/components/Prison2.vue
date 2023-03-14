@@ -13,12 +13,9 @@
         <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
         <StackLayout orientation="vertical" row="0">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
-            <Label class="text-2xl text-center" text="Stumped by the Words" />
-            <Label class="text-base leading-none p-4 pb-0" text="Up to 3/4 of adult prisoners suffer from trouble reading." textWrap="true" />
-            <Label class="text-base leading-none p-4 pb-0" text="It starts to show up in Juvenile Detention centers. Like this one." textWrap="true" />
+            <Label class="text-2xl text-center" text="Stumped by the Words 2" />
             <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail"></XPCard2>
             <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView>
-
         </StackLayout>
         <StackLayout row="1" class="mt-32">
             <Button class="btn-b" width="100" text="Back to Intro" @tap="goBack" />
@@ -30,22 +27,15 @@
 
 <script>
 import * as utils from "~/shared/utils";
-import {
-    SelectedPageService
-} from "../shared/selected-page-service";
-import {
-    Dialogs
-} from '@nativescript/core';
+import { SelectedPageService } from "../shared/selected-page-service";
+import { Dialogs } from '@nativescript/core';
 import {
     preparePageInfo,
     preparePageDetails
 } from "./pageData.js";
 import XPModalA from "./XPModalA";
 import XPCard2 from "./XPCard2";
-//import XPCardSmall from "./XPCardSmall";
-import {
-    XPs
-} from "../data/xp_list.js";
+import { XPs } from "../data/xp_list.js";
 //import P rogressBar from "./ProgressBar";
 import {
     topicPages
@@ -54,7 +44,7 @@ import {
     Tasks
 } from "../data/Task_list.js";
 import TaskView from "./TaskView.vue";
-import Prison2 from "./Prison2"
+import Prison3 from "./Prison3"
 
 const alertOptions = {
     title: '',
@@ -65,19 +55,20 @@ const alertOptions = {
 
 export default {
     mounted() {
-        SelectedPageService.getInstance().updateSelectedPage("Prison");
+        SelectedPageService.getInstance().updateSelectedPage("Prison2");
     },
     components: {
         XPCard2,
         TaskView
     },
     data() {
-        const page = "Prison";
+        const page = "Prison2";
         const pageInfo = preparePageInfo(page, topicPages);
-
-        console.info("In data, topicPage.page is: ", pageInfo[0].page);
         const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
-        const task = Tasks[8];
+        const task = Tasks[pageInfo[0].task];
+        console.info("In data, topicPage.page is: ", pageInfo[0].page);
+        console.info("In data, topicPage.task is: ", pageInfo[0].task);
+        console.info("In data, topicPage.task is: ", task);
         const textViewValue1 = "";
         const textViewValue2 = "";
         const taskResponses = ["", ""];
@@ -109,14 +100,14 @@ export default {
             utils.showDrawer();
         },
         acceptInput() {
-            console.log("$$$$$$$  Prison Input", this.taskResponse);
+            console.log("$$$$$$$  Prison 2 input ", this.taskResponse);
 
             /*
                 this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});
             this.$store.commit('addXP', {XP: "XP3000"});
             */
             Dialogs.alert(alertOptions).then(() => {
-                this.$navigateTo(Prison2);
+                this.$navigateTo(Prison3);
             })
         },
         goBack() {

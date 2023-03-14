@@ -3221,7 +3221,7 @@ export const XPs = [{
     "YTvideoId": "",
     "nav_link": "",
     "Subtitle": "",
-    "xpText": "Keep listening to DeShaun's part of the story--through ~5:20.",
+    "xpText": "Keep listening to DeShaun's part of the story--2:00 through ~5:20.",
     "text2": "",
     "xpUrl": "https://www.apmreports.org/episode/2020/08/06/what-the-words-say",
     "Text3": "",

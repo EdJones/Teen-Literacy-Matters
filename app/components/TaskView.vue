@@ -7,6 +7,8 @@
             <Label row="0" col="0" :text="mediaIcon" class="fa-solid fas text-center text-2xl" verticalAlignment="top"></Label>
             <Label class="text-base leading-none font-light  p-4 pb-0 mt-2" :text="task.prompt1" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt1a" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt1b" textWrap="true" />
+            <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt1c" textWrap="true" />
             <TextView width="360" height="50" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="task.hint1" returnKeyType="next"> </TextView>
             <Label class="text-base leading-none font-light  p-4 pb-0 mt-4" :text="task.prompt2" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2a" textWrap="true" />

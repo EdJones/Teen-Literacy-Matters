@@ -79,7 +79,7 @@ export default {
         const task = Tasks[7];
         const textViewValue1 = "";
         const textViewValue2 = "";
-        const taskResponses = ["blue", "fuschia"];
+        const taskResponses = ["", ""];
         return {
             pageXPDetails: pageXPDetails,
             pageInfo: pageInfo[0],
