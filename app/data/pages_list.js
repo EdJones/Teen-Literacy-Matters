@@ -78,6 +78,18 @@ export const topicPages = [
     closingText: "",
     closingText2: "", 
     modal: ""
+  },{
+    page: "Prison4",
+    title: "(Black) Literacy Matters--Stumped by the Words 3",
+    challenge: "",
+    pageXPs: ["XP10133"],
+    text1: "",
+    text2: "",
+    text3: "",
+    task: 11,
+    closingText: "",
+    closingText2: "", 
+    modal: ""
   }, {
     page: "HowKidsRead",
     title: "(Black) Literacy Matters--How Kids Learn",
@@ -220,6 +232,18 @@ export const topicPages = [
     text1: "We could def use $$ help to speed things up.!",
     text2: "Stay tuned. Or, join us and help.  ",
     text3: "",
+    closingText: "",
+    closingText2: "",
+    modal: ""
+  }, {
+    page: "EndIntro",
+    title: "Finished 'First Steps'",
+    challenge: "",
+    pageXPs: ["XP0"],
+    text1: "Good work.",
+    text2: "We've gone fairly fast through a problem that is large and complex, with terrible results for young people.",
+    text3: "Many people would just accept it. 'It is what it is.",
+    text4: "We're not such people.",
     closingText: "",
     closingText2: "",
     modal: ""

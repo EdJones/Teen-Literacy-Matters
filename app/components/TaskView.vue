@@ -3,7 +3,7 @@
     <GridLayout class="border-dotted border-2 bg-slate-50 rounded-md m-2">
         <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
         <!--PreviousNextView-->
-        <StackLayout orientation="vertical" class="mt-2">
+        <StackLayout orientation="vertical" class="mt-2 text-black">
             <Label row="0" col="0" :text="mediaIcon" class="fa-solid fas text-center text-2xl" verticalAlignment="top"></Label>
             <Label class="text-base leading-none font-light  p-4 pb-0 mt-2" :text="task.prompt1" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt1a" textWrap="true" />
@@ -14,7 +14,7 @@
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2a" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2b" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="task.prompt2c" textWrap="true" />
-            <TextView width="360" height="80" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" hint="task.hint2" returnKeyType="next"> </TextView>
+            <TextView v-if="(task.prompt2!='')" width="360" height="80" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" hint="task.hint2" returnKeyType="next"> </TextView>
             <Label text="_" class="h-px bg-gray-200 border-2 bg-slate-50 border-solid dark:bg-gray-700" />
             <Button class="btn-b mt-2 mb-4" text="Enter" @tap="updateTaskResponse" />  
         </StackLayout>
@@ -42,6 +42,8 @@ export default {
         },
     },
     mounted() {
+        console.log("taskview mounted");
+        console.info("task: ", this.task);
     },
     components: {
     },
@@ -96,6 +98,9 @@ export default {
 // Start custom common variables
 @import '@nativescript/theme/scss/variables/blue';
 @import '../_btlm.scss';
+.red {
+    color: blue;
+}
 // End custom common variables
 // Custom styles
 </style>

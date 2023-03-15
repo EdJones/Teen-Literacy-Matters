@@ -44,7 +44,7 @@ import {
     Tasks
 } from "../data/Task_list.js";
 import TaskView from "./TaskView.vue";
-import Prison4 from "./Prison4"
+import EndIntro from "./EndIntro"
 
 const alertOptions = {
     title: '',
@@ -55,14 +55,14 @@ const alertOptions = {
 
 export default {
     mounted() {
-        SelectedPageService.getInstance().updateSelectedPage("Prison3");
+        SelectedPageService.getInstance().updateSelectedPage("Prison4");
     },
     components: {
         XPCard2,
         TaskView
     },
     data() {
-        const page = "Prison3";
+        const page = "Prison4";
         const pageInfo = preparePageInfo(page, topicPages);
         const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
         const task = Tasks[pageInfo[0].task];
@@ -78,8 +78,7 @@ export default {
             pageInfo: pageInfo[0],
             topicPages: topicPages,
             task: task,
-            textViewValue1: textViewValue1,
-            textViewValue2: textViewValue2,
+
             taskResponses: taskResponses
         };
     },
@@ -100,14 +99,14 @@ export default {
             utils.showDrawer();
         },
         acceptInput() {
-            console.log("$$$$$$$  Prison 3 input ", this.taskResponses);
+            console.log("$$$$$$$  Prison 4 input ", this.taskResponses);
 
             /*
                 this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});
             this.$store.commit('addXP', {XP: "XP3000"});
             */
             Dialogs.alert(alertOptions).then(() => {
-                this.$navigateTo(Prison4);
+                this.$navigateTo(EndIntro);
             })
         },
         goBack() {
