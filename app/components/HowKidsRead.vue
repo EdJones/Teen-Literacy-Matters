@@ -17,7 +17,7 @@
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text3" textWrap="true" />
-            <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
+            <XPCard5 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard5>
           </StackLayout>
           <StackLayout row="1" class="mb-4" >
           <Button class="btn-b" width="170" text="Back to First Steps" @tap="goBack" />
@@ -32,7 +32,7 @@
   import { SelectedPageService } from "../shared/selected-page-service";
   import { preparePageInfo, preparePageDetails } from "./pageData.js";
   //import XPModalA from "./XPModalA";
-  import XPCard2 from "./XPCard2";
+  import XPCard5 from "./XPCard5";
   //import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
@@ -42,7 +42,7 @@
       SelectedPageService.getInstance().updateSelectedPage("End");
     },
     components: {
-      XPCard2
+      XPCard5
   },
     data() {
       const page="HowKidsRead";
