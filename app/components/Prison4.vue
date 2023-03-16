@@ -66,11 +66,9 @@ export default {
         const pageInfo = preparePageInfo(page, topicPages);
         const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
         const task = Tasks[pageInfo[0].task];
-        console.info("In data, topicPage.page is: ", pageInfo[0].page);
-        console.info("In data, topicPage.task is: ", pageInfo[0].task);
+        console.info("@@@@@@@@@@@@@@@@@@@@@@@ Data block for ", page, "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+    console.info("In page ", page, ">data(), pageXPDetails is: ", pageXPDetails);
         console.info("In data, topicPage.task is: ", task);
-        const textViewValue1 = "";
-        const textViewValue2 = "";
         const taskResponses = ["", ""];
 
         return {
@@ -78,7 +76,6 @@ export default {
             pageInfo: pageInfo[0],
             topicPages: topicPages,
             task: task,
-
             taskResponses: taskResponses
         };
     },

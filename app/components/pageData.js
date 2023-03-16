@@ -8,9 +8,12 @@ export function preparePageInfo(page, topicPages) {
       console.info("In pageData, pageInfo is: ", pageInfo);
       if (pageInfo.pageXPs===[] ){
         console.log("No XP list set for this page");
+        console.info("^^^^^^^^^^^^^ End preparePageInfo ^^^^^^^^^^^^^^^^");
     }
     else console.log("pageInfo.pageXPs: ", pageInfo.pageXPs);
+    console.info("^^^^^^^^^^^^^ End preparePageInfo ^^^^^^^^^^^^^^^^");
       return pageInfo;
+      console.info("^^^^^^^^^^^^^ End preparePageInfo ^^^^^^^^^^^^^^^^");
 }
 
 
@@ -31,6 +34,7 @@ export function preparePageDetails(pageInfo, XPs) {
               pageXPDetails.push(newXP[0]);
               console.info("pageXPDetails length: ", pageXPDetails.length);         
        }
+       console.info("^^^^^^^^^^^^^ End pageXPDetails ^^^^^^^^^^^^^^^^");
      return pageXPDetails;
     }
     else { console.log("No XP list set for this page");
@@ -40,6 +44,7 @@ export function preparePageDetails(pageInfo, XPs) {
        });
     
        console.info("In pageData.js, pageXPDetails is: ", pageXPDetails);
+       console.info("^^^^^^^^^^^^^ End pageXPDetails ^^^^^^^^^^^^^^^^");
        return pageXPDetails;
     } 
 }

@@ -58,9 +58,11 @@ const alertOptions = {
     data() {
       const page="NotNatural";
       const pageInfo = preparePageInfo(page, topicPages);
-      //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
-      console.info("In RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );
+      console.info(pageInfo[0]);
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
+      console.info("@@@@@@@@@@@@@@@@@@@@@@@ Data block for ", page, "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+      console.info("In page ", page, ">data(), pageInfo is: ", pageInfo[0]);
+      console.info("In page ", page, ">data(), pageXPDetails is: ", pageXPDetails);
 
     return {
       pageXPDetails: pageXPDetails,
