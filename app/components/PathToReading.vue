@@ -8,10 +8,9 @@
         </GridLayout>
       </ActionBar>
       <ScrollView>
-        <GridLayout class="">
-          <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
-          <PreviousNextView>
-          <StackLayout orientation="vertical">
+        <GridLayout class="" rows="auto,*">
+            <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
+          <StackLayout orientation="vertical" row="0" >
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
             <Label class="text-1xl text-center" text="The Path to Reading is Through Sound" textWrap="true"  />
             <Label class="text-base leading-none font-light p-4 pb-0" text="It's the least expected thing, to most people. You'd think seeing the word 'dog' in print would go straight to a mental outline of a four-legged animal. Right?" textWrap="true" />
@@ -19,9 +18,12 @@
             <Label class="text-base leading-none font-light  p-4 pb-0" text="In 1987, the Van Orden experiments proved the unexpected opposite:" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0 italic" text="We all process written words as sounds." textWrap="true" />
             
-            <TaskView :task="task" class=""></TaskView>
-            <Button class="btn-b" text="Enter" @tap="acceptInput" />   
+            <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView>
+
           </StackLayout>
+          <StackLayout row="1" class="py-4">
+                <Button class="pt-4 btn-b" width="100" text="Back to How Kids Read" @tap="goBack" />
+            </StackLayout>
         </PreviousNextView>
         </GridLayout>
         </ScrollView>
@@ -62,14 +64,14 @@ const alertOptions = {
       console.info("RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );   
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
       const task=Tasks[2];
+      const taskResponses = ["", ""];
 
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
       topicPages: topicPages,
       task: task,
-      textViewValue1: this.textViewValue1,
-      textViewValue2: ""
+      taskResponses: taskResponses
     };
   },
     computed: {
@@ -77,13 +79,23 @@ const alertOptions = {
         return "<!-- Page content goes here -->";
       }
     },
+    watch: {
+        taskResponses(newtaskResponses, oldtaskResponses) {
+            console.log("Watcher updated");
+            console.info(newtaskResponses);
+            this.acceptInput();
+        },
+    },
     methods: {
       onDrawerButtonTap() {
         utils.showDrawer();
       }, 
-      
+      goBack() {
+            console.log("Done with ", this.page);
+            this.$navigateBack();
+        },
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Path to Reading Input", this.textViewValue1,this.textViewValue2);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Path to Reading Input", this.taskResponses);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);
