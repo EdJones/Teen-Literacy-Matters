@@ -14,11 +14,11 @@
             <StackLayout orientation="vertical" row="0">
                 <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
                 <Label class="text-2xl text-center" text="Sold A Story" />
-                <Label class="text-base leading-none p-4 pb-0" text="Listen to three children read." textWrap="true" />
-                <Label class="text-base leading-none p-4 pb-0" text="Is the difference how 'smart' they each are?" textWrap="true" />
-                <Label class="text-base leading-none p-4 pb-0" text="Or is it more about how they were--or weren't--taught?" textWrap="true" />
+                <Label class="text-base leading-none p-4 pb-0" text="" textWrap="true" />
+                <Label class="text-base leading-none p-4 pb-0" text="" textWrap="true" />
+                <Label class="text-base leading-none p-4 pb-0" text="" textWrap="true" />
                 <!--XPcard v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPcard-->
-                <XPCard2 :xpObj="pageXPDetails[0]"></XPCard2>
+                <XPCard :xpObj="pageXPDetails[0]"></XPCard>
                 <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView>
 
             </StackLayout>
@@ -41,7 +41,7 @@ import {
 } from "../shared/selected-page-service";
 import { preparePageInfo, preparePageDetails } from "./pageData.js";
 import XPModalA from "./XPModalA";
-import XPCard2 from "./XPCard2";
+import XPCard from "./XPCard";
 //import XPCardSmall from "./XPCardSmall";
 import {
     XPs
@@ -68,7 +68,7 @@ export default {
         SelectedPageService.getInstance().updateSelectedPage("SoldAStory2");
     },
     components: {
-        XPCard2,
+        XPCard,
         TaskView
     },
     data() {
