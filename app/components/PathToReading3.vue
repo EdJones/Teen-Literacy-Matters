@@ -8,21 +8,21 @@
         </GridLayout>
       </ActionBar>
       <ScrollView>
-        <GridLayout class="">
+        <GridLayout class="" rows="auto,*">
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
-          <PreviousNextView>
+
           <StackLayout orientation="vertical">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
             <Label class="text-2xl text-center" text="The Path to Reading is Through Sound--3" textWrap="true"  />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
-            <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard2>
-
-            <TaskView :task="task" class=""></TaskView>  
-            <Button class="btn-b" text="Enter" @tap="acceptInput" />  
+            <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView>
           </StackLayout>
-        </PreviousNextView>
+          <StackLayout row="1" class="py-4">
+            <Button class="pt-4 btn-b" width="100" text="Back to How Kids Read" @tap="goBack" />
+          </StackLayout>
+
         </GridLayout>
         </ScrollView>
     </Page>
@@ -62,14 +62,15 @@ const alertOptions = {
       console.info("RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );   
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
       const task=Tasks[4];
+      const taskResponses = ["", ""];
 
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
       topicPages: topicPages,
+      page: page,
       task: task,
-      textViewValue1: "",
-      textViewValue2: ""
+      taskResponses: taskResponses
     };
   },
     computed: {
@@ -77,13 +78,24 @@ const alertOptions = {
         return "<!-- Page content goes here -->";
       }
     },
+    watch: {
+        taskResponses(newtaskResponses, oldtaskResponses) {
+            console.log("Watcher updated");
+            console.info(newtaskResponses);
+            this.acceptInput();
+        },
+    },
     methods: {
       onDrawerButtonTap() {
         utils.showDrawer();
       }, 
-      
+      goBack() {
+            console.log("Done with ", this.page);
+            this.$navigateBack();
+            this.$navigateBack();
+        },
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Path to Reading 3 Input", this.textViewValue1,this.textViewValue2);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$ Input: ", this.taskResponses);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);

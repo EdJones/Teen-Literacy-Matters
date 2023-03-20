@@ -8,21 +8,23 @@
         </GridLayout>
       </ActionBar>
       <ScrollView>
-        <GridLayout class="">
-          <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
-          <PreviousNextView>
-          <StackLayout orientation="vertical">
+        <GridLayout class="" rows="auto,*">
+            <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
+            
+          <StackLayout orientation="vertical" row="0" >
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
             <Label class="text-2xl text-center" text="The Path to Reading is Through" textWrap="true"  />
             <Label class="text-2xl text-center" text="Sound--2" textWrap="true"  />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
-            <XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
-            <TaskView :task="task" class=""></TaskView>
-                <Button class="btn-b" text="Enter" @tap="acceptInput" />   
+            <XPCard6 :xpObj="pageXPDetails[0]" ></XPCard6>
+            <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView>
           </StackLayout>
-        </PreviousNextView>
+          <StackLayout row="1" class="py-4">
+            <Button class="pt-4 btn-b" width="100" text="Back to How Kids Read" @tap="goBack" />
+          </StackLayout>
+        
         </GridLayout>
         </ScrollView>
     </Page>
@@ -36,9 +38,10 @@
   import { topicPages } from "../data/pages_list.js";
   import { XPs } from "../data/xp_list.js";
   import { Tasks } from "../data/Task_list.js";
-  import XPCard2 from "./XPCard2.vue";
+  import XPCard6 from "./XPCard6.vue";
   import TaskView from "./TaskView.vue";
   import PathToReading3 from "./PathToReading3";
+
   //import ProgressBar from "./ProgressBar";
   //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
@@ -53,7 +56,7 @@ const alertOptions = {
       SelectedPageService.getInstance().updateSelectedPage("Path2Reading2");
     },
     components: {
-      XPCard2,
+      XPCard6,
       TaskView
   },
     data() {
@@ -63,6 +66,7 @@ const alertOptions = {
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
       console.info("In data, pageXPDetails[0]: ", pageXPDetails);
       const task=Tasks[3];
+      const taskResponses = ["", ""];
       console.log("In data, task: ", task);
 
     return {
@@ -70,8 +74,7 @@ const alertOptions = {
       pageInfo: pageInfo[0],
       topicPages: topicPages,
       task: task,
-      textViewValue1: "",
-      textViewValue2: ""
+      taskResponses: taskResponses
     };
   },
     computed: {
@@ -79,16 +82,24 @@ const alertOptions = {
         return "<!-- Page content goes here -->";
       }
     },
+    watch: {
+        taskResponses(newtaskResponses, oldtaskResponses) {
+            console.log("Watcher updated");
+            console.info(newtaskResponses);
+            this.acceptInput();
+        },
+    },
     methods: {
       onDrawerButtonTap() {
         utils.showDrawer();
       }, 
-      
+      goBack() {
+            console.log("Done with ", this.page);
+            this.$navigateBack();
+        },
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Path to Reading Input", this.textViewValue1,this.textViewValue2);
-        let now = new Date();
-        let docNum = now.getTime();
-        console.log("Now: ",  docNum);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Input: ", this.taskResponses);
+
 /*
 
     this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});

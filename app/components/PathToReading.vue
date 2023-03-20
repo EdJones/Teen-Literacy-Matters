@@ -17,13 +17,11 @@
             <Label class="text-base leading-none font-light  p-4 pb-0" text="Yet it doesn't." textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" text="In 1987, the Van Orden experiments proved the unexpected opposite:" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0 italic" text="We all process written words as sounds." textWrap="true" />
-            
             <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView>
-
           </StackLayout>
           <StackLayout row="1" class="py-4">
-                <Button class="pt-4 btn-b" width="100" text="Back to How Kids Read" @tap="goBack" />
-            </StackLayout>
+            <Button class="pt-4 btn-b" width="100" text="Back to How Kids Read" @tap="goBack" />
+          </StackLayout>
         </PreviousNextView>
         </GridLayout>
         </ScrollView>
@@ -52,16 +50,17 @@ const alertOptions = {
   }; 
   export default {
     mounted() {
-      SelectedPageService.getInstance().updateSelectedPage("PrisonEngage");
+      SelectedPageService.getInstance().updateSelectedPage("PathToReading");
     },
     components: {
       TaskView
   },
     data() {
       const page="PathToReading";
+      const nextPage="PathToReading2"
       const pageInfo = preparePageInfo(page, topicPages);
     //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
-      console.info("RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );   
+      console.info("In ", page, ">data, pageInfo[0].page is: ", pageInfo[0].XPs );   
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
       const task=Tasks[2];
       const taskResponses = ["", ""];
@@ -95,7 +94,7 @@ const alertOptions = {
             this.$navigateBack();
         },
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Path to Reading Input", this.taskResponses);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$ ", this.page, "Input: ", this.taskResponses);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);

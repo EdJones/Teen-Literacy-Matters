@@ -207,9 +207,9 @@ export const topicPages = [
     title: "(Black) Literacy Matters--The Path to Reading in the Brain--3",
     challenge: "",
     pageXPs: ["XP10226"],
-    text1: "How do we know that we process written words AS SOUNDS?",
-    text2: "Van Orden's 1987 experiments showed us.",
-    text3: "Here's how it happened.",
+    text1: "As Van Orden set out to find if we really do process written words AS SOUNDS,",
+    text2: "the question was, how to trick people's brains into revealing what they were doing.",
+    text3: "",
     closingText: "",
     closingText2: "",
     modal: ""
