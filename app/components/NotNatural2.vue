@@ -38,7 +38,7 @@
   import XPCard2 from "./XPCard2";
   import XPModalA from "./XPModalA";
   import { XPs } from "../data/xp_list.js";
-  import PathToReading from './PathToReading';
+  import LetterBox from './LetterBox';
   //import P rogressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
 //import PreviousNextView from '@nativescript/iqkeyboardmanager';
@@ -82,17 +82,14 @@ const alertOptions = {
       }, 
       
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Rewiring Engage Input", this.textViewValue1,this.textViewValue2);
-        let now = new Date();
-        let docNum = now.getTime();
-        console.log("Now: ",  docNum);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$ Input: ", this.taskResponses);
 /*
 
     this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(PathToReading);
+   this.$navigateTo(LetterBox);
 })
 },
 

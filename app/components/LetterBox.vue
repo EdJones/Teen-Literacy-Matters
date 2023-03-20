@@ -8,24 +8,20 @@
         </GridLayout>
       </ActionBar>
       <ScrollView>
-        <GridLayout class="">
-          <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
-          <PreviousNextView>
-          <StackLayout orientation="vertical">
+        <GridLayout class="" rows="auto,*">
+            <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
+          </PreviousNextView>
+          <StackLayout orientation="vertical" row="0" >
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
             <Label class="text-2xl text-center" :text="pageInfo.challenge"  />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
             <XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
-            <Label class="text-base leading-none font-light  p-4 pb-0" text="Here, Dr. Strom points at a green area we call the 'Letter Box'. What's the more technical name for the brain's Letter Box?" textWrap="true" />
-            <TextViewWithHint width="350" height="70" class="text-black input-gray text-xl" editable="true" v-model="textViewValue1" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Label class="text-base leading-none font-light  p-4 pb-0" text="The video shows a picture of the brain of a 9 year old non-reader ('dyslexic')." textWrap="true" />
-            <Label class="text-base leading-none font-light  p-4 pb-0" text="What's the difference between the two brains?" textWrap="true" />
-            <TextViewWithHint width="350" height="70" class="text-black input-gray text-xl" editable="true" v-model="textViewValue2" hint="" returnKeyType="next" > </TextViewWithHint>
-            <Button class="btn-b" text="Enter" @tap="acceptInput" /> 
-            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text4" textWrap="true" />
-            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text5" textWrap="true" />
-             <!--XPCard2 :xpObj="pageXPDetails[1]" ></XPCard2--> 
+            <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView>
+          
+          </StackLayout>
+          <StackLayout row="1" class="py-4">
+            <Button class="mx-auto btn-b" width="200" opacity=".6" text="Back to How Kids Read" @tap="goBack" />
           </StackLayout>
         </PreviousNextView>
         </GridLayout>
@@ -39,8 +35,9 @@
   import { preparePageInfo, preparePageDetails } from "./pageData.js";
   import { Dialogs } from '@nativescript/core';
   import XPCard2 from "./XPCard2";
-  import XPModalA from "./XPModalA";
   import { XPs } from "../data/xp_list.js";
+  import { Tasks } from "../data/Task_list.js";
+  import TaskView from "./TaskView.vue";
   import LetterBox2 from './LetterBox2';
   //import P rogressBar from "./ProgressBar";
 import { topicPages } from "../data/pages_list.js";
@@ -57,7 +54,8 @@ const alertOptions = {
       SelectedPageService.getInstance().updateSelectedPage("LetterBox");
     },
     components: {
-      XPCard2
+      XPCard2,
+      TaskView
   },
     data() {
       const page="LetterBox";
@@ -65,13 +63,15 @@ const alertOptions = {
       //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
       console.info("In LetterBox>data, pageInfo[0].page is: ", pageInfo[0].page );
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
+      const task = Tasks[12];
+      const taskResponses = ["", ""];
 
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
       topicPages: topicPages,
-      textViewValue1: "",
-      textViewValue2: ""
+      task: task,
+      taskResponses: taskResponses
     };
   },
     computed: {
@@ -79,26 +79,32 @@ const alertOptions = {
         return "<!-- Page content goes here -->";
       }
     },
+    watch: {
+        taskResponses(newtaskResponses, oldtaskResponses) {
+            console.log("Watcher updated");
+            console.info(newtaskResponses);
+            this.acceptInput();
+        },
+    },
     methods: {
       onDrawerButtonTap() {
         utils.showDrawer();
       }, 
-      
+      goBack() {
+            console.log("Done with ", this.page);
+            this.$navigateBack();
+        },
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  LetterBox Input", this.textViewValue1,this.textViewValue2);
-        let now = new Date();
-        let docNum = now.getTime();
-        console.log("Now: ",  docNum);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$ Input: ", this.taskResponses);
 /*
 
     this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});
 this.$store.commit('addXP', {XP: "XP3000"});
 */
-Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(LetterBox2);
-})
-},
-
+        Dialogs.alert(alertOptions).then(() => {
+          this.$navigateTo(LetterBox2);
+          })
+      },
 
     }
   };

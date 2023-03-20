@@ -146,6 +146,7 @@ export const topicPages = [
     text3: "",
     text4: "",
     text5: "",
+    task: 12,
     closingText: "",
     closingText2: "",
     modal: ""

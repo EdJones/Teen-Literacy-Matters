@@ -181,7 +181,7 @@ export const Tasks = [
     closingText2: "", 
     modal: ""
   } ,{
-    taskID: 10,
+    taskID: 11,
     title: "Stumped By the Words 4",
     challenge: "",
     text1: "Early in this(~2:227), we hear from a mother who says:",
@@ -199,25 +199,23 @@ export const Tasks = [
     closingText2: "", 
     modal: ""
   } ,{
-    taskID: 11,
-    title: "Stumped By the Words 3",
+    taskID: 12,
+    title: "The Brain's Letterbox",
     challenge: "",
-    text1: "Typically, we expect children to learn such phonemes in kindergarten or first grade.",
-    text2: "Obviously, DeShaun was never taught this.",
+    text1: "",
+    text2: "",
     text3: "",
-    prompt1: "The particular phoneme DeSahun is so excited about is a little special. It's one of a few that are spelled with two letters.",
-    prompt1a: "T'But they're...'",
-    prompt1b: "",
-    prompt1c: "",
-    prompt2: "",
-    prompt2a: "",
+    prompt1: "Here, Dr. Strom points at a green area we call the 'Letter Box'. What's the more technical name for the brain's Letter Box?",
+    prompt1a: "",
+    prompt2: "The video shows a picture of the brain of a 9 year old non-reader ('dyslexic').",
+    prompt2a: "What's the difference between the two brains?",
     prompt2b: "",
     prompt2c: "",
     closingText: "",
     closingText2: "", 
     modal: ""
   } ,{
-    taskID: 12,
+    taskID: 13,
     title: "Stumped By the Words 3",
     challenge: "",
     text1: "Typically, we expect children to learn such phonemes in kindergarten or first grade.",
@@ -235,8 +233,8 @@ export const Tasks = [
     closingText2: "", 
     modal: ""
   } ,{
-    taskID: 13,
-    title: "The Brain's Letterbox 2",
+    taskID: 14,
+    title: "The Brain's Letterbox",
     challenge: "",
     text1: "",
     text2: "",

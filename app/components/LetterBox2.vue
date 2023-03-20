@@ -67,14 +67,13 @@ const alertOptions = {
       console.info("In LetterBox2>data, pageInfo[0].page is: ", pageInfo[0].page );
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
       const task=Tasks[pageInfo[0].task];
-
+      const taskResponses = ["", ""];
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
       topicPages: topicPages,
       task: task,
-      textViewValue1: "",
-      textViewValue2: ""
+      taskResponses: taskResponses
     };
   },
     computed: {
@@ -82,16 +81,20 @@ const alertOptions = {
         return "<!-- Page content goes here -->";
       }
     },
+    watch: {
+        taskResponses(newtaskResponses, oldtaskResponses) {
+            console.log("Watcher updated");
+            console.info(newtaskResponses);
+            this.acceptInput();
+        },
+    },
     methods: {
       onDrawerButtonTap() {
         utils.showDrawer();
       }, 
       
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  Letterbox2 Input", this.textViewValue1,this.textViewValue2);
-        let now = new Date();
-        let docNum = now.getTime();
-        console.log("Now: ",  docNum);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$ Input: ", this.taskResponses);
 /*
 
     this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});
