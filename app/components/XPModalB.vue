@@ -17,13 +17,11 @@
                   <StackLayout row="1" width="90%" horizontalAlignment="left" >
           <Label class="text-base leading-none p-4 pb-0"  horizontalAlignment="left" text="'R' is a high school teen. Yet he reads at what grade level?" textWrap="true"> </Label>
           <TextView width="50" height="40" class="input" horizontalAlignment="left" editable="true" keyboardType="number" maxlength="2" v-model="textViewValue1" hint="10" returnKeyType="next" @returnPress="onReturnPress()" > </TextView>
-          <Button class="btn-b" text="Submit" @tap="acceptInput(textViewValue1)" />
           <Label class="text-base leading-none p-4 pb-0" text="In this school, how many freshmen & sophomores read below a sixth-grade level?" textWrap="true"> </Label>
           <TextView width="40" height="40" class="input" horizontalAlignment="left" editable="true" v-model="textViewValue2" hint="0" returnKeyType="next" > </TextView>
-          <Button class="btn-b" text="Submit" @tap="acceptInput(textViewValue2)" />
           <Label class="text-base leading-none p-4 pb-0" text="Did any part of this story bring a tear to your eye? Make you well up with emotion? Which part?" textWrap="true"> </Label>
           <TextView width="400" height="80" class="inputText" horizontalAlignment="left" editable="true" v-model="textViewValue3" hint="0" returnKeyType="done" > </TextView>
-          <Button class="btn-b" text="Submit" @tap="acceptInput(textViewValue3)" />
+          <Button class="btn-b mt-2 mb-4" text="Enter" @tap="updateTaskResponse" /> 
         </StackLayout>
         </GridLayout>
         </ScrollView>
@@ -68,13 +66,19 @@ export default {
     onReturnPress() {
       console.log("Return pressed");
     },
-    acceptInput(inputValue) {
+    updateTaskResponse() {
+            console.info("Updating task input");
+            console.info( this.textViewValue1);
+            console.info( this.textViewValue2);
+            //let taskResponses = [this.textViewValue1, this.textViewValue2];
+            let taskResponses = [this.textViewValue1, this.textViewValue2,this.textViewValue3];
+            console.info("taskResponses: ", taskResponses);
+     this.$emit('updateTaskResponses', taskResponses);this.finishXP();
+    
+   },
+    acceptInput() {
 
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  XPModalB answer entered: ", inputValue);
-        let now = new Date();
-        let docNum = now.getTime();
-        console.log("Now: ",  docNum);
-        
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$  XPModalB answer entered: ", );
         /*
           
             this.$store.commit('increment', {XP: "XP3000", newPoints: 3000});

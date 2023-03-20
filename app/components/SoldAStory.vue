@@ -56,7 +56,7 @@ import {
     Tasks
 } from "../data/Task_list.js";
 import TaskView from "./TaskView.vue";
-import SoldAStory2 from "./SoldAStory";
+import SoldAStory2 from "./SoldAStory2";
 
 const alertOptions = {
             title: 'Thank you',
