@@ -155,7 +155,7 @@ export const topicPages = [
     title: "(Black) Literacy Matters--How Kids Learn",
     challenge: "The Brain's LetterBox--2",
     pageXPs: ["XP10221","XP0"],
-    task: ["5"],
+    task: ["13"],
     text1: "OK. We've learned that children's brains don't naturally come with a high-speed word decoder.",
     text2: "We knew about this letterbox long before fancy new fMRI's were invented.",
     text3: "How?",

@@ -8,20 +8,19 @@
         </GridLayout>
       </ActionBar>
       <ScrollView>
-        <GridLayout class="">
-          <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
-          <!--PreviousNextView-->
-          <StackLayout orientation="vertical">
+        <GridLayout class="" rows="auto,*">
+          <StackLayout orientation="vertical" row="0" >
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
             <Label class="text-2xl text-center" :text="pageInfo.challenge"  />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text3" textWrap="true" />
             <XPCard2 :xpObj="pageXPDetails[0]" ></XPCard2>
-            <TaskView :task="task" class=""></TaskView>
-            <Button class="btn-b" text="Enter" @tap="acceptInput" />  
-            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text5" textWrap="true" />
-             <!--XPCard2 :xpObj="pageXPDetails[1]" ></XPCard2--> 
+            <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView>
+          </StackLayout>
+          <StackLayout row="1" class="py-4">
+            <Button class="mx-auto btn-b" width="200" opacity=".6" text="Back to How Kids Read" @tap="goBack" />
+          </StackLayout>
           </StackLayout>
         <!--/PreviousNextView-->
         </GridLayout>
@@ -62,9 +61,6 @@ const alertOptions = {
     data() {
       const page="LetterBox2";
       const pageInfo = preparePageInfo(page, topicPages);
-      //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
-      console.info("In LetterBox2>data, pageInfo[0].page is: ", pageInfo[0].page );
-      console.info("In LetterBox2>data, pageInfo[0].page is: ", pageInfo[0].page );
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
       const task=Tasks[pageInfo[0].task];
       const taskResponses = ["", ""];
