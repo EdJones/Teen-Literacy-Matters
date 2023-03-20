@@ -20,7 +20,7 @@
             <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView>
           </StackLayout>
           <StackLayout row="1" class="py-4">
-            <Button class="pt-4 btn-b" width="100" text="Back to How Kids Read" @tap="goBack" />
+            <Button class="mx-auto btn-b" width="200" opacity=".6" text="Back to How Kids Read" @tap="goBack" />
           </StackLayout>
 
         </GridLayout>
