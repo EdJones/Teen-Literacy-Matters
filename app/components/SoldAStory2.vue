@@ -85,8 +85,6 @@ export default {
             pageInfo: pageInfo[0],
             topicPages: topicPages,
             task: task,
-            textViewValue1: textViewValue1,
-            textViewValue2: textViewValue2,
             taskResponses: taskResponses
         };
     },
@@ -118,7 +116,9 @@ export default {
             this.$store.commit('addXP', {XP: "XP3000"});
             */
             Dialogs.alert(alertOptions).then(() => {
-                this.$navigateTo(SoldAStory2);
+              //  this.$navigateTo(SoldAStory3);
+              this.$navigateBack();
+              this.$navigateBack();
             })
         },
     }
