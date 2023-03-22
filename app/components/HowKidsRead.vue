@@ -9,7 +9,10 @@
         </GridLayout>
       </ActionBar>
       <ScrollView >
-        <GridLayout class="" rows="*,auto">
+        <FlexboxLayout 
+            flexDirection="column" 
+            justifyContent="space-between" 
+            alignItems="stretch" >
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <StackLayout orientation="vertical" height="100%" row="0">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
@@ -19,10 +22,10 @@
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text3" textWrap="true" />
             <XPCard5 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail" ></XPCard5>
           </StackLayout>
-          <StackLayout row="1" class="" verticalAlignment="bottom" >
+          <StackLayout row="1" class=""  >
           <Button class="btn-b" opacity=".6" width="170" text="Back to First Steps" @tap="goBack" />
         </StackLayout>
-        </GridLayout>
+      </FlexboxLayout>
         </ScrollView>
     </Page>
 </template>
