@@ -174,8 +174,8 @@ ActionBar .action-bar-title {
   width: 30%;
 }
 .completed-dot {
-    height: 40px;
-    width: 40px;
+    height: 15;
+    width: 15;
     background-color: #22b222;
     border-radius: 50%;
     display: inline-block;
@@ -185,8 +185,8 @@ ActionBar .action-bar-title {
     vertical-align: top;
   }
   .incomplete-dot {
-    height: 40px;
-    width: 40px;
+    height: 15;
+    width: 15;
     background-color: #ffffff;
     border-color: #cccccc;
     border-style: solid;
@@ -196,7 +196,7 @@ ActionBar .action-bar-title {
     text-align: right;
     padding:0;
     margin-right:0;
-    margin-left: 6px;
+    margin-left: 6;
     vertical-align: top;
   }
   .headphones {

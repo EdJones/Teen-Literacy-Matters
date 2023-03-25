@@ -5,7 +5,7 @@
         <Gridlayout columns="20,*, 20" rows="auto,auto">
             <Label row="0" col="0" :text="mediaIcon" :class="iconPackage" verticalAlignment="top"></Label>
             <Label row="0" col="1" :text="xpObj.title" class="card-title" textWrap="true"></Label>
-            <Label row="0" col="2" :class="dotStatus"></Label>
+            <Label row="0" col="2" class="w-10":class="dotStatus"></Label>
             <Label row="1" col="1" v-if="xpObj.xpType!='challenge'" :text="xpObj.Subtitle" class="card-subtitle" textWrap="true"></Label>
             <Label row="1" colSpan="3" v-if="xpObj.xpType==='challenge'" :text="xpObj.xpText" class="card-text break-all" textWrap="true"></Label>
         </Gridlayout>
