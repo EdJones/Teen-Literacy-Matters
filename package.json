@@ -8,7 +8,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/vue-fontawesome": "^2.0.9",
-    "@nativescript/core": "^8.4.7",
+    "@nativescript/core": "^8.5.0",
     "@nativescript/firebase-auth": "^2.5.1",
     "@nativescript/firebase-core": "^2.5.1",
     "@nativescript/firebase-firestore": "^2.5.1",
@@ -27,8 +27,8 @@
     "vuex": "~3.6.2"
   },
   "devDependencies": {
-    "@nativescript/android": "^8.3.1",
-    "@nativescript/ios": "^8.3.3",
+    "@nativescript/android": "^8.5.0",
+    "@nativescript/ios": "^8.5.0",
     "@nativescript/preview-cli": "1.0.2",
     "@nativescript/webpack": "~5.0.6",
     "nativescript-vue-template-compiler": "~2.9.0"
