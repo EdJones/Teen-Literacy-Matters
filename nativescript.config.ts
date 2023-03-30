@@ -1,7 +1,7 @@
 import { NativeScriptConfig } from '@nativescript/core';
 
 export default {
-  id: 'com.edwincjones.blackteenliteracymatters',
+  id: 'com.edwincjones.teenliteracymatters',
   appPath: 'app',
   appResourcesPath: 'App_Resources',
   android: {
