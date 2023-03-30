@@ -4,7 +4,7 @@
     
       <GridLayout rows="40, *, 40">
         <StackLayout row="0" height="40" orientation="horizontal" class="modalblue">
-          <Button horizontalAlignment="right" class="closebutton7 text-right" text="Done" @tap="finishXP()" />
+          <Button horizontalAlignment="right" class="text-stone-600 closebutton7 text-right" text="Done" @tap="finishXP()" />
         </StackLayout>
 
         <ScrollView row="1" height="auto">
@@ -78,14 +78,13 @@ export default {
 .closebutton7 {
     
   /*  border-radius: 5; */
-    color: white;
-    font-family: FontAwesome;
+    color: ;
     font-size: 24;
     margin-left: 0;
     padding-left:5;
     padding-right: 10;
     margin-top:5;
-    padding-top:15;
+    padding-top:5;
     padding-bottom:10;
     width:100%;
     height:50;
@@ -119,7 +118,7 @@ export default {
 }
 .share {
   color: #3399ff;
-  font-size:24px;
+  font-size:24;
   height: 100%;
 }
 .browser-button {

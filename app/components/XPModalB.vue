@@ -164,7 +164,7 @@ export default {
 }
 .share {
   color: #3399ff;
-  font-size:24px;
+  font-size:24;
   height: 100%;
 }
 .browser-button {
