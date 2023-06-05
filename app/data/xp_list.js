@@ -13,7 +13,7 @@ export const XPs = [{
     "imageSource": "barn.jpg",
     "Text3": "",
     "points": "0"
-},{
+}, {
     "Science": "TRUE",
     "XP_NUM": "1",
     "xpId": "XP1",
@@ -2663,7 +2663,7 @@ export const XPs = [{
     "xpUrl": "https://www.sciencedaily.com/releases/2004/04/040420011157.htm",
     "Text3": "",
     "points": "2500"
-},, {
+}, , {
     "Science": "True",
     "XP_NUM": "300",
     "xpId": "XP300",
@@ -2734,7 +2734,7 @@ export const XPs = [{
     "Text3": "",
     "points": "2500"
 }
-, {
+    , {
     "Science": "TRUE",
     "XP_NUM": "2401",
     "xpId": " XP2401",
@@ -3298,7 +3298,7 @@ export const XPs = [{
     "xpUrl": "",
     "Text3": "",
     "points": ""
-},{
+}, {
     "Science": "",
     "XP_NUM": "10205",
     "xpId": "XP10205",
@@ -3314,7 +3314,7 @@ export const XPs = [{
     "xpUrl": "",
     "Text3": "Start at 10:05, and watch through 11:35",
     "points": "2500"
-},{
+}, {
     "Science": "",
     "xpId": "XP10220",
     "Section": "HowKidsRead",
@@ -3329,7 +3329,7 @@ export const XPs = [{
     "xpUrl": "",
     "Text3": "",
     "points": "2500"
-},{
+}, {
     "Science": "",
     "xpId": "XP10221",
     "Section": "HowKidsRead",
@@ -3344,7 +3344,7 @@ export const XPs = [{
     "xpUrl": "https://phonicshero.com/how-children-learn-to-read/",
     "Text3": "Read the first section of this, stopping before 'Reading By Sound'.",
     "points": "2500"
-},{
+}, {
     "Science": "",
     "xpId": "XP10222",
     "Section": "HowKidsRead",
@@ -3359,7 +3359,7 @@ export const XPs = [{
     "xpUrl": "https://www.psypost.org/2015/07/alexia-what-happens-when-a-brain-injury-makes-you-forget-how-to-read-35929",
     "Text3": "",
     "points": "2500"
-},{
+}, {
     "Science": "",
     "xpId": "XP10222",
     "Section": "HowKidsRead",
@@ -3374,7 +3374,7 @@ export const XPs = [{
     "xpUrl": "https://www.psypost.org/2015/07/alexia-what-happens-when-a-brain-injury-makes-you-forget-how-to-read-35929",
     "Text3": "",
     "points": "2500"
-},{
+}, {
     "Science": "",
     "xpId": "XP10206",
     "Section": "HowKidsRead",
@@ -3403,7 +3403,7 @@ export const XPs = [{
     "xpUrl": "",
     "Text3": "We just want you to see what an fNIRS looks like and what it tells us.",
     "points": "2500"
-},{
+}, {
     "Science": "",
     "xpId": "XP10211",
     "Page": "HowKidsRead",
@@ -3417,7 +3417,7 @@ export const XPs = [{
     "xpUrl": "",
     "Text3": "",
     "points": "2500"
-},{
+}, {
     "Science": "",
     "xpId": "XP10230",
     "Page": "GrowingALetterBox",
@@ -3453,6 +3453,20 @@ export const XPs = [{
     "xpType": "YtVideo",
     "YTvideoId": "bjqsI-JH4Os",
     "start": 90,
+    "Subtitle": "",
+    "xpText": "Now lets look at the experimental setup here.",
+    "text2": "Start at 3:03 and watch to the end.",
+    "xpUrl": "",
+    "Text3": "",
+    "points": "2500"
+}, {
+    "Science": "TRUE",
+    "xpId": "XP10230",
+    "Page": "LightOfMoon",
+    "title": "In the light of the moon",
+    "xpType": "article",
+    "YTvideoId": "",
+    "start": "",
     "Subtitle": "",
     "xpText": "Now lets look at the experimental setup here.",
     "text2": "Start at 3:03 and watch to the end.",

@@ -1,16 +1,16 @@
-export const topicPages = [ 
+export const topicPages = [
   {
     page: "Introduction",
     title: "(Black) Literacy Matters--Intro",
     challenge: "",
-    pageXPs: ["XP10100", "XP10101", "XP10102","XP10130"],
+    pageXPs: ["XP10100", "XP10101", "XP10102", "XP10130"],
     text1: "",
     text2: "",
     text3: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  },{
+  }, {
     page: "HardTruth",
     title: "(Black) Literacy Matters--A Hard Truth",
     challenge: "",
@@ -19,9 +19,9 @@ export const topicPages = [
     text2: "",
     text3: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  },{
+  }, {
     page: "SoldAStory",
     title: "(Black) Literacy Matters--Sold A Story",
     challenge: "",
@@ -30,9 +30,9 @@ export const topicPages = [
     text2: "",
     text3: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  },{
+  }, {
     page: "SoldAStory2",
     title: "(Black) Literacy Matters--Sold A Story",
     challenge: "",
@@ -41,9 +41,9 @@ export const topicPages = [
     text2: "",
     text3: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  },{
+  }, {
     page: "Prison",
     title: "(Black) Literacy Matters--Stumped by the Words",
     challenge: "",
@@ -52,9 +52,9 @@ export const topicPages = [
     text2: "",
     text3: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  },{
+  }, {
     page: "Prison2",
     title: "(Black) Literacy Matters--Stumped by the Words 2",
     challenge: "",
@@ -64,9 +64,9 @@ export const topicPages = [
     text3: "",
     task: 9,
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  },{
+  }, {
     page: "Prison3",
     title: "(Black) Literacy Matters--Stumped by the Words 3",
     challenge: "",
@@ -76,9 +76,9 @@ export const topicPages = [
     text3: "",
     task: 10,
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  },{
+  }, {
     page: "Prison4",
     title: "(Black) Literacy Matters--Stumped by the Words 3",
     challenge: "",
@@ -88,13 +88,13 @@ export const topicPages = [
     text3: "",
     task: 11,
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
   }, {
     page: "HowKidsRead",
     title: "(Black) Literacy Matters--How Kids Learn",
     challenge: "How Kids Learn to Read",
-    pageXPs: ["XP10202","XP10203","XP10204"],
+    pageXPs: ["XP10202", "XP10203", "XP10204"],
     text1: "We looked at what happens when kids aren't taught to read. Some pretty bad things happen to some of those kids.",
     text2: "But why don't these kids learn, while many other kids do?",
     text3: "We need to look inside kids' brains.",
@@ -127,7 +127,7 @@ export const topicPages = [
     page: "NotNatural2",
     title: "(Black) Literacy Matters--How Kids Learn",
     challenge: "It's Not Natural--2",
-    pageXPs: ["XP10205","XP10206"],
+    pageXPs: ["XP10205", "XP10206"],
     text1: "Dr. Carolyn Strom makes the point again:",
     text2: "Start at 10:05, and watch through 11:35",
     text3: "",
@@ -140,7 +140,7 @@ export const topicPages = [
     page: "LetterBox",
     title: "(Black) Literacy Matters--How Kids Learn",
     challenge: "The Brain's LetterBox",
-    pageXPs: ["XP10220","XP0"],
+    pageXPs: ["XP10220", "XP0"],
     text1: "OK. We've learned that children's brains don't naturally come with a high speed word decoder.",
     text2: "What's one way we know this?",
     text3: "",
@@ -154,7 +154,7 @@ export const topicPages = [
     page: "LetterBox2",
     title: "(Black) Literacy Matters--How Kids Learn",
     challenge: "The Brain's LetterBox--2",
-    pageXPs: ["XP10221","XP0"],
+    pageXPs: ["XP10221", "XP0"],
     task: ["13"],
     text1: "OK. We've learned that children's brains don't naturally come with a high-speed word decoder.",
     text2: "We knew about this letterbox long before fancy new fMRI's were invented.",
@@ -218,7 +218,7 @@ export const topicPages = [
     page: "Tools4BrainScience",
     title: "Tools for Brain Science",
     challenge: "What are some newer tools that learning scientists use?",
-    pageXPs: ["XP10210","XP10211"],
+    pageXPs: ["XP10210", "XP10211"],
     text1: "While the science of reading goes back many decades, we have access to some cool new tools, too.",
     text2: "These give us a clearer picture of what cognitive scientists have known. ",
     text3: "",
@@ -248,4 +248,16 @@ export const topicPages = [
     closingText: "",
     closingText2: "",
     modal: ""
-  } ]
+  }, {
+    page: "LightOfMoon",
+    title: "In the light of the moon",
+    challenge: "Why reading early and often matters.",
+    pageXPs: ["XP0"],
+    text1: "'In the light of the moon a little egg lay on a leaf.'",
+    text2: "'One Sunday morning the warm sun came up....and POP, out of the egg came a tiny, very hungry caterpillar.'",
+    text3: "People do not talk like this. Not even educated people, not when they are just talking together. ",
+    text4: "",
+    closingText: "",
+    closingText2: "",
+    modal: ""
+  }]
