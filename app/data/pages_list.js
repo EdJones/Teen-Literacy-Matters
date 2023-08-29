@@ -226,6 +226,23 @@ export const topicPages = [
     closingText2: "",
     modal: ""
   }, {
+    page: "Lebron",
+    title: "Can Lebron Fix It? (Or any gazillionaire?)",
+    challenge: "",
+    pageXPs: ["XP10230"],
+    text1: "Lebbron James thought he could help save Akron's kids by opening a school.",
+    text2: "He and many others have bragged about it since it opened in 2018.",
+    text3: "He's put a huge amount of money into this school.",
+    prompt1: "In the video, what was the title of the experimental report?",
+    prompt1a: "Hint: We showed you a photo of that report.",
+    prompt2: "In the title of that report, they gave a funny little clue to how the experiment worked.",
+    prompt2a: "'Rows' and 'rose' are what we call 'homophones'. Words that sound alike, but are spelled differently.",
+    prompt2b: "'Hear' and 'here' are another example.",
+    prompt2c: "Give three more examples of such word pairs.",
+    closingText: "",
+    closingText2: "",
+    modal: ""
+  }, {
     page: "End",
     title: "Finish!",
     challenge: "That's it! (For now.) We've still got lots to share.",

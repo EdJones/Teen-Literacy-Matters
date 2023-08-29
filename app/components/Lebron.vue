@@ -3,26 +3,26 @@
       <ActionBar class="action-bar">
         <NavigationButton visibility="hidden"/>
         <GridLayout columns="*, 50">
-          <Label col="0" class="action-bar-title" text="(Black) Teen Literacy Matters - Brains" />
+          <Label col="0" class="action-bar-title" text="(Black) Teen Literacy Matters - Money" />
           <Label col="1" class="fas text-right" text.decode="&#xf0c9;" @tap="onDrawerButtonTap" />
         </GridLayout>
       </ActionBar>
       <ScrollView>
         <GridLayout class="" rows="auto,*">
-          <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
-
-          <StackLayout orientation="vertical">
+            <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
+          <StackLayout orientation="vertical" row="0" >
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24 mb-4" />
-            <Label class="text-2xl text-center" text="The Path to Reading is Through Sound--3" textWrap="true"  />
+             <Label class="text-2xl text-center" :text="pageInfo.title" textWrap="true"  />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
+            <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text3" textWrap="true" />
             <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView>
           </StackLayout>
           <StackLayout row="1" class="py-4">
             <Button class="mx-auto btn-b" width="200" opacity=".6" text="Back to How Kids Read" @tap="goBack" />
           </StackLayout>
-
+        </PreviousNextView>
         </GridLayout>
         </ScrollView>
     </Page>
@@ -33,43 +33,42 @@
   import { preparePageInfo, preparePageDetails } from "./pageData.js";
   import { SelectedPageService } from "../shared/selected-page-service";
   import { Dialogs } from '@nativescript/core';
+  import XPModalA from "./XPModalA";
   import { topicPages } from "../data/pages_list.js";
   import { XPs } from "../data/xp_list.js";
   import { Tasks } from "../data/Task_list.js";
-  import XPCard2 from "./XPCard2.vue";
-  import TaskView from "./TaskView";
-  import End from "./End";
-  import Lebron from "./Lebron";
+  import TaskView from "./TaskView.vue";
+  import PathToReading2 from "./PathToReading2";
   //import ProgressBar from "./ProgressBar";
   //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
 const alertOptions = {
     title: '',
-    message: 'Sweet!',
+    message: 'Keep going!',
     okButtonText: 'Next',
     cancelable: false // [Android only] Gets or sets if the dialog can be canceled by taping outside of the dialog.
   }; 
   export default {
     mounted() {
-      SelectedPageService.getInstance().updateSelectedPage("Path2Reading3");
+      SelectedPageService.getInstance().updateSelectedPage("PathToReading");
     },
     components: {
-      XPCard2,
       TaskView
   },
     data() {
-      const page="PathToReading3";
+      const page="Lebron";
+      const nextPage="PathToReading2"
       const pageInfo = preparePageInfo(page, topicPages);
-      console.info("RewiringEngage>data, pageInfo[0].page is: ", pageInfo[0].page );   
+    //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
+      console.info("In ", page, ">data, pageInfo[0].page is: ", pageInfo[0].XPs );   
       const pageXPDetails = preparePageDetails(pageInfo[0], XPs);
-      const task=Tasks[4];
+      const task=Tasks[2];
       const taskResponses = ["", ""];
 
     return {
       pageXPDetails: pageXPDetails,
       pageInfo: pageInfo[0],
       topicPages: topicPages,
-      page: page,
       task: task,
       taskResponses: taskResponses
     };
@@ -93,10 +92,9 @@ const alertOptions = {
       goBack() {
             console.log("Done with ", this.page);
             this.$navigateBack();
-            this.$navigateBack();
         },
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$ Input: ", this.taskResponses);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$ ", this.page, "Input: ", this.taskResponses);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);
@@ -106,7 +104,7 @@ const alertOptions = {
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(Lebron);
+   this.$navigateTo(PathToReading2);
 })
 },
 
