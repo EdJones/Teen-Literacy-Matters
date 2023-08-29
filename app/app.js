@@ -1,9 +1,10 @@
+console.log("****************$$$$$$$$$$$$$  Starting App   $$$$$$$$$$$************************");
 import Vue from 'nativescript-vue'
 import RadSideDrawer from 'nativescript-ui-sidedrawer/vue'
 import YoutubePlayer from '@triniwiz/nativescript-youtubeplayer/vue';
 import PreviousNextView from '@nativescript/iqkeyboardmanager';
 import { store } from './store';
-Vue.registerElement("PreviousNextView", () => require("@nativescript/iqkeyboardmanager"). PreviousNextView);
+Vue.registerElement("PreviousNextView", () => require("@nativescript/iqkeyboardmanager").PreviousNextView);
 Vue.registerElement('TextViewWithHint', () => require('@nativescript/iqkeyboardmanager').TextViewWithHint);
 Vue.use(YoutubePlayer);
 
@@ -19,7 +20,7 @@ Vue.use(RadSideDrawer)
 
 
 import App from './components/App'
-
+console.log("****************$$$$$$$$$$$$$  Starting App   $$$$$$$$$$$************************");
 Vue.config.silent = !__DEV__
 
 new Vue({
