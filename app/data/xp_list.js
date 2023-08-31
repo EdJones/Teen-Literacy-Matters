@@ -3473,4 +3473,18 @@ export const XPs = [{
     "xpUrl": "",
     "Text3": "",
     "points": "2500"
+}, {
+    "Science": "TRUE",
+    "xpId": "XP10240",
+    "Page": "Lebron",
+    "title": "Not one 8th grade student at LeBron James’ ‘I Promise School’ has passed a state math test in over 3 years",
+    "xpType": "article",
+    "YTvideoId": "",
+    "start": "",
+    "Subtitle": "And their reading scores aren't much better.",
+    "xpText": "A school funded by one of the world's richest athletes should be able to teach kids to read. It isn't.",
+    "text2": "",
+    "xpUrl": "https://www.basketballinsiders.com/news/not-one-8th-grade-student-at-lebron-james-i-promise-school-has-passed-a-state-math-in-over-3-years/",
+    "Text3": "",
+    "points": "2500"
 }]

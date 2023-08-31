@@ -38,7 +38,7 @@
   import { XPs } from "../data/xp_list.js";
   import { Tasks } from "../data/Task_list.js";
   import TaskView from "./TaskView.vue";
-  import PathToReading2 from "./PathToReading2";
+  import End from "./End";
   //import ProgressBar from "./ProgressBar";
   //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
@@ -50,14 +50,14 @@ const alertOptions = {
   }; 
   export default {
     mounted() {
-      SelectedPageService.getInstance().updateSelectedPage("PathToReading");
+      SelectedPageService.getInstance().updateSelectedPage("Lebron");
     },
     components: {
       TaskView
   },
     data() {
       const page="Lebron";
-      const nextPage="PathToReading2"
+      const nextPage="End"
       const pageInfo = preparePageInfo(page, topicPages);
     //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
       console.info("In ", page, ">data, pageInfo[0].page is: ", pageInfo[0].XPs );   
@@ -104,7 +104,7 @@ const alertOptions = {
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(PathToReading2);
+   this.$navigateTo(End);
 })
 },
 

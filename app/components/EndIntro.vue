@@ -9,7 +9,7 @@
         </GridLayout>
       </ActionBar>
       <ScrollView >
-        <GridLayout class="" rows="*,100">
+        <GridLayout class="" rows="*,200">
           <!--XPCardSmall :xpObj="pageXPDetails[0]" ></XPCardSmall-->
           <StackLayout orientation="vertical" row="0">
             <image src="~/images/boy_walking.png" stretch="aspectFit" class="h-24" />
@@ -19,8 +19,9 @@
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text3" textWrap="true" />
             <Label class="text-base leading-none font-light  p-4 pb-0" :text="pageInfo.text4" textWrap="true" />
          </StackLayout>
-          <StackLayout row="1" class="mb-4" >
-          <Button class="btn-b" width="170" text="How Kids Learn" @tap="goTo()" />
+          <StackLayout row="1" class="mb-4 mt-8" >
+          <Button class="next-section-btn" width="170" text="How Kids Learn" @tap="goTo()" />
+          <Button class="next-section-btn" width="170" text="Can Lebron Fix It?" @tap="goTo1()" />
         </StackLayout>
         </GridLayout>
         </ScrollView>
@@ -33,6 +34,7 @@
   import { preparePageInfo, preparePageDetails } from "./pageData.js";
   import XPCard2 from "./XPCard2";
   import HowKidsRead from "./HowKidsRead";
+  import Lebron from "./Lebron";
   //import XPCardSmall from "./XPCardSmall";
   import { XPs } from "../data/xp_list.js";
   //import P rogressBar from "./ProgressBar";
@@ -74,6 +76,9 @@
       },
       goTo() {
         this.$navigateTo(HowKidsRead);
+      },
+      goTo1() {
+        this.$navigateTo(Lebron);
       }
     }
   };
