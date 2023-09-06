@@ -271,7 +271,7 @@ export const Tasks = [
     text1: "",
     text2: "",
     text3: "",
-    prompt1: "",
+    prompt1: "What percent of I Promise School's students tested proficient in English?",
     prompt1a: "",
     prompt2: "",
     prompt2a: "",

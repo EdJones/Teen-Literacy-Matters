@@ -17,10 +17,11 @@
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text1" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text2" textWrap="true" />
             <Label class="text-base leading-none font-light p-4 pb-0" :text="pageInfo.text3" textWrap="true" />
+            <XPCard2 v-for="pageXPDetail in pageXPDetails" :key="pageXPDetail.id" :xpObj="pageXPDetail"></XPCard2>
             <TaskView :task="task" @updateTaskResponses="taskResponses = $event" class=""></TaskView>
           </StackLayout>
           <StackLayout row="1" class="py-4">
-            <Button class="mx-auto btn-b" width="200" opacity=".6" text="Back to How Kids Read" @tap="goBack" />
+            <!--Button class="mx-auto btn-b" width="200" opacity=".6" text="Back to How Kids Read" @tap="goBack" /-->
           </StackLayout>
         </PreviousNextView>
         </GridLayout>
@@ -37,8 +38,10 @@
   import { topicPages } from "../data/pages_list.js";
   import { XPs } from "../data/xp_list.js";
   import { Tasks } from "../data/Task_list.js";
+  import XPCard2 from "./XPCard2";
   import TaskView from "./TaskView.vue";
-  import End from "./End";
+  import EndLebron from "./EndLebron";
+
   //import ProgressBar from "./ProgressBar";
   //import PreviousNextView from '@nativescript/iqkeyboardmanager';
 
@@ -53,11 +56,12 @@ const alertOptions = {
       SelectedPageService.getInstance().updateSelectedPage("Lebron");
     },
     components: {
-      TaskView
+      TaskView,
+      XPCard2
   },
     data() {
       const page="Lebron";
-      const nextPage="End"
+      const nextPage="EndLebron"
       const pageInfo = preparePageInfo(page, topicPages);
     //console.info("RewiringEngage>data(), pageInfo is: ", pageInfo);
       console.info("In ", page, ">data, pageInfo[0].page is: ", pageInfo[0].XPs );   
@@ -94,7 +98,7 @@ const alertOptions = {
             this.$navigateBack();
         },
       acceptInput() {
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$ ", this.page, "Input: ", this.taskResponses);
+        //console.log("$$$$$$$$$$$$$$$$$$$$$$$$$ ", this.page, "Input: ", this.taskResponses);
         let now = new Date();
         let docNum = now.getTime();
         console.log("Now: ",  docNum);
@@ -104,7 +108,7 @@ const alertOptions = {
 this.$store.commit('addXP', {XP: "XP3000"});
 */
 Dialogs.alert(alertOptions).then(() => {
-   this.$navigateTo(End);
+   this.$navigateTo(EndLebron);
 })
 },
 

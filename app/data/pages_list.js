@@ -229,7 +229,7 @@ export const topicPages = [
     page: "Lebron",
     title: "Can Lebron Fix It? (Or any gazillionaire?)",
     challenge: "",
-    pageXPs: ["XP10240"],
+    pageXPs: ["XP10240", "XP10241"],
     text1: "Lebron James thought he could help save Akron's kids by opening a school.",
     text2: "He and many others have bragged about it since it opened in 2018.",
     text3: "He's put a huge amount of money into this school.",
@@ -249,6 +249,18 @@ export const topicPages = [
     closingText2: "",
     modal: ""
   }, {
+    page: "EndLebron",
+    title: "So, Now What?",
+    challenge: "",
+    pageXPs: ["XP0"],
+    text1: "We're digging in now.",
+    text2: "So, if the problem is as bad as it seems; and if even Lebron's many millions can't fix it,...",
+    text3: "What really is the solution?",
+    text4: "How do we change things?",
+    closingText: "",
+    closingText2: "",
+    modal: ""
+  }, {
     page: "EndIntro",
     title: "Finished 'First Steps'",
     challenge: "",
@@ -264,7 +276,7 @@ export const topicPages = [
     page: "LightOfMoon",
     title: "In the light of the moon",
     challenge: "Why reading early and often matters.",
-    pageXPs: ["XP0"],
+    pageXPs: ["XP10240"],
     text1: "'In the light of the moon a little egg lay on a leaf.'",
     text2: "'One Sunday morning the warm sun came up....and POP, out of the egg came a tiny, very hungry caterpillar.'",
     text3: "People do not talk like this. Not even educated people, not when they are just talking together. ",
