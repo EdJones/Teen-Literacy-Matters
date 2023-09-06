@@ -27,6 +27,7 @@
   import * as utils from "~/shared/utils";
   import { SelectedPageService } from "../shared/selected-page-service";
   import HardTruth from "./HardTruth";
+  import Lebron from "./Lebron";
   import XPModalA from "./XPModalA";
   import XPCard   from "./XPCard";
   import { XPs } from "../data/xp_list.js";
@@ -78,7 +79,7 @@ import HowKidsRead from "./HowKidsRead";
         utils.showDrawer();
       },
       onNextSection() {
-        this.$navigateTo(HowKidsRead);
+        this.$navigateTo(Lebron);
       }
 
     }

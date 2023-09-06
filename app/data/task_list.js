@@ -1,4 +1,4 @@
-export const Tasks = [ 
+export const Tasks = [
   {
     taskID: 0,
     title: "(Black) Literacy Matters--Intro",
@@ -7,7 +7,7 @@ export const Tasks = [
     text2: "",
     text3: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
   },
   {
@@ -18,7 +18,7 @@ export const Tasks = [
     text2: "",
     text3: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
   },
   {
@@ -35,7 +35,7 @@ export const Tasks = [
     prompt2b: "",
     prompt2c: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
   },
   {
@@ -54,9 +54,9 @@ export const Tasks = [
     hint1: "",
     hint2: "Pear and..",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  },{
+  }, {
     taskID: 4,
     title: "(Black) Literacy Matters--Intro",
     challenge: "",
@@ -72,9 +72,9 @@ export const Tasks = [
     hint1: "",
     hint2: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  },{
+  }, {
     taskID: 5,
     title: "The Brain's Letterbox 2",
     challenge: "",
@@ -88,9 +88,9 @@ export const Tasks = [
     prompt2b: "Discribe how the brain routes Chinese differently from English, French, Polish, or Arabic.",
     prompt2c: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  },{
+  }, {
     taskID: 6,
     title: "Sold A Story",
     challenge: "",
@@ -106,9 +106,9 @@ export const Tasks = [
     prompt2c: "",
     hint2: "hue",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  },{
+  }, {
     taskID: 7,
     title: "Sold A Story 2",
     challenge: "",
@@ -124,9 +124,9 @@ export const Tasks = [
     prompt2c: "",
     hint2: "hue",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  },{
+  }, {
     taskID: 8,
     title: "Stumped By the Words",
     challenge: "",
@@ -142,9 +142,9 @@ export const Tasks = [
     prompt2b: "",
     prompt2c: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  } ,{
+  }, {
     taskID: 9,
     title: "Stumped By the Words 2",
     challenge: "",
@@ -160,9 +160,9 @@ export const Tasks = [
     prompt2b: "",
     prompt2c: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  } ,{
+  }, {
     taskID: 10,
     title: "Stumped By the Words 3",
     challenge: "",
@@ -178,9 +178,9 @@ export const Tasks = [
     prompt2b: "",
     prompt2c: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  } ,{
+  }, {
     taskID: 11,
     title: "Stumped By the Words 4",
     challenge: "",
@@ -196,9 +196,9 @@ export const Tasks = [
     prompt2b: "",
     prompt2c: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  } ,{
+  }, {
     taskID: 12,
     title: "The Brain's Letterbox",
     challenge: "",
@@ -212,9 +212,9 @@ export const Tasks = [
     prompt2b: "",
     prompt2c: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  },{
+  }, {
     taskID: 13,
     title: "The Brain's Letterbox 2",
     challenge: "",
@@ -228,9 +228,9 @@ export const Tasks = [
     prompt2b: "Discribe how the brain routes Chinese differently from English, French, Polish, or Arabic.",
     prompt2c: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  } ,{
+  }, {
     taskID: 14,
     title: "The Brain's Letterbox 2",
     challenge: "",
@@ -246,9 +246,9 @@ export const Tasks = [
     prompt2b: "",
     prompt2c: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
     modal: ""
-  } ,{
+  }, {
     taskID: 15,
     title: "The Brain's Letterbox",
     challenge: "",
@@ -262,6 +262,22 @@ export const Tasks = [
     prompt2b: "",
     prompt2c: "",
     closingText: "",
-    closingText2: "", 
+    closingText2: "",
+    modal: ""
+  }, {
+    taskID: 16,
+    title: "Lebron's School",
+    challenge: "",
+    text1: "",
+    text2: "",
+    text3: "",
+    prompt1: "",
+    prompt1a: "",
+    prompt2: "",
+    prompt2a: "",
+    prompt2b: "",
+    prompt2c: "",
+    closingText: "",
+    closingText2: "",
     modal: ""
   }]

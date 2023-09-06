@@ -24,6 +24,13 @@
                 </GridLayout>
 
                 <GridLayout columns="auto, *"
+                            :class="'nt-drawer__list-item' + (selectedPage === 'Lebron' ? ' -selected': '')"
+                            @tap="onNavigationItemTap(Lebron)">
+                    <Label col="0" text.decode="&#xf1ea;" class="nt-icon far"/>
+                    <Label col="1" text="Can Lebron Fix It?" class="p-r-10"/>
+                </GridLayout>
+
+                <GridLayout columns="auto, *"
                             :class="'nt-drawer__list-item' + (selectedPage === 'HowKidsREad' ? ' -selected': '')"
                             @tap="onNavigationItemTap(HowKidsRead)">
                     <Label col="0" text.decode="&#xf002;" class="nt-icon fas"/>
@@ -39,6 +46,7 @@
 <script>
   import Home from "./Home";
   import Intro from "./Intro";
+    import Lebron from "./Lebron";
   import HowKidsRead from "./HowKidsRead";
   import Search from "./Search";
   import Settings from "./Settings";
@@ -54,6 +62,7 @@
       return {
         Home: Home,
         Intro: Intro,
+        Lebron: Lebron,
         HowKidsRead: HowKidsRead,
         Search: Search,
         Settings: Settings,
@@ -63,6 +72,7 @@
     components: {
       Home,
       Intro,
+      Lebron,
       HowKidsRead,
       Search,
       Settings
