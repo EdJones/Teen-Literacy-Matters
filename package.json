@@ -1,6 +1,6 @@
 {
   "name": "(Black) Teen Literacy Matters",
-  "id": "com.edwincjones.teenliteracymatters",
+  "id": "com.edwincjones.blackteenliteracymatters",
   "main": "app/app.js",
   "version": "0.1.5",
   "private": true,
