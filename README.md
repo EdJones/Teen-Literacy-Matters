@@ -3,9 +3,9 @@
 
 This project creates a new [industry credential](https://education.ohio.gov/Topics/Ohio-s-Graduation-Requirements/Contacts-and-Resources/Industry-Recognized-Credentials/Industry-Recognized-Credentials-by-Career-Field) for high school students. 
 
-It is also the prototype project for an entirely [new approach to developing teen curricula](https://skunkworks-edu.com/#transparency), and to [setting specific teen learning goals](https://medium.com/@creditflex/pillars-of-a-hacked-high-school-experience-784ea60fd851).
+It is also the prototype project for an entirely new approach to developing teen curricula, and to [setting specific teen learning goals](https://medium.com/@creditflex/pillars-of-a-hacked-high-school-experience-784ea60fd851). 
 
-This credential is the result of over a [decade of R&D](https://skunkworks-edu.com) into how we can [redesign high schools](https://fordhaminstitute.org/national/commentary/wonkathon-2022-we-must-reinvent-high-schools-state-policies-stand-way-how-do-we). 
+This [next generation credential](https://www.reimaginedonline.org/2023/06/high-school-first-industry-credentials-a-scalable-approach-to-improving-schools/) is the result of over a [decade of R&D](https://skunkworks-edu.com) into how we can [redesign high schools](https://fordhaminstitute.org/national/commentary/wonkathon-2022-we-must-reinvent-high-schools-state-policies-stand-way-how-do-we). 
 
 It specifically addresses two workforce issues:
 1. The inequitable teaching of literacy in K-3, and the lifelong consequences.
