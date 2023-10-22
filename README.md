@@ -17,7 +17,7 @@ As a prototype, it will help iterate entirely new processes for developing, test
 ### Features
 * Made with [NativeScript](https://features.apmreports.org/sold-a-story/), the open source, cross-platform framework for mobile apps.
 * Designed to offer one ten-hour course 
-* Designed to be used with Ohio's unique [Credit Flexibility option](https://education.ohio.gov/Topics/Ohio-Education-Options/Credit-Flexibility-Plan) to organically grow a new, highest quality Industry Credential.
+* Designed to be used with new education freedom laws (including Learn Everywhere in a number of states, or Ohio's unique [Credit Flexibility option](https://education.ohio.gov/Topics/Ohio-Education-Options/Credit-Flexibility-Plan)) to organically grow a new, highest quality Industry Credential.
 
 ### Try it now 
  
